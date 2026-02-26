@@ -5,211 +5,244 @@
 <title>Pablo Díaz Avila | Data Engineer & Analytics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
+<!-- Icons & Bootstrap -->
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-body {
-  font-family: 'Lato', sans-serif;
-}
-
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-}
+body { font-family: 'Lato', sans-serif; }
+h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
 
 /* HERO */
-.hero {
-  background: #0d6efd;
-  color: white;
-  padding: 120px 20px;
-  text-align: center;
+.masthead {
+  background:#0d6efd;
+  padding:120px 20px;
+  color:white;
+  text-align:center;
+}
+.masthead-avatar {
+  width:180px;
+  border-radius:50%;
+  margin-bottom:30px;
+}
+.divider-custom {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:20px 0;
+}
+.divider-custom-line {
+  width:100px;
+  height:4px;
+  background:white;
+}
+.divider-custom-icon {
+  margin:0 15px;
+}
+
+/* PORTFOLIO */
+.portfolio-card {
+  background:white;
+  border-radius:15px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  padding:20px;
+  cursor:pointer;
+  transition:.3s;
+}
+.portfolio-card:hover {
+  transform:translateY(-5px);
 }
 
 /* TIMELINE */
 .timeline-section {
-  padding: 100px 0;
-  background: #f8f9fa;
+  background:#f8f9fa;
+  padding:100px 0;
 }
-
 .timeline-wrapper {
-  display: flex;
-  gap: 40px;
-  overflow-x: auto;
-  padding: 40px;
-  scroll-snap-type: x mandatory;
+  display:flex;
+  gap:40px;
+  overflow-x:auto;
+  padding:30px;
 }
-
 .timeline-card {
-  min-width: 320px;
-  background: white;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-  scroll-snap-align: start;
-  transform: translateY(40px);
-  opacity: 0;
-  transition: all 0.6s ease;
+  min-width:320px;
+  background:white;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+  cursor:pointer;
 }
-
-.timeline-card.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.timeline-year {
-  font-size: 14px;
-  font-weight: bold;
-  color: #0d6efd;
-}
-
-.timeline-company {
-  font-size: 20px;
-  margin-top: 5px;
-}
-
-.timeline-desc {
-  margin-top: 15px;
-  font-size: 15px;
-}
-
-.tech {
-  margin-top: 15px;
-  font-size: 13px;
-  font-weight: bold;
-  color: #6c757d;
-}
+.timeline-year { font-weight:bold; color:#0d6efd; }
+.timeline-company { font-size:20px; margin-top:5px; }
+.tech { font-size:13px; color:#6c757d; margin-top:10px; }
 
 /* CONTACT */
-.contact {
-  padding: 80px 0;
-  text-align: center;
-}
+.contact { padding:80px 0; text-align:center; }
 </style>
 </head>
 
-<body>
+<body id="page-top">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#page-top">Pablo Díaz</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Pablo Díaz Avila</h1>
-  <p class="lead mt-3">
-    Industrial Engineer · Data Engineer · Analytics & BI
+<header class="masthead">
+  <img src="assets/img/pablo.png" class="masthead-avatar" alt="Pablo Díaz Avila">
+  <h1 class="text-uppercase">Pablo Díaz Avila</h1>
+
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+
+  <p class="lead">Industrial Engineer · Data Engineer · Analytics & BI</p>
+</header>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="container py-5">
+  <h2 class="text-center text-uppercase">Portfolio</h2>
+  <p class="text-center mt-3">
+    Selected data and analytics projects developed in enterprise and academic environments,
+    focused on measurable business impact.
   </p>
+
+  <div class="row mt-5 g-4">
+    <div class="col-md-6">
+      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
+        <h5>Movistar – Revenue & Collections</h5>
+        <p>Enterprise BI dashboards for billing and collections.</p>
+        <strong>Tech:</strong> Power BI, DAX
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
+        <h5>Nestlé – Financial & HR Analytics</h5>
+        <p>ETL pipelines and Power BI reporting for LATAM.</p>
+        <strong>Tech:</strong> SSIS, SQL Server
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- TIMELINE -->
-<section class="timeline-section">
-  <div class="container text-center mb-5">
+<section id="timeline" class="timeline-section">
+  <div class="container text-center">
     <h2 class="text-uppercase">Professional Timeline</h2>
-    <p class="mt-3">
-      Key enterprise and data projects delivered across finance, analytics and BI environments.
-    </p>
   </div>
 
   <div class="timeline-wrapper">
-
-    <div class="timeline-card">
-      <span class="timeline-year">2022</span>
+    <div class="timeline-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
+      <div class="timeline-year">2022</div>
       <div class="timeline-company">Telefónica Movistar</div>
-      <p class="timeline-desc">
-        Led the development of Power BI dashboards for Billing, Collections and Accounts Receivable,
-        improving financial visibility and operational control.
-      </p>
-      <div class="tech">Power BI · DAX · Finance KPIs</div>
+      <p>BI for Billing, Collections & AR.</p>
+      <div class="tech">Power BI · DAX</div>
     </div>
 
-    <div class="timeline-card">
-      <span class="timeline-year">2022</span>
+    <div class="timeline-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
+      <div class="timeline-year">2022</div>
       <div class="timeline-company">Deloitte</div>
-      <p class="timeline-desc">
-        Developed Payment Reconciliation dashboards in Power BI, built a .NET file loader
-        and optimized stored procedures for BI reporting for clients like Johnson & Johnson and Sky.
-      </p>
-      <div class="tech">Power BI · SQL Server · .NET</div>
+      <p>Payment Reconciliation & BI automation.</p>
+      <div class="tech">Power BI · SQL · .NET</div>
     </div>
 
     <div class="timeline-card">
-      <span class="timeline-year">2023</span>
+      <div class="timeline-year">2023</div>
       <div class="timeline-company">Nestlé</div>
-      <p class="timeline-desc">
-        Built SSIS-based ETL pipelines and analytics-ready datasets consumed in Power BI
-        for finance and HR teams across LATAM.
-      </p>
-      <div class="tech">SSIS · SQL Server · Power BI</div>
+      <p>SSIS-based ETL & Power BI analytics.</p>
+      <div class="tech">SSIS · SQL Server</div>
     </div>
 
     <div class="timeline-card">
-      <span class="timeline-year">2024</span>
-      <div class="timeline-company">MVS Radio</div>
-      <p class="timeline-desc">
-        Developed HR dashboards for employee and training tracking using Azure-hosted datasets,
-        reducing reporting time by 35%.
-      </p>
-      <div class="tech">Power BI · Azure · Power Query</div>
+      <div class="timeline-year">2024–2026</div>
+      <div class="timeline-company">MVS Radio / Grupo Salinas</div>
+      <p>Automation & executive reporting.</p>
+      <div class="tech">Power BI · Azure</div>
     </div>
-
-    <div class="timeline-card">
-      <span class="timeline-year">2025</span>
-      <div class="timeline-company">MVS Radio</div>
-      <p class="timeline-desc">
-        Optimized sales and growth data models using DAX and relational modeling,
-        enabling management-level reporting in Excel.
-      </p>
-      <div class="tech">DAX · Data Modeling · Excel</div>
-    </div>
-
-    <div class="timeline-card">
-      <span class="timeline-year">2026</span>
-      <div class="timeline-company">Grupo Salinas</div>
-      <p class="timeline-desc">
-        Automated the Legal Collections Report in Power BI,
-        reducing manual processing time by 90%.
-      </p>
-      <div class="tech">Power BI · Automation · Legal Analytics</div>
-    </div>
-
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section id="contact" class="contact">
   <h2>Contact</h2>
-
   <a class="btn btn-outline-dark m-2" href="mailto:avila.pablo961@gmail.com">
     <i class="fas fa-envelope"></i> Email
   </a>
-
   <a class="btn btn-outline-dark m-2" href="tel:+525533980702">
     <i class="fas fa-phone"></i> +52 55 3398 0702
   </a>
-
   <a class="btn btn-outline-dark m-2" target="_blank"
      href="https://www.linkedin.com/in/pablo-d-44967318a/">
     <i class="fab fa-linkedin"></i> LinkedIn
   </a>
-
   <a class="btn btn-outline-dark m-2" target="_blank"
      href="https://github.com/PABLO8520">
     <i class="fab fa-github"></i> GitHub
   </a>
 </section>
 
-<script>
-const cards = document.querySelectorAll('.timeline-card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
+<!-- MODALS -->
+<div class="modal fade" id="movistarModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <h4>Telefónica Movistar – BI Project</h4>
+      <p>
+        Led the development of Power BI dashboards for Billing, Collections and Accounts Receivable,
+        enabling financial control and KPI-driven decision making.
+      </p>
+      <ul>
+        <li>End-to-end dashboard design</li>
+        <li>DAX modeling</li>
+        <li>Executive KPIs</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-cards.forEach(card => observer.observe(card));
-</script>
+<div class="modal fade" id="deloitteModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <h4>Deloitte – BI & Automation</h4>
+      <p>
+        Developed reconciliation dashboards, .NET file loaders and optimized SQL stored procedures
+        for enterprise BI clients.
+      </p>
+    </div>
+  </div>
+</div>
 
+<div class="modal fade" id="nestleModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <h4>Nestlé – ETL & Power BI</h4>
+      <p>
+        Built SSIS pipelines and Power BI reports supporting finance and HR analytics
+        across LATAM regions.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
