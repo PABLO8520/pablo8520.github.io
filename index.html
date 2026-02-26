@@ -14,8 +14,8 @@
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
 
 <style>
-body { font-family: 'Lato', sans-serif; }
-h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; font-weight:700; }
+body { font-family:'Lato',sans-serif; }
+h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:700; }
 
 /* NAV */
 .navbar { background:#1f2933; }
@@ -50,29 +50,47 @@ h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; font-weight:700; }
   padding:90px 0;
 }
 
-/* TIMELINE */
-.timeline-year {
-  font-size:34px;
-  color:#0d6efd;
-  margin:60px 0 30px;
-}
-
-.company-card {
+/* PORTFOLIO */
+.portfolio-card {
   background:white;
-  border-radius:14px;
+  border-radius:16px;
   padding:25px;
-  margin-bottom:25px;
   box-shadow:0 15px 35px rgba(0,0,0,.12);
-  border-left:6px solid #0d6efd;
+  cursor:pointer;
   transition:.3s;
+  height:100%;
 }
-.company-card:hover {
-  transform:translateY(-5px);
+.portfolio-card:hover {
+  transform:translateY(-6px);
 }
 
-.company-title {
-  font-size:20px;
-  margin-bottom:10px;
+/* TIMELINE HORIZONTAL */
+.timeline-wrapper {
+  overflow-x:auto;
+  padding:30px 10px;
+}
+.timeline {
+  display:flex;
+  gap:30px;
+  min-width:1200px;
+}
+.timeline-year {
+  min-width:260px;
+  background:white;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  border-top:6px solid #0d6efd;
+}
+.timeline-year h3 {
+  color:#0d6efd;
+  margin-bottom:15px;
+}
+.timeline-item {
+  margin-bottom:15px;
+}
+.timeline-item strong {
+  display:block;
 }
 
 /* CONTACT */
@@ -93,6 +111,7 @@ h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; font-weight:700; }
     </button>
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -112,122 +131,142 @@ h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; font-weight:700; }
   <p class="lead">Industrial Engineer · Data Engineer · Analytics & BI</p>
 </header>
 
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section container">
+  <h2 class="text-center text-uppercase">Portfolio</h2>
+  <p class="text-center mb-5">
+    Detailed data and analytics projects with a strong focus on business impact,
+    KPIs, data modeling, and decision support.
+  </p>
+
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
+        <h4>Telefónica Movistar</h4>
+        <p>Billing, Collections & Accounts Receivable BI</p>
+        <strong>Power BI · DAX · Finance</strong>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
+        <h4>Deloitte</h4>
+        <p>Payment Reconciliation & BI Automation</p>
+        <strong>Power BI · SQL · .NET</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- TIMELINE -->
 <section id="timeline" class="section bg-light">
   <div class="container">
-
     <h2 class="text-center text-uppercase mb-4">Professional Timeline</h2>
-    <p class="text-center mb-5">
-      Enterprise and academic data projects delivered with a strong focus on analytics,
-      automation, and business impact.
-    </p>
+  </div>
 
-    <!-- 2022 -->
-    <div class="timeline-year">2022</div>
+  <div class="timeline-wrapper">
+    <div class="timeline">
 
-    <div class="company-card">
-      <div class="company-title"><strong>Telefónica Movistar</strong></div>
-      <p>
-        BI for Billing, Collections & Accounts Receivable departments.
-        Designed and delivered executive and operational Power BI dashboards
-        supporting financial decision-making.
-      </p>
+      <div class="timeline-year">
+        <h3>2022</h3>
+        <div class="timeline-item">
+          <strong>Telefónica Movistar</strong>
+          BI for Billing, Collections & Accounts Receivable
+        </div>
+        <div class="timeline-item">
+          <strong>Deloitte</strong>
+          Payment Reconciliation dashboards, .NET loader, stored procedures
+        </div>
+      </div>
+
+      <div class="timeline-year">
+        <h3>2023</h3>
+        <div class="timeline-item">
+          <strong>Nestlé</strong>
+          SSIS ETL & Power BI analytics for LATAM
+        </div>
+      </div>
+
+      <div class="timeline-year">
+        <h3>2024</h3>
+        <div class="timeline-item">
+          <strong>MVS Radio</strong>
+          HR dashboard & accounting automation
+        </div>
+      </div>
+
+      <div class="timeline-year">
+        <h3>2025</h3>
+        <div class="timeline-item">
+          <strong>MVS Radio</strong>
+          Sales & growth data model optimization
+        </div>
+      </div>
+
+      <div class="timeline-year">
+        <h3>2026</h3>
+        <div class="timeline-item">
+          <strong>Grupo Salinas</strong>
+          Legal Collections automation (–90% time)
+        </div>
+      </div>
+
     </div>
-
-    <div class="company-card">
-      <div class="company-title"><strong>Deloitte</strong></div>
-      <ul>
-        <li>Development of Payment Reconciliation Dashboards in Power BI for Johnson & Johnson.</li>
-        <li>Creation of a .NET program for automated file loading.</li>
-        <li>Modification and optimization of stored procedures for BI report generation for Sky.</li>
-      </ul>
-    </div>
-
-    <!-- 2023 -->
-    <div class="timeline-year">2023</div>
-
-    <div class="company-card">
-      <div class="company-title"><strong>Nestlé</strong></div>
-      <ul>
-        <li>
-          Supported the Fiscal Report Project at Mallher Guatemala by extracting source data
-          and building ETL processes using SQL Server Integration Services (SSIS),
-          delivering analytics-ready datasets consumed in Power BI.
-        </li>
-        <li>
-          Collaborated on a Power BI reporting solution for Nestlé Venezuela’s HR team,
-          improving visibility of inventory availability, stock coverage,
-          and sales indicators used in operational planning.
-        </li>
-      </ul>
-    </div>
-
-    <!-- 2024 -->
-    <div class="timeline-year">2024</div>
-
-    <div class="company-card">
-      <div class="company-title"><strong>MVS Radio</strong></div>
-      <ul>
-        <li>
-          Developed an HR dashboard in Power BI for employee and training tracking,
-          supported by datasets prepared with Power Query and stored in Azure,
-          reducing report generation time by 35%.
-        </li>
-        <li>
-          Built a monthly accounting auxiliary from raw Oracle data.
-        </li>
-      </ul>
-    </div>
-
-    <!-- 2025 -->
-    <div class="timeline-year">2025</div>
-
-    <div class="company-card">
-      <div class="company-title"><strong>MVS Radio</strong></div>
-      <p>
-        Optimized a sales and growth data model using DAX and table relationships,
-        enabling management-level reporting through an Excel dashboard.
-      </p>
-    </div>
-
-    <!-- 2026 -->
-    <div class="timeline-year">2026</div>
-
-    <div class="company-card">
-      <div class="company-title"><strong>Grupo Salinas</strong></div>
-      <p>
-        Automated the Legal Collections Report in Power BI,
-        reducing manual processing time by 90%.
-      </p>
-    </div>
-
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section text-center">
-  <div class="container">
-    <h2 class="text-uppercase mb-4">Contact</h2>
+  <h2 class="text-uppercase mb-4">Contact</h2>
 
-    <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
-      <i class="fas fa-envelope"></i> Email
-    </a>
+  <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
+    <i class="fas fa-envelope"></i> Email
+  </a>
 
-    <a class="btn btn-outline-dark" href="tel:+525533980702">
-      <i class="fas fa-phone"></i> +52 55 3398 0702
-    </a>
+  <a class="btn btn-outline-dark" href="tel:+525533980702">
+    <i class="fas fa-phone"></i> +52 55 3398 0702
+  </a>
 
-    <a class="btn btn-outline-dark" target="_blank"
-       href="https://www.linkedin.com/in/pablo-d-44967318a/">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
+  <a class="btn btn-outline-dark" target="_blank"
+     href="https://www.linkedin.com/in/pablo-d-44967318a/">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
 
-    <a class="btn btn-outline-dark" target="_blank"
-       href="https://github.com/PABLO8520">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-  </div>
+  <a class="btn btn-outline-dark" target="_blank"
+     href="https://github.com/PABLO8520">
+    <i class="fab fa-github"></i> GitHub
+  </a>
 </section>
+
+<!-- MODALS (PORTFOLIO DETAIL) -->
+<div class="modal fade" id="movistarModal">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content p-4">
+      <h3>Telefónica Movistar – BI Dashboard</h3>
+      <p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
+      <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
+      <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
+      <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
+
+      <img src="assets/img/projects/movistar_1.png" class="img-fluid mb-3">
+      <img src="assets/img/projects/movistar_2.png" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deloitteModal">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content p-4">
+      <h3>Deloitte – BI & Automation</h3>
+      <p><strong>Purpose:</strong> Automate reconciliation and reporting processes.</p>
+      <p><strong>KPIs:</strong> Variance detection, reconciliation accuracy.</p>
+      <p><strong>Tech:</strong> Power BI, SQL Server, .NET.</p>
+      <p><strong>Impact:</strong> Reduced manual effort and improved reporting reliability.</p>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
