@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="#page-top">Pablo Díaz</a>
-    <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+    <button class="navbar-toggler bg-primary text-white rounded"
             type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
       Menu <i class="fas fa-bars"></i>
     </button>
@@ -72,27 +72,35 @@
 
     <div class="row justify-content-center">
 
-      <!-- PROJECT 1 -->
+      <!-- MOVISTAR -->
       <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto">
-          <img class="img-fluid" src="assets/img/portfolio/movistar_dashboard.png" alt="Movistar Dashboard" />
-          <h5 class="mt-3 text-center">Movistar – Revenue & Collections</h5>
-          <p class="text-center">
-            Professional BI dashboards for billing and collections analysis.<br>
-            <strong>Tech:</strong> Power BI, DAX
-          </p>
+        <div class="portfolio-item mx-auto"
+             data-bs-toggle="modal"
+             data-bs-target="#portfolioModalMovistar">
+          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid"
+               src="assets/img/portfolio/movistar_dashboard.png"
+               alt="Movistar Dashboard" />
         </div>
       </div>
 
-      <!-- PROJECT 2 -->
+      <!-- NSW -->
       <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto">
-          <img class="img-fluid" src="assets/img/portfolio/nsw_remote_work.png" alt="NSW Remote Work Survey" />
-          <h5 class="mt-3 text-center">NSW Remote Work Survey</h5>
-          <p class="text-center">
-            Academic analysis of remote work trends and productivity.<br>
-            <strong>Tech:</strong> Power BI
-          </p>
+        <div class="portfolio-item mx-auto"
+             data-bs-toggle="modal"
+             data-bs-target="#portfolioModalNSW">
+          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid"
+               src="assets/img/portfolio/nsw_remote_work.png"
+               alt="NSW Remote Work Survey" />
         </div>
       </div>
 
@@ -103,9 +111,7 @@
 <!-- ABOUT -->
 <section class="page-section bg-primary text-white mb-0" id="about">
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-white">
-      About
-    </h2>
+    <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
 
     <div class="divider-custom divider-light">
       <div class="divider-custom-line"></div>
@@ -114,12 +120,12 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <p class="lead text-center">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="lead">
           Industrial Engineer with experience in Data Engineering, Analytics & BI.
-          Strong background in process analysis, data modeling, and dashboard development.
-          Experience working with SQL, Python, Power BI, Databricks, SSIS, and cloud platforms
-          (Azure & AWS).
+          Strong background in SQL, Python, Power BI, Databricks, SSIS, and cloud
+          platforms (Azure & AWS). Experienced in KPI definition, data modeling,
+          and dashboard automation.
         </p>
       </div>
     </div>
@@ -128,10 +134,8 @@
 
 <!-- CONTACT -->
 <section class="page-section" id="contact">
-  <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Contact
-    </h2>
+  <div class="container text-center">
+    <h2 class="page-section-heading text-uppercase text-secondary mb-0">Contact</h2>
 
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
@@ -139,35 +143,31 @@
       <div class="divider-custom-line"></div>
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <p class="lead mb-4">
-          Open to Data Engineering, Analytics & BI roles and professional collaboration.
-        </p>
+    <p class="lead mb-4">
+      Open to Data Engineering, Analytics & BI roles and collaborations.
+    </p>
 
-        <a class="btn btn-outline-dark btn-lg m-2"
-           href="https://www.linkedin.com/in/pablo-d-44967318a/"
-           target="_blank">
-          <i class="fab fa-linkedin me-2"></i> LinkedIn
-        </a>
+    <a class="btn btn-outline-dark btn-lg m-2"
+       href="mailto:avila.pablo961@gmail.com">
+      <i class="fas fa-envelope me-2"></i> avila.pablo961@gmail.com
+    </a>
 
-        <a class="btn btn-outline-dark btn-lg m-2"
-           href="mailto:avila.pablo961@gmail.com">
-          <i class="fas fa-envelope me-2"></i> avila.pablo961@gmail.com
-        </a>
+    <a class="btn btn-outline-dark btn-lg m-2"
+       href="tel:+525533980702">
+      <i class="fas fa-phone me-2"></i> +52 55 3398 0702
+    </a>
 
-        <a class="btn btn-outline-dark btn-lg m-2"
-           href="tel:+525533980702">
-          <i class="fas fa-phone me-2"></i> +52 55 3398 0702
-        </a>
+    <a class="btn btn-outline-dark btn-lg m-2"
+       href="https://www.linkedin.com/in/pablo-d-44967318a/"
+       target="_blank">
+      <i class="fab fa-linkedin me-2"></i> LinkedIn
+    </a>
 
-        <a class="btn btn-outline-dark btn-lg m-2"
-           href="https://github.com/PABLO8520"
-           target="_blank">
-          <i class="fab fa-github me-2"></i> GitHub
-        </a>
-      </div>
-    </div>
+    <a class="btn btn-outline-dark btn-lg m-2"
+       href="https://github.com/PABLO8520"
+       target="_blank">
+      <i class="fab fa-github me-2"></i> GitHub
+    </a>
   </div>
 </section>
 
@@ -177,6 +177,61 @@
     <small>© Pablo Díaz Avila | Data Engineer & Analytics</small>
   </div>
 </footer>
+
+<!-- MODALS -->
+<div class="portfolio-modal modal fade" id="portfolioModalMovistar" tabindex="-1">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="container">
+          <h2 class="text-secondary text-uppercase mb-3">
+            Movistar – Revenue & Collections BI
+          </h2>
+          <img class="img-fluid rounded mb-4"
+               src="assets/img/portfolio/movistar_dashboard.png">
+          <p class="text-start">
+            BI dashboards for billing, collections, and revenue KPIs.
+          </p>
+          <ul class="text-start">
+            <li>Collections efficiency</li>
+            <li>Billing accuracy</li>
+            <li>Overdue portfolio</li>
+            <li>DAX-based KPIs</li>
+          </ul>
+          <p class="text-start"><strong>Tech:</strong> Power BI, DAX, SQL</p>
+          <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="portfolioModalNSW" tabindex="-1">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="container">
+          <h2 class="text-secondary text-uppercase mb-3">
+            NSW Remote Work Survey
+          </h2>
+          <img class="img-fluid rounded mb-4"
+               src="assets/img/portfolio/nsw_remote_work.png">
+          <p class="text-start">
+            Academic analysis of remote work productivity and trends.
+          </p>
+          <p class="text-start"><strong>Tech:</strong> Power BI</p>
+          <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
