@@ -5,268 +5,297 @@
 <title>Pablo Díaz Avila | Data Engineer & Analytics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
-<!-- Bootstrap & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
 
 <style>
-body { font-family:'Lato',sans-serif; }
+:root {
+  --primary:#2563eb;
+  --dark:#0f172a;
+  --light:#f4f7fb;
+}
+
+body {
+  font-family:'Lato',sans-serif;
+  background:var(--light);
+  transition:.3s;
+}
+
+.dark-mode {
+  background:#0b1120;
+  color:white;
+}
+
 h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:700; }
 
-/* NAV */
-.navbar { background:#1f2933; }
+.navbar { background:var(--dark); }
 
-/* HERO */
 .masthead {
-  background:#0d6efd;
+  background:linear-gradient(135deg,#1e3a8a,#2563eb);
   color:white;
   padding:120px 20px;
   text-align:center;
 }
 .masthead-avatar {
-  width:180px;
+  width:170px;
   border-radius:50%;
-  margin-bottom:25px;
+  border:4px solid white;
+  margin-bottom:20px;
 }
-.divider {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin:25px 0;
-}
-.divider-line {
-  width:90px;
-  height:4px;
-  background:white;
-}
-.divider i { margin:0 15px; }
 
-/* SECTION */
-.section {
-  padding:90px 0;
+/* Fade Animation */
+.fade-in {
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s ease;
+}
+.fade-in.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* PORTFOLIO */
+.section { padding:100px 0; }
+
 .portfolio-card {
   background:white;
-  border-radius:16px;
-  padding:25px;
-  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  transition:.4s;
   cursor:pointer;
-  transition:.3s;
-  height:100%;
 }
 .portfolio-card:hover {
-  transform:translateY(-6px);
+  transform:translateY(-10px);
+  box-shadow:0 30px 70px rgba(0,0,0,.18);
 }
 
-/* TIMELINE HORIZONTAL */
-.timeline-wrapper {
+/* Metrics */
+.metric {
+  font-size:48px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+/* TIMELINE */
+.timeline-section {
+  background:white;
+  padding:100px 0;
+}
+.timeline-container {
   overflow-x:auto;
-  padding:30px 10px;
+  padding:50px 0;
 }
 .timeline {
   display:flex;
-  gap:30px;
-  min-width:1200px;
+  gap:60px;
+  min-width:1600px;
 }
 .timeline-year {
-  min-width:260px;
-  background:white;
-  border-radius:16px;
-  padding:25px;
-  box-shadow:0 15px 35px rgba(0,0,0,.12);
-  border-top:6px solid #0d6efd;
+  min-width:300px;
+  background:#f8fafc;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+  border-top:6px solid var(--primary);
+  position:relative;
 }
-.timeline-year h3 {
-  color:#0d6efd;
-  margin-bottom:15px;
-}
-.timeline-item {
-  margin-bottom:15px;
-}
-.timeline-item strong {
-  display:block;
+.timeline-year::before {
+  content:'';
+  position:absolute;
+  top:-40px;
+  left:50%;
+  transform:translateX(-50%);
+  width:20px;
+  height:20px;
+  background:var(--primary);
+  border-radius:50%;
 }
 
 /* CONTACT */
-.contact a {
-  margin:8px;
+.contact-section {
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:white;
+  text-align:center;
+  padding:100px 0;
+}
+
+/* Toggle */
+.toggle-btn {
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:1000;
+}
+
+.modal-content img {
+  border-radius:15px;
 }
 </style>
 </head>
 
-<body id="page-top">
+<body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#page-top">Pablo Díaz</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
+<button class="btn btn-light toggle-btn" onclick="toggleDarkMode()">
+<i class="fas fa-moon"></i>
+</button>
+
+<nav class="navbar navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#">Pablo Díaz</a>
+</div>
 </nav>
 
-<!-- HERO -->
-<header class="masthead">
-  <img src="assets/img/pablo.png" class="masthead-avatar" alt="Pablo Díaz Avila">
-  <h1 class="text-uppercase">Pablo Díaz Avila</h1>
-  <div class="divider">
-    <div class="divider-line"></div>
-    <i class="fas fa-star"></i>
-    <div class="divider-line"></div>
-  </div>
-  <p class="lead">Industrial Engineer · Data Engineer · Analytics & BI</p>
+<header class="masthead fade-in">
+<img src="assets/img/pablo.png" class="masthead-avatar">
+<h1>Pablo Díaz Avila</h1>
+<p>Industrial Engineer · Data Engineer · Analytics & BI</p>
 </header>
 
 <!-- PORTFOLIO -->
-<section id="portfolio" class="section container">
-  <h2 class="text-center text-uppercase">Portfolio</h2>
-  <p class="text-center mb-5">
-    Detailed data and analytics projects with a strong focus on business impact,
-    KPIs, data modeling, and decision support.
-  </p>
+<section class="section container">
+<h2 class="text-center mb-5 fade-in">Project Portfolio</h2>
 
-  <div class="row g-4">
+<div class="row g-4">
 
-    <div class="col-md-6">
-      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
-        <h4>Telefónica Movistar</h4>
-        <p>Billing, Collections & Accounts Receivable BI</p>
-        <strong>Power BI · DAX · Finance</strong>
-      </div>
-    </div>
+<div class="col-md-6 fade-in">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
+<h4>Telefónica Movistar</h4>
+<p>Billing, Collections & Accounts Receivable BI</p>
+<div class="metric">+18%</div>
+<small>Improvement in recovery rate</small>
+</div>
+</div>
 
-    <div class="col-md-6">
-      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
-        <h4>Deloitte</h4>
-        <p>Payment Reconciliation & BI Automation</p>
-        <strong>Power BI · SQL · .NET</strong>
-      </div>
-    </div>
+<div class="col-md-6 fade-in">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salinasModal">
+<h4>Grupo Salinas</h4>
+<p>Legal Collections Automation</p>
+<div class="metric">–90%</div>
+<small>Manual processing reduction</small>
+</div>
+</div>
 
-  </div>
+</div>
 </section>
 
 <!-- TIMELINE -->
-<section id="timeline" class="section bg-light">
-  <div class="container">
-    <h2 class="text-center text-uppercase mb-4">Professional Timeline</h2>
-  </div>
+<section class="timeline-section">
+<div class="container text-center mb-4 fade-in">
+<h2>Professional Timeline</h2>
+</div>
 
-  <div class="timeline-wrapper">
-    <div class="timeline">
+<div class="timeline-container fade-in">
+<div class="timeline">
 
-      <div class="timeline-year">
-        <h3>2022</h3>
-        <div class="timeline-item">
-          <strong>Telefónica Movistar</strong>
-          BI for Billing, Collections & Accounts Receivable
-        </div>
-        <div class="timeline-item">
-          <strong>Deloitte</strong>
-          Payment Reconciliation dashboards, .NET loader, stored procedures
-        </div>
-      </div>
+<div class="timeline-year">
+<h3>2022</h3>
+<p><strong>Movistar</strong> – Financial BI</p>
+<p><strong>Deloitte</strong> – Reconciliation & Automation</p>
+</div>
 
-      <div class="timeline-year">
-        <h3>2023</h3>
-        <div class="timeline-item">
-          <strong>Nestlé</strong>
-          SSIS ETL & Power BI analytics for LATAM
-        </div>
-      </div>
+<div class="timeline-year">
+<h3>2023</h3>
+<p><strong>Nestlé</strong> – SSIS ETL Architecture</p>
+</div>
 
-      <div class="timeline-year">
-        <h3>2024</h3>
-        <div class="timeline-item">
-          <strong>MVS Radio</strong>
-          HR dashboard & accounting automation
-        </div>
-      </div>
+<div class="timeline-year">
+<h3>2024</h3>
+<p><strong>MVS Radio</strong> – HR Dashboard (–35%)</p>
+</div>
 
-      <div class="timeline-year">
-        <h3>2025</h3>
-        <div class="timeline-item">
-          <strong>MVS Radio</strong>
-          Sales & growth data model optimization
-        </div>
-      </div>
+<div class="timeline-year">
+<h3>2025</h3>
+<p><strong>MVS Radio</strong> – Sales Data Model</p>
+</div>
 
-      <div class="timeline-year">
-        <h3>2026</h3>
-        <div class="timeline-item">
-          <strong>Grupo Salinas</strong>
-          Legal Collections automation (–90% time)
-        </div>
-      </div>
+<div class="timeline-year">
+<h3>2026</h3>
+<p><strong>Grupo Salinas</strong> – Automation (–90%)</p>
+</div>
 
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section text-center">
-  <h2 class="text-uppercase mb-4">Contact</h2>
-
-  <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
-    <i class="fas fa-envelope"></i> Email
-  </a>
-
-  <a class="btn btn-outline-dark" href="tel:+525533980702">
-    <i class="fas fa-phone"></i> +52 55 3398 0702
-  </a>
-
-  <a class="btn btn-outline-dark" target="_blank"
-     href="https://www.linkedin.com/in/pablo-d-44967318a/">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-
-  <a class="btn btn-outline-dark" target="_blank"
-     href="https://github.com/PABLO8520">
-    <i class="fab fa-github"></i> GitHub
-  </a>
+<section class="contact-section fade-in">
+<h2>Contact</h2>
+<p>
+Let’s build data solutions that generate measurable business value.
+I’m open to collaboration, consulting, and new professional opportunities.
+</p>
+<a class="btn btn-light" href="mailto:avila.pablo961@gmail.com">Email</a>
+<a class="btn btn-light" href="tel:+525533980702">Call</a>
+<a class="btn btn-light" target="_blank" href="https://www.linkedin.com/in/pablo-d-44967318a/">LinkedIn</a>
+<a class="btn btn-light" target="_blank" href="https://github.com/PABLO8520">GitHub</a>
 </section>
 
-<!-- MODALS (PORTFOLIO DETAIL) -->
+<!-- MOVISTAR MODAL -->
 <div class="modal fade" id="movistarModal">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h3>Telefónica Movistar – BI Dashboard</h3>
-      <p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-      <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-      <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-      <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
 
-      <img src="assets/img/projects/movistar_1.png" class="img-fluid mb-3">
-      <img src="assets/img/projects/movistar_2.png" class="img-fluid">
-    </div>
-  </div>
+<h3>Telefónica Movistar – BI Dashboard</h3>
+
+<div id="carouselMovistar" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="assets/img/projects/movistar_1.png" class="d-block w-100">
+</div>
+<div class="carousel-item">
+<img src="assets/img/projects/movistar_2.png" class="d-block w-100">
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselMovistar" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselMovistar" data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
 </div>
 
-<div class="modal fade" id="deloitteModal">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h3>Deloitte – BI & Automation</h3>
-      <p><strong>Purpose:</strong> Automate reconciliation and reporting processes.</p>
-      <p><strong>KPIs:</strong> Variance detection, reconciliation accuracy.</p>
-      <p><strong>Tech:</strong> Power BI, SQL Server, .NET.</p>
-      <p><strong>Impact:</strong> Reduced manual effort and improved reporting reliability.</p>
-    </div>
-  </div>
+<p class="mt-4"><strong>DAX:</strong> Time Intelligence, Aging Logic, Cumulative Collections.</p>
+<p><strong>Impact:</strong> Enhanced executive monitoring and financial performance tracking.</p>
+
 </div>
+</div>
+</div>
+
+<!-- SALINAS MODAL -->
+<div class="modal fade" id="salinasModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+<h3>Grupo Salinas – Legal Collections Automation</h3>
+<p>Automated manual reporting processes, reducing processing time by 90%.</p>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Fade on scroll
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+faders.forEach(el=>observer.observe(el));
+
+// Dark mode
+function toggleDarkMode(){
+document.body.classList.toggle('dark-mode');
+}
+</script>
+
+</body>
+</html>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
