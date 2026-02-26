@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pablo Díaz Avila | Data Engineer & Analytics</title>
 
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" href="assets/favicon.ico" />
 
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet">
 
-  <!-- Theme CSS -->
-  <link href="css/styles.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -24,15 +24,14 @@
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="#page-top">Pablo Díaz</a>
-    <button class="navbar-toggler bg-primary text-white rounded"
-            type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+    <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+      type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
       Menu <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -42,7 +41,7 @@
 <!-- HERO -->
 <header class="masthead bg-primary text-white text-center">
   <div class="container d-flex align-items-center flex-column">
-    <img class="masthead-avatar mb-5" src="assets/img/pablo.png" alt="Pablo Díaz Avila" />
+    <img class="masthead-avatar mb-5" src="assets/img/pablo.png" alt="Pablo Díaz Avila">
     <h1 class="masthead-heading text-uppercase mb-0">Pablo Díaz Avila</h1>
 
     <div class="divider-custom divider-light">
@@ -60,39 +59,40 @@
 <!-- PORTFOLIO -->
 <section class="page-section portfolio" id="portfolio">
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Portfolio
-    </h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
 
-    <p class="lead text-center mt-4 mb-5">
-      Below are selected projects developed in enterprise and academic environments.
-      These initiatives focus on analytics, business intelligence, and data-driven
-      decision-making, delivering measurable impact while aligning with business objectives.
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <p class="text-center lead mb-5">
+      These are some of the data and analytics projects I’ve had the opportunity to develop
+      across academic and enterprise environments, delivering business-focused solutions
+      aligned with operational and strategic objectives.
     </p>
 
     <div class="row justify-content-center">
 
       <!-- MOVISTAR -->
       <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#movistarModal">
-          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-white">
-              <i class="fas fa-plus fa-3x"></i>
-            </div>
-          </div>
-          <img class="img-fluid" src="assets/img/portfolio/movistar_dashboard.png" alt="Movistar BI Dashboards" />
+        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modalMovistar">
+          <img class="img-fluid" src="assets/img/portfolio/movistar_2022.png" alt="Movistar BI">
         </div>
       </div>
 
-      <!-- NSW -->
+      <!-- DELOITTE -->
       <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#nswModal">
-          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-white">
-              <i class="fas fa-plus fa-3x"></i>
-            </div>
-          </div>
-          <img class="img-fluid" src="assets/img/portfolio/nsw_remote_work.png" alt="NSW Remote Work Survey" />
+        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modalDeloitte">
+          <img class="img-fluid" src="assets/img/portfolio/deloitte_2022.png" alt="Deloitte BI">
+        </div>
+      </div>
+
+      <!-- NESTLE -->
+      <div class="col-md-6 col-lg-4 mb-5">
+        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modalNestle">
+          <img class="img-fluid" src="assets/img/portfolio/nestle_2023.png" alt="Nestlé BI">
         </div>
       </div>
 
@@ -103,73 +103,95 @@
 <!-- TIMELINE -->
 <section class="page-section bg-light" id="timeline">
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
       Professional Timeline
     </h2>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-
-        <h4>2024 – Telefónica Movistar</h4>
-        <p>
-          Led the development of Power BI dashboards for the Billing, Collections,
-          and Accounts Receivable departments. Delivered KPIs and financial insights
-          that improved visibility into revenue performance, aging balances,
-          and collection efficiency.
-        </p>
-        <p><strong>Tech:</strong> Power BI, DAX, SQL</p>
-
-        <hr>
-
-        <h4>2023 – NSW Remote Work Survey (Academic)</h4>
-        <p>
-          Academic analytics project focused on remote work trends and productivity.
-          Data was cleaned, modeled, and visualized to identify patterns and insights
-          supporting workforce decision-making.
-        </p>
-        <p><strong>Tech:</strong> Power BI</p>
-
-      </div>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
     </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section class="page-section bg-primary text-white" id="about">
-  <div class="container text-center">
-    <h2 class="page-section-heading text-uppercase text-white">About</h2>
-    <p class="lead">
-      Industrial Engineer with experience in Data Engineering, Analytics, and Business Intelligence.
-      Strong background in SQL, Python, Power BI, Databricks, SSIS, and cloud platforms
-      including Azure and AWS. Focused on delivering data solutions aligned with
-      business objectives.
-    </p>
+    <ul class="timeline">
+
+      <li>
+        <div class="timeline-badge">2022</div>
+        <div class="timeline-panel">
+          <h5>Telefónica Movistar</h5>
+          <p>Led the development of Power BI dashboards for Billing, Collections and Accounts Receivable.</p>
+        </div>
+      </li>
+
+      <li class="timeline-inverted">
+        <div class="timeline-badge">2022</div>
+        <div class="timeline-panel">
+          <h5>Deloitte</h5>
+          <p>Payment Reconciliation dashboards (Power BI), .NET file loader and stored procedure optimization.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="timeline-badge">2023</div>
+        <div class="timeline-panel">
+          <h5>Nestlé</h5>
+          <p>SSIS-based ETL pipelines and Power BI reporting for LATAM finance and HR teams.</p>
+        </div>
+      </li>
+
+      <li class="timeline-inverted">
+        <div class="timeline-badge">2024</div>
+        <div class="timeline-panel">
+          <h5>MVS Radio</h5>
+          <p>HR dashboards and accounting automation using Power BI, Power Query and Azure.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="timeline-badge">2025</div>
+        <div class="timeline-panel">
+          <h5>MVS Radio</h5>
+          <p>Sales and growth data model optimization using DAX and Excel-based executive dashboards.</p>
+        </div>
+      </li>
+
+      <li class="timeline-inverted">
+        <div class="timeline-badge">2026</div>
+        <div class="timeline-panel">
+          <h5>Grupo Salinas</h5>
+          <p>Automated Legal Collections reporting in Power BI, reducing manual effort by 90%.</p>
+        </div>
+      </li>
+
+    </ul>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="page-section" id="contact">
   <div class="container text-center">
-    <h2 class="page-section-heading text-uppercase text-secondary mb-4">Contact</h2>
+    <h2 class="page-section-heading text-uppercase text-secondary mb-0">Contact</h2>
 
-    <a class="btn btn-outline-dark btn-lg m-2"
-       href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
-      <i class="fab fa-linkedin me-2"></i> LinkedIn
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <a class="btn btn-outline-dark btn-lg m-2" href="mailto:avila.pablo961@gmail.com">
+      <i class="fas fa-envelope me-2"></i>Email
     </a>
 
-    <a class="btn btn-outline-dark btn-lg m-2"
-       href="https://github.com/PABLO8520" target="_blank">
-      <i class="fab fa-github me-2"></i> GitHub
+    <a class="btn btn-outline-dark btn-lg m-2" href="tel:+525533980702">
+      <i class="fas fa-phone me-2"></i>+52 55 3398 0702
     </a>
 
-    <a class="btn btn-outline-dark btn-lg m-2"
-       href="mailto:avila.pablo961@gmail.com">
-      <i class="fas fa-envelope me-2"></i> Email
+    <a class="btn btn-outline-dark btn-lg m-2" href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
+      <i class="fab fa-linkedin me-2"></i>LinkedIn
     </a>
 
-    <a class="btn btn-outline-dark btn-lg m-2"
-       href="tel:+525533980702">
-      <i class="fas fa-phone me-2"></i> +52 55 3398 0702
+    <a class="btn btn-outline-dark btn-lg m-2" href="https://github.com/PABLO8520" target="_blank">
+      <i class="fab fa-github me-2"></i>GitHub
     </a>
   </div>
 </section>
@@ -180,41 +202,8 @@
   </div>
 </footer>
 
-<!-- MODALS -->
-<div class="portfolio-modal modal fade" id="movistarModal" tabindex="-1">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-body text-center pb-5">
-        <h2>Telefónica Movistar</h2>
-        <p>
-          Enterprise BI project focused on financial analytics.
-          Screenshots are shown as evidence due to data confidentiality.
-        </p>
-        <p><strong>Tech:</strong> Power BI, DAX, SQL</p>
-        <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="portfolio-modal modal fade" id="nswModal" tabindex="-1">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-body text-center pb-5">
-        <h2>NSW Remote Work Survey</h2>
-        <p>
-          Academic project analyzing remote work trends and productivity
-          using Power BI dashboards.
-        </p>
-        <p><strong>Tech:</strong> Power BI</p>
-        <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/scripts.js"></script>
 
 </body>
 </html>
