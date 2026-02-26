@@ -9,89 +9,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-<!-- Icons & Bootstrap -->
-<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
+<!-- Bootstrap & Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
 
 <style>
-body { font-family:'Lato',sans-serif; }
-h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:700; }
+body { font-family: 'Lato', sans-serif; }
+h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; font-weight:700; }
+
+/* NAV */
+.navbar { background:#1f2933; }
 
 /* HERO */
 .masthead {
   background:#0d6efd;
-  padding:120px 20px;
   color:white;
+  padding:120px 20px;
   text-align:center;
 }
 .masthead-avatar {
   width:180px;
   border-radius:50%;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
-.divider-custom {
+.divider {
   display:flex;
   justify-content:center;
   align-items:center;
-  margin:20px 0;
+  margin:25px 0;
 }
-.divider-custom-line {
-  width:100px;
+.divider-line {
+  width:90px;
   height:4px;
   background:white;
 }
-.divider-custom-icon {
-  margin:0 15px;
-}
+.divider i { margin:0 15px; }
 
-/* PORTFOLIO */
-.portfolio-card {
-  background:white;
-  border-radius:16px;
-  padding:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
-  cursor:pointer;
-  transition:.3s;
-  height:100%;
-}
-.portfolio-card:hover {
-  transform:translateY(-6px);
+/* SECTION */
+.section {
+  padding:90px 0;
 }
 
 /* TIMELINE */
-.timeline-section {
-  background:#f8f9fa;
-  padding:100px 0;
-}
 .timeline-year {
-  font-size:32px;
-  font-weight:700;
+  font-size:34px;
   color:#0d6efd;
-  margin:50px 0 30px;
+  margin:60px 0 30px;
 }
-.timeline-item {
+
+.company-card {
   background:white;
-  border-left:6px solid #0d6efd;
-  padding:20px 25px;
+  border-radius:14px;
+  padding:25px;
   margin-bottom:25px;
-  border-radius:10px;
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
-  animation:fadeUp .6s ease both;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  border-left:6px solid #0d6efd;
+  transition:.3s;
 }
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(30px); }
-  to { opacity:1; transform:translateY(0); }
+.company-card:hover {
+  transform:translateY(-5px);
+}
+
+.company-title {
+  font-size:20px;
+  margin-bottom:10px;
 }
 
 /* CONTACT */
-.contact { padding:80px 0; text-align:center; }
+.contact a {
+  margin:8px;
+}
 </style>
 </head>
 
 <body id="page-top">
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#page-top">Pablo Díaz</a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -99,7 +93,6 @@ h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:700; }
     </button>
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -111,169 +104,130 @@ h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:700; }
 <header class="masthead">
   <img src="assets/img/pablo.png" class="masthead-avatar" alt="Pablo Díaz Avila">
   <h1 class="text-uppercase">Pablo Díaz Avila</h1>
-  <div class="divider-custom">
-    <div class="divider-custom-line"></div>
-    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-    <div class="divider-custom-line"></div>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <i class="fas fa-star"></i>
+    <div class="divider-line"></div>
   </div>
   <p class="lead">Industrial Engineer · Data Engineer · Analytics & BI</p>
 </header>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="container py-5">
-  <h2 class="text-center text-uppercase">Projects</h2>
-  <p class="text-center mt-3">
-    Enterprise and academic data projects focused on analytics, automation and business impact.
-  </p>
-
-  <div class="row mt-5 g-4">
-
-    <div class="col-md-6">
-      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
-        <h5>Telefónica Movistar</h5>
-        <p>Billing, Collections & Accounts Receivable BI</p>
-        <strong>Tech:</strong> Power BI, DAX
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
-        <h5>Deloitte</h5>
-        <p>Payment Reconciliation & BI Automation</p>
-        <strong>Tech:</strong> Power BI, SQL, .NET
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
-        <h5>Nestlé LATAM</h5>
-        <p>SSIS ETL & Power BI Analytics</p>
-        <strong>Tech:</strong> SSIS, SQL Server
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
-        <h5>MVS Radio</h5>
-        <p>HR, Accounting & Sales Analytics</p>
-        <strong>Tech:</strong> Power BI, Azure
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- TIMELINE -->
-<section id="timeline" class="timeline-section">
+<section id="timeline" class="section bg-light">
   <div class="container">
-    <h2 class="text-center text-uppercase">Professional Timeline</h2>
 
+    <h2 class="text-center text-uppercase mb-4">Professional Timeline</h2>
+    <p class="text-center mb-5">
+      Enterprise and academic data projects delivered with a strong focus on analytics,
+      automation, and business impact.
+    </p>
+
+    <!-- 2022 -->
     <div class="timeline-year">2022</div>
-    <div class="timeline-item">
-      <strong>Telefónica Movistar</strong><br>
-      Led the development of Power BI dashboards for Billing, Collections and Accounts Receivable.
-    </div>
-    <div class="timeline-item">
-      <strong>Deloitte</strong><br>
-      Development of Payment Reconciliation dashboards (Power BI), .NET file loader and stored
-      procedure optimization.
+
+    <div class="company-card">
+      <div class="company-title"><strong>Telefónica Movistar</strong></div>
+      <p>
+        BI for Billing, Collections & Accounts Receivable departments.
+        Designed and delivered executive and operational Power BI dashboards
+        supporting financial decision-making.
+      </p>
     </div>
 
+    <div class="company-card">
+      <div class="company-title"><strong>Deloitte</strong></div>
+      <ul>
+        <li>Development of Payment Reconciliation Dashboards in Power BI for Johnson & Johnson.</li>
+        <li>Creation of a .NET program for automated file loading.</li>
+        <li>Modification and optimization of stored procedures for BI report generation for Sky.</li>
+      </ul>
+    </div>
+
+    <!-- 2023 -->
     <div class="timeline-year">2023</div>
-    <div class="timeline-item">
-      <strong>Nestlé</strong><br>
-      Built SSIS-based ETL pipelines and Power BI reports for LATAM finance and HR teams.
+
+    <div class="company-card">
+      <div class="company-title"><strong>Nestlé</strong></div>
+      <ul>
+        <li>
+          Supported the Fiscal Report Project at Mallher Guatemala by extracting source data
+          and building ETL processes using SQL Server Integration Services (SSIS),
+          delivering analytics-ready datasets consumed in Power BI.
+        </li>
+        <li>
+          Collaborated on a Power BI reporting solution for Nestlé Venezuela’s HR team,
+          improving visibility of inventory availability, stock coverage,
+          and sales indicators used in operational planning.
+        </li>
+      </ul>
     </div>
 
+    <!-- 2024 -->
     <div class="timeline-year">2024</div>
-    <div class="timeline-item">
-      <strong>MVS Radio</strong><br>
-      Developed HR dashboard for employee and training tracking using Power BI and Azure.
+
+    <div class="company-card">
+      <div class="company-title"><strong>MVS Radio</strong></div>
+      <ul>
+        <li>
+          Developed an HR dashboard in Power BI for employee and training tracking,
+          supported by datasets prepared with Power Query and stored in Azure,
+          reducing report generation time by 35%.
+        </li>
+        <li>
+          Built a monthly accounting auxiliary from raw Oracle data.
+        </li>
+      </ul>
     </div>
 
+    <!-- 2025 -->
     <div class="timeline-year">2025</div>
-    <div class="timeline-item">
-      <strong>MVS Radio</strong><br>
-      Optimized sales and growth data model using DAX and Excel dashboards.
+
+    <div class="company-card">
+      <div class="company-title"><strong>MVS Radio</strong></div>
+      <p>
+        Optimized a sales and growth data model using DAX and table relationships,
+        enabling management-level reporting through an Excel dashboard.
+      </p>
     </div>
 
+    <!-- 2026 -->
     <div class="timeline-year">2026</div>
-    <div class="timeline-item">
-      <strong>Grupo Salinas</strong><br>
-      Automated Legal Collections report in Power BI, reducing manual processing time by 90%.
+
+    <div class="company-card">
+      <div class="company-title"><strong>Grupo Salinas</strong></div>
+      <p>
+        Automated the Legal Collections Report in Power BI,
+        reducing manual processing time by 90%.
+      </p>
     </div>
 
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <a class="btn btn-outline-dark m-2" href="mailto:avila.pablo961@gmail.com">
-    <i class="fas fa-envelope"></i> Email
-  </a>
-  <a class="btn btn-outline-dark m-2" href="tel:+525533980702">
-    <i class="fas fa-phone"></i> +52 55 3398 0702
-  </a>
-  <a class="btn btn-outline-dark m-2" target="_blank"
-     href="https://www.linkedin.com/in/pablo-d-44967318a/">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-  <a class="btn btn-outline-dark m-2" target="_blank"
-     href="https://github.com/PABLO8520">
-    <i class="fab fa-github"></i> GitHub
-  </a>
+<section id="contact" class="section text-center">
+  <div class="container">
+    <h2 class="text-uppercase mb-4">Contact</h2>
+
+    <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+
+    <a class="btn btn-outline-dark" href="tel:+525533980702">
+      <i class="fas fa-phone"></i> +52 55 3398 0702
+    </a>
+
+    <a class="btn btn-outline-dark" target="_blank"
+       href="https://www.linkedin.com/in/pablo-d-44967318a/">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+
+    <a class="btn btn-outline-dark" target="_blank"
+       href="https://github.com/PABLO8520">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </div>
 </section>
-
-<!-- MODALS -->
-<div class="modal fade" id="movistarModal">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h4>Telefónica Movistar – BI Project</h4>
-      <p>
-        Enterprise Power BI solution supporting Billing, Collections and Accounts Receivable.
-        KPIs designed for executive and operational decision-making.
-      </p>
-      <img src="assets/img/projects/movistar_1.png" class="img-fluid mb-3">
-      <img src="assets/img/projects/movistar_2.png" class="img-fluid">
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="deloitteModal">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h4>Deloitte – BI & Automation</h4>
-      <p>
-        Developed reconciliation dashboards, file ingestion tools in .NET and optimized SQL
-        stored procedures for enterprise BI environments.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="nestleModal">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h4>Nestlé – ETL & Power BI</h4>
-      <p>
-        Built SSIS ETL pipelines and analytics-ready datasets consumed by Power BI reports
-        across LATAM regions.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="mvsModal">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h4>MVS Radio – Analytics Projects</h4>
-      <p>
-        HR, accounting and sales analytics solutions using Power BI, Azure and Excel.
-      </p>
-    </div>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
