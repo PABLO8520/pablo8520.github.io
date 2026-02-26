@@ -14,8 +14,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-body { font-family: 'Lato', sans-serif; }
-h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
+body { font-family:'Lato',sans-serif; }
+h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:700; }
 
 /* HERO */
 .masthead {
@@ -31,8 +31,8 @@ h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
 }
 .divider-custom {
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   margin:20px 0;
 }
 .divider-custom-line {
@@ -47,14 +47,15 @@ h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
 /* PORTFOLIO */
 .portfolio-card {
   background:white;
-  border-radius:15px;
-  box-shadow:0 15px 35px rgba(0,0,0,.15);
-  padding:20px;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
   cursor:pointer;
   transition:.3s;
+  height:100%;
 }
 .portfolio-card:hover {
-  transform:translateY(-5px);
+  transform:translateY(-6px);
 }
 
 /* TIMELINE */
@@ -62,23 +63,25 @@ h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
   background:#f8f9fa;
   padding:100px 0;
 }
-.timeline-wrapper {
-  display:flex;
-  gap:40px;
-  overflow-x:auto;
-  padding:30px;
+.timeline-year {
+  font-size:32px;
+  font-weight:700;
+  color:#0d6efd;
+  margin:50px 0 30px;
 }
-.timeline-card {
-  min-width:320px;
+.timeline-item {
   background:white;
-  border-radius:16px;
-  padding:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,.12);
-  cursor:pointer;
+  border-left:6px solid #0d6efd;
+  padding:20px 25px;
+  margin-bottom:25px;
+  border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  animation:fadeUp .6s ease both;
 }
-.timeline-year { font-weight:bold; color:#0d6efd; }
-.timeline-company { font-size:20px; margin-top:5px; }
-.tech { font-size:13px; color:#6c757d; margin-top:10px; }
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
 
 /* CONTACT */
 .contact { padding:80px 0; text-align:center; }
@@ -108,77 +111,98 @@ h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
 <header class="masthead">
   <img src="assets/img/pablo.png" class="masthead-avatar" alt="Pablo Díaz Avila">
   <h1 class="text-uppercase">Pablo Díaz Avila</h1>
-
   <div class="divider-custom">
     <div class="divider-custom-line"></div>
     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
     <div class="divider-custom-line"></div>
   </div>
-
   <p class="lead">Industrial Engineer · Data Engineer · Analytics & BI</p>
 </header>
 
 <!-- PORTFOLIO -->
 <section id="portfolio" class="container py-5">
-  <h2 class="text-center text-uppercase">Portfolio</h2>
+  <h2 class="text-center text-uppercase">Projects</h2>
   <p class="text-center mt-3">
-    Selected data and analytics projects developed in enterprise and academic environments,
-    focused on measurable business impact.
+    Enterprise and academic data projects focused on analytics, automation and business impact.
   </p>
 
   <div class="row mt-5 g-4">
+
     <div class="col-md-6">
       <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
-        <h5>Movistar – Revenue & Collections</h5>
-        <p>Enterprise BI dashboards for billing and collections.</p>
+        <h5>Telefónica Movistar</h5>
+        <p>Billing, Collections & Accounts Receivable BI</p>
         <strong>Tech:</strong> Power BI, DAX
       </div>
     </div>
 
     <div class="col-md-6">
+      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
+        <h5>Deloitte</h5>
+        <p>Payment Reconciliation & BI Automation</p>
+        <strong>Tech:</strong> Power BI, SQL, .NET
+      </div>
+    </div>
+
+    <div class="col-md-6">
       <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
-        <h5>Nestlé – Financial & HR Analytics</h5>
-        <p>ETL pipelines and Power BI reporting for LATAM.</p>
+        <h5>Nestlé LATAM</h5>
+        <p>SSIS ETL & Power BI Analytics</p>
         <strong>Tech:</strong> SSIS, SQL Server
       </div>
     </div>
+
+    <div class="col-md-6">
+      <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
+        <h5>MVS Radio</h5>
+        <p>HR, Accounting & Sales Analytics</p>
+        <strong>Tech:</strong> Power BI, Azure
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- TIMELINE -->
 <section id="timeline" class="timeline-section">
-  <div class="container text-center">
-    <h2 class="text-uppercase">Professional Timeline</h2>
-  </div>
+  <div class="container">
+    <h2 class="text-center text-uppercase">Professional Timeline</h2>
 
-  <div class="timeline-wrapper">
-    <div class="timeline-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
-      <div class="timeline-year">2022</div>
-      <div class="timeline-company">Telefónica Movistar</div>
-      <p>BI for Billing, Collections & AR.</p>
-      <div class="tech">Power BI · DAX</div>
+    <div class="timeline-year">2022</div>
+    <div class="timeline-item">
+      <strong>Telefónica Movistar</strong><br>
+      Led the development of Power BI dashboards for Billing, Collections and Accounts Receivable.
+    </div>
+    <div class="timeline-item">
+      <strong>Deloitte</strong><br>
+      Development of Payment Reconciliation dashboards (Power BI), .NET file loader and stored
+      procedure optimization.
     </div>
 
-    <div class="timeline-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
-      <div class="timeline-year">2022</div>
-      <div class="timeline-company">Deloitte</div>
-      <p>Payment Reconciliation & BI automation.</p>
-      <div class="tech">Power BI · SQL · .NET</div>
+    <div class="timeline-year">2023</div>
+    <div class="timeline-item">
+      <strong>Nestlé</strong><br>
+      Built SSIS-based ETL pipelines and Power BI reports for LATAM finance and HR teams.
     </div>
 
-    <div class="timeline-card">
-      <div class="timeline-year">2023</div>
-      <div class="timeline-company">Nestlé</div>
-      <p>SSIS-based ETL & Power BI analytics.</p>
-      <div class="tech">SSIS · SQL Server</div>
+    <div class="timeline-year">2024</div>
+    <div class="timeline-item">
+      <strong>MVS Radio</strong><br>
+      Developed HR dashboard for employee and training tracking using Power BI and Azure.
     </div>
 
-    <div class="timeline-card">
-      <div class="timeline-year">2024–2026</div>
-      <div class="timeline-company">MVS Radio / Grupo Salinas</div>
-      <p>Automation & executive reporting.</p>
-      <div class="tech">Power BI · Azure</div>
+    <div class="timeline-year">2025</div>
+    <div class="timeline-item">
+      <strong>MVS Radio</strong><br>
+      Optimized sales and growth data model using DAX and Excel dashboards.
     </div>
+
+    <div class="timeline-year">2026</div>
+    <div class="timeline-item">
+      <strong>Grupo Salinas</strong><br>
+      Automated Legal Collections report in Power BI, reducing manual processing time by 90%.
+    </div>
+
   </div>
 </section>
 
@@ -207,14 +231,11 @@ h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
     <div class="modal-content p-4">
       <h4>Telefónica Movistar – BI Project</h4>
       <p>
-        Led the development of Power BI dashboards for Billing, Collections and Accounts Receivable,
-        enabling financial control and KPI-driven decision making.
+        Enterprise Power BI solution supporting Billing, Collections and Accounts Receivable.
+        KPIs designed for executive and operational decision-making.
       </p>
-      <ul>
-        <li>End-to-end dashboard design</li>
-        <li>DAX modeling</li>
-        <li>Executive KPIs</li>
-      </ul>
+      <img src="assets/img/projects/movistar_1.png" class="img-fluid mb-3">
+      <img src="assets/img/projects/movistar_2.png" class="img-fluid">
     </div>
   </div>
 </div>
@@ -224,8 +245,8 @@ h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
     <div class="modal-content p-4">
       <h4>Deloitte – BI & Automation</h4>
       <p>
-        Developed reconciliation dashboards, .NET file loaders and optimized SQL stored procedures
-        for enterprise BI clients.
+        Developed reconciliation dashboards, file ingestion tools in .NET and optimized SQL
+        stored procedures for enterprise BI environments.
       </p>
     </div>
   </div>
@@ -236,8 +257,19 @@ h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; }
     <div class="modal-content p-4">
       <h4>Nestlé – ETL & Power BI</h4>
       <p>
-        Built SSIS pipelines and Power BI reports supporting finance and HR analytics
+        Built SSIS ETL pipelines and analytics-ready datasets consumed by Power BI reports
         across LATAM regions.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="mvsModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <h4>MVS Radio – Analytics Projects</h4>
+      <p>
+        HR, accounting and sales analytics solutions using Power BI, Azure and Excel.
       </p>
     </div>
   </div>
