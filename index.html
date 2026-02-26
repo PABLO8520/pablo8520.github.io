@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pablo Díaz Avila | Data Engineer & Analytics</title>
 
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -16,59 +16,6 @@
 
   <!-- Theme CSS -->
   <link href="css/styles.css" rel="stylesheet" />
-
-  <!-- TIMELINE CSS -->
-  <style>
-    .timeline {
-      position: relative;
-      padding: 0;
-      list-style: none;
-    }
-    .timeline:before {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 2px;
-      content: '';
-      background-color: #e9ecef;
-    }
-    .timeline > li {
-      position: relative;
-      margin-bottom: 50px;
-      min-height: 120px;
-    }
-    .timeline > li .timeline-panel {
-      position: relative;
-      width: 46%;
-      padding: 20px;
-      background: #fff;
-      border-radius: 6px;
-      text-align: left;
-    }
-    .timeline > li .timeline-image {
-      position: absolute;
-      left: 50%;
-      width: 120px;
-      height: 120px;
-      margin-left: -60px;
-      background-color: #1abc9c;
-      border-radius: 100%;
-      overflow: hidden;
-      z-index: 100;
-    }
-    .timeline > li .timeline-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .timeline > li:not(.timeline-inverted) .timeline-panel {
-      float: left;
-    }
-    .timeline > li.timeline-inverted .timeline-panel {
-      float: right;
-    }
-  </style>
 </head>
 
 <body id="page-top">
@@ -97,11 +44,13 @@
   <div class="container d-flex align-items-center flex-column">
     <img class="masthead-avatar mb-5" src="assets/img/pablo.png" alt="Pablo Díaz Avila" />
     <h1 class="masthead-heading text-uppercase mb-0">Pablo Díaz Avila</h1>
+
     <div class="divider-custom divider-light">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
       <div class="divider-custom-line"></div>
     </div>
+
     <p class="masthead-subheading font-weight-light mb-0">
       Industrial Engineer · Data Engineer · Analytics & BI
     </p>
@@ -111,44 +60,39 @@
 <!-- PORTFOLIO -->
 <section class="page-section portfolio" id="portfolio">
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+      Portfolio
+    </h2>
+
+    <p class="lead text-center mt-4 mb-5">
+      Below are selected projects developed in enterprise and academic environments.
+      These initiatives focus on analytics, business intelligence, and data-driven
+      decision-making, delivering measurable impact while aligning with business objectives.
+    </p>
 
     <div class="row justify-content-center">
 
       <!-- MOVISTAR -->
       <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto"
-             data-bs-toggle="modal"
-             data-bs-target="#portfolioModalMovistar">
+        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#movistarModal">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white">
+            <div class="portfolio-item-caption-content text-white">
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid"
-               src="assets/img/portfolio/movistar_dashboard.png"
-               alt="Movistar Dashboard" />
+          <img class="img-fluid" src="assets/img/portfolio/movistar_dashboard.png" alt="Movistar BI Dashboards" />
         </div>
       </div>
 
       <!-- NSW -->
       <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto"
-             data-bs-toggle="modal"
-             data-bs-target="#portfolioModalNSW">
+        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#nswModal">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white">
+            <div class="portfolio-item-caption-content text-white">
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid"
-               src="assets/img/portfolio/nsw_remote_work.png"
-               alt="NSW Remote Work Survey" />
+          <img class="img-fluid" src="assets/img/portfolio/nsw_remote_work.png" alt="NSW Remote Work Survey" />
         </div>
       </div>
 
@@ -159,63 +103,46 @@
 <!-- TIMELINE -->
 <section class="page-section bg-light" id="timeline">
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Project Timeline
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">
+      Professional Timeline
     </h2>
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-      <div class="divider-custom-line"></div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <h4>2024 – Telefónica Movistar</h4>
+        <p>
+          Led the development of Power BI dashboards for the Billing, Collections,
+          and Accounts Receivable departments. Delivered KPIs and financial insights
+          that improved visibility into revenue performance, aging balances,
+          and collection efficiency.
+        </p>
+        <p><strong>Tech:</strong> Power BI, DAX, SQL</p>
+
+        <hr>
+
+        <h4>2023 – NSW Remote Work Survey (Academic)</h4>
+        <p>
+          Academic analytics project focused on remote work trends and productivity.
+          Data was cleaned, modeled, and visualized to identify patterns and insights
+          supporting workforce decision-making.
+        </p>
+        <p><strong>Tech:</strong> Power BI</p>
+
+      </div>
     </div>
-
-    <ul class="timeline">
-
-      <li>
-        <div class="timeline-image">
-          <img src="assets/img/portfolio/movistar_dashboard.png">
-        </div>
-        <div class="timeline-panel">
-          <h4>Movistar</h4>
-          <h5>Revenue & Collections BI</h5>
-          <p>
-            Led BI dashboards for billing, collections and revenue KPIs.
-            Executive-level Power BI reports used for decision-making.
-            <br><strong>Tech:</strong> Power BI, DAX, SQL
-          </p>
-        </div>
-      </li>
-
-      <li class="timeline-inverted">
-        <div class="timeline-image">
-          <img src="assets/img/portfolio/nsw_remote_work.png">
-        </div>
-        <div class="timeline-panel">
-          <h4>Academic Project</h4>
-          <h5>NSW Remote Work Survey</h5>
-          <p>
-            Analysis of remote work trends and productivity.
-            Data cleaning, modeling and visualization.
-            <br><strong>Tech:</strong> Power BI
-          </p>
-        </div>
-      </li>
-
-    </ul>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="page-section bg-primary text-white mb-0" id="about">
+<section class="page-section bg-primary text-white" id="about">
   <div class="container text-center">
     <h2 class="page-section-heading text-uppercase text-white">About</h2>
-    <div class="divider-custom divider-light">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
     <p class="lead">
-      Industrial Engineer with experience in Data Engineering, Analytics & BI.
-      Strong background in SQL, Python, Power BI, Databricks, SSIS and cloud platforms.
+      Industrial Engineer with experience in Data Engineering, Analytics, and Business Intelligence.
+      Strong background in SQL, Python, Power BI, Databricks, SSIS, and cloud platforms
+      including Azure and AWS. Focused on delivering data solutions aligned with
+      business objectives.
     </p>
   </div>
 </section>
@@ -223,16 +150,21 @@
 <!-- CONTACT -->
 <section class="page-section" id="contact">
   <div class="container text-center">
-    <h2 class="page-section-heading text-uppercase text-secondary mb-0">Contact</h2>
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
+    <h2 class="page-section-heading text-uppercase text-secondary mb-4">Contact</h2>
+
+    <a class="btn btn-outline-dark btn-lg m-2"
+       href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
+      <i class="fab fa-linkedin me-2"></i> LinkedIn
+    </a>
+
+    <a class="btn btn-outline-dark btn-lg m-2"
+       href="https://github.com/PABLO8520" target="_blank">
+      <i class="fab fa-github me-2"></i> GitHub
+    </a>
 
     <a class="btn btn-outline-dark btn-lg m-2"
        href="mailto:avila.pablo961@gmail.com">
-      <i class="fas fa-envelope me-2"></i> avila.pablo961@gmail.com
+      <i class="fas fa-envelope me-2"></i> Email
     </a>
 
     <a class="btn btn-outline-dark btn-lg m-2"
@@ -249,43 +181,33 @@
 </footer>
 
 <!-- MODALS -->
-<div class="portfolio-modal modal fade" id="portfolioModalMovistar" tabindex="-1">
+<div class="portfolio-modal modal fade" id="movistarModal" tabindex="-1">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header border-0">
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
       <div class="modal-body text-center pb-5">
-        <div class="container">
-          <h2>Movistar – Revenue & Collections</h2>
-          <img class="img-fluid rounded mb-4"
-               src="assets/img/portfolio/movistar_dashboard.png">
-          <p>
-            KPI dashboards for billing, collections and cash flow visibility.
-          </p>
-          <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-        </div>
+        <h2>Telefónica Movistar</h2>
+        <p>
+          Enterprise BI project focused on financial analytics.
+          Screenshots are shown as evidence due to data confidentiality.
+        </p>
+        <p><strong>Tech:</strong> Power BI, DAX, SQL</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
-<div class="portfolio-modal modal fade" id="portfolioModalNSW" tabindex="-1">
+<div class="portfolio-modal modal fade" id="nswModal" tabindex="-1">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header border-0">
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
       <div class="modal-body text-center pb-5">
-        <div class="container">
-          <h2>NSW Remote Work Survey</h2>
-          <img class="img-fluid rounded mb-4"
-               src="assets/img/portfolio/nsw_remote_work.png">
-          <p>
-            Academic Power BI project on remote work productivity.
-          </p>
-          <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-        </div>
+        <h2>NSW Remote Work Survey</h2>
+        <p>
+          Academic project analyzing remote work trends and productivity
+          using Power BI dashboards.
+        </p>
+        <p><strong>Tech:</strong> Power BI</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
