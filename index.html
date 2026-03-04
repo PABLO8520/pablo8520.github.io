@@ -13,10 +13,30 @@
 
 <style>
 
-body{font-family:'Lato',sans-serif;background:#f5f6fa;}
-h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:700;}
+body{
+font-family:'Lato',sans-serif;
+background:#f5f6fa;
+}
 
-.navbar{background:#1f2933;}
+h1,h2,h3,h4{
+font-family:'Montserrat',sans-serif;
+font-weight:700;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#1f2933;
+padding:18px 0;
+font-size:18px;
+}
+
+.navbar-brand{
+font-size:22px;
+font-weight:700;
+}
+
+/* HERO */
 
 .masthead{
 background:#0d6efd;
@@ -69,7 +89,7 @@ box-shadow:0 25px 45px rgba(0,0,0,.18);
 /* TIMELINE */
 
 .timeline-section{
-background:#ffffff;
+background:white;
 padding:100px 0;
 }
 
@@ -111,7 +131,6 @@ z-index:1;
 
 .left{left:0;}
 .right{left:50%;}
-
 .right::after{left:-9px;}
 
 .timeline-content{
@@ -119,10 +138,6 @@ background:white;
 padding:20px;
 border-radius:12px;
 box-shadow:0 15px 30px rgba(0,0,0,.12);
-}
-
-.timeline-content h3{
-color:#0d6efd;
 }
 
 /* CONTACT */
@@ -142,14 +157,14 @@ line-height:1.7;
 /* PROJECT IMAGES */
 
 .project-image{
-max-width:900px;
-max-height:500px;
+
+max-width:650px;
 width:100%;
-object-fit:contain;
 display:block;
-margin:25px auto;
+margin:30px auto;
 border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,.15);
+
 }
 
 </style>
@@ -158,10 +173,39 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
 <div class="container">
+
 <a class="navbar-brand" href="#">Pablo Díaz</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="nav" class="collapse navbar-collapse">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#portfolio">Portfolio</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#timeline">Timeline</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+</ul>
+
 </div>
+
+</div>
+
 </nav>
+
 
 <header class="masthead">
 
@@ -179,7 +223,6 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 
 </header>
 
-<!-- PORTFOLIO -->
 
 <section id="portfolio" class="section container">
 
@@ -187,7 +230,7 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 
 <p class="text-center mb-5">
 
-These projects demonstrate how I transform raw data into scalable analytics solutions, combining data engineering pipelines, business intelligence dashboards, and advanced data modeling to support strategic decision-making.
+These projects demonstrate how I design scalable data solutions — transforming raw data into analytics platforms, executive dashboards, and operational insights that drive measurable business impact.
 
 </p>
 
@@ -209,45 +252,12 @@ These projects demonstrate how I transform raw data into scalable analytics solu
 </div>
 </div>
 
-<div class="col-md-6">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
-<h4>Nestlé</h4>
-<p>ETL Data Integration</p>
-<strong>SSIS · SQL Server</strong>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsHRModal">
-<h4>MVS Radio</h4>
-<p>HR Analytics Dashboard</p>
-<strong>Power BI · Azure</strong>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsSalesModal">
-<h4>MVS Radio</h4>
-<p>Sales Data Model Optimization</p>
-<strong>DAX · Data Modeling</strong>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salinasModal">
-<h4>Grupo Salinas</h4>
-<p>Legal Collections Automation</p>
-<strong>Power BI</strong>
-</div>
-</div>
-
 </div>
 
 </section>
 
-<!-- TIMELINE -->
 
-<section class="timeline-section">
+<section id="timeline" class="timeline-section">
 
 <h2 class="text-center text-uppercase mb-5">Professional Timeline</h2>
 
@@ -305,7 +315,6 @@ These projects demonstrate how I transform raw data into scalable analytics solu
 
 </section>
 
-<!-- CONTACT -->
 
 <section id="contact" class="section text-center contact-section">
 
@@ -338,44 +347,122 @@ href="https://github.com/PABLO8520">
 
 </section>
 
-<!-- MODAL MOVISTAR -->
 
 <div class="modal fade" id="movistarModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
 
-<h3>Telefónica Movistar – Revenue Analytics</h3>
+<div class="modal-dialog modal-xl modal-dialog-centered">
+
+<div class="modal-content p-5">
+
+<h3>Telefónica Movistar – Revenue Analytics Platform</h3>
 
 <h5>Business Problem</h5>
 <p>
-Finance teams lacked centralized analytics for monitoring billing performance and collections efficiency.
+Finance teams lacked centralized analytics to monitor billing performance,
+collection efficiency, and outstanding receivables.
 </p>
 
 <h5>Data Pipeline</h5>
 <p>
-Billing data extracted from operational systems → transformed with Power Query → modeled using a star schema → visualized in Power BI dashboards.
+Billing and financial transaction data extracted from operational systems,
+transformed with Power Query, modeled with a star schema and analyzed using Power BI.
+</p>
+
+<h5>Architecture</h5>
+<p>
+Operational DB → Data preparation → Semantic model → Executive dashboards
 </p>
 
 <h5>Key Metrics</h5>
+
 <ul>
+
 <li>Collection Rate</li>
+
 <li>Aging Balance</li>
-<li>Revenue Performance</li>
+
+<li>Revenue Recovery</li>
+
 <li>Outstanding Receivables</li>
+
 </ul>
 
 <h5>Business Impact</h5>
+
 <p>
-Enabled executives to monitor revenue recovery trends and improved decision-making across finance operations.
+
+Enabled finance executives to track revenue recovery trends and improved operational
+decision-making across collections teams.
+
 </p>
 
+
 <img src="assets/img/projects/movistar_1.png" class="project-image">
+
 <img src="assets/img/projects/movistar_2.png" class="project-image">
+
 <img src="assets/img/projects/movistar_3.png" class="project-image">
 
 </div>
+
 </div>
+
 </div>
+
+
+
+<div class="modal fade" id="deloitteModal">
+
+<div class="modal-dialog modal-xl modal-dialog-centered">
+
+<div class="modal-content p-5">
+
+<h3>Deloitte – Payment Reconciliation Automation</h3>
+
+<h5>Business Problem</h5>
+
+<p>
+
+Manual reconciliation processes created delays and risk of reporting inconsistencies.
+
+</p>
+
+<h5>Solution</h5>
+
+<p>
+
+Developed automated reconciliation dashboards integrated with SQL stored procedures
+and .NET processing scripts.
+
+</p>
+
+<h5>Key Metrics</h5>
+
+<ul>
+
+<li>Payment reconciliation accuracy</li>
+
+<li>Transaction mismatch detection</li>
+
+<li>Daily financial reconciliation tracking</li>
+
+</ul>
+
+<h5>Business Impact</h5>
+
+<p>
+
+Reduced manual reconciliation workload and improved reliability of financial reporting.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
