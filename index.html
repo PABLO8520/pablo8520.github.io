@@ -45,25 +45,33 @@ margin-bottom:25px;
 
 .section{
 padding:90px 0;
+}
+
+/* TECH STACK */
+
 .tech-stack{
 text-align:center;
+max-width:900px;
+margin:auto;
 }
 
 .tech-icon{
-font-size:42px;
+font-size:40px;
 margin:15px;
 color:#0d6efd;
 }
+
+/* ARCHITECTURE */
 
 .arch-box{
 background:white;
 padding:25px;
 border-radius:14px;
 box-shadow:0 10px 25px rgba(0,0,0,.12);
-text-align:center;  
+text-align:center;
 }
 
-/* PROJECT CARDS */
+/* PORTFOLIO */
 
 .portfolio-card{
 background:white;
@@ -83,10 +91,12 @@ box-shadow:0 30px 55px rgba(0,0,0,.18);
 /* PROJECT IMAGES */
 
 .project-image{
-max-width:520px;
-width:100%;
+width:720px;
+max-width:100%;
+height:420px;
+object-fit:cover;
 display:block;
-margin:30px auto;
+margin:25px auto;
 border-radius:10px;
 box-shadow:0 10px 20px rgba(0,0,0,.15);
 }
@@ -157,7 +167,6 @@ font-size:18px;
 margin-bottom:20px;
 }
 
-
 </style>
 
 </head>
@@ -195,7 +204,9 @@ margin-bottom:20px;
 
 <section class="section tech-stack">
 
-<h2 class="text-center mb-5">Tech Stack</h2>
+<h2 class="mb-4">Tech Stack</h2>
+
+<div>
 
 <i class="fab fa-python tech-icon"></i>
 <i class="fas fa-database tech-icon"></i>
@@ -204,6 +215,8 @@ margin-bottom:20px;
 <i class="fas fa-bolt tech-icon"></i>
 <i class="fas fa-server tech-icon"></i>
 <i class="fab fa-microsoft tech-icon"></i>
+
+</div>
 
 <p>
 Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · Excel
@@ -249,7 +262,6 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 
 </section>
-
 
 <!-- PORTFOLIO -->
 
@@ -312,176 +324,27 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 <div class="modal-dialog modal-xl modal-dialog-centered">
 <div class="modal-content p-5">
 
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
 <h2>Telefónica Movistar – Revenue Analytics</h2>
 
-<p>Power BI dashboard for financial monitoring of collections and billing performance.</p>
+<p><b>Business Problem</b></p>
+<p>Finance teams lacked real-time visibility into billing performance and collection efficiency.</p>
+
+<p><b>Data Pipeline</b></p>
+<p>Oracle Database → SQL transformations → Power BI dataset.</p>
+
+<p><b>Architecture</b></p>
+<p>Operational systems → ETL → Analytical data model → Executive dashboards.</p>
+
+<p><b>Key Metrics</b></p>
+<p>Revenue growth · Collection rate · Aging buckets.</p>
+
+<p><b>Business Impact</b></p>
+<p>Enabled executives to monitor financial performance and reduce overdue balances.</p>
 
 <img src="assets/img/projects/movistar_1.png" class="project-image">
 <img src="assets/img/projects/movistar_2.png" class="project-image">
+<img src="assets/img/projects/movistar_3.png" class="project-image">
 
 </div>
 </div>
 </div>
-
-<!-- DELOITTE MODAL -->
-
-<div class="modal fade" id="deloitteModal" tabindex="-1">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
-<h2>Deloitte – Payment Reconciliation Automation</h2>
-
-<p>Automation pipeline for financial reconciliation integrating SQL procedures and reporting dashboards.</p>
-
-<img src="assets/img/projects/deloitte_1.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- NESTLE MODAL -->
-
-<div class="modal fade" id="nestleModal" tabindex="-1">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
-<h2>Nestlé – Fiscal Reporting Pipeline</h2>
-
-<p>ETL pipelines for fiscal reporting automation using SSIS and SQL Server.</p>
-
-<img src="assets/img/projects/nestle_1.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- MVS MODAL -->
-
-<div class="modal fade" id="mvsModal" tabindex="-1">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
-<h2>MVS Radio – Sales & Growth Analytics</h2>
-
-<p>Developed optimized data model and DAX measures for executive Excel dashboard reporting.</p>
-
-<img src="assets/img/projects/mvs_1.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- SALINAS MODAL -->
-
-<div class="modal fade" id="salinasModal" tabindex="-1">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
-<h2>Grupo Salinas – Legal Collections Automation</h2>
-
-<p>Automation of legal collection tracking through SQL reporting processes.</p>
-
-<img src="assets/img/projects/salinas_1.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- TIMELINE -->
-<section id="timeline" class="section">
-
-<h2 class="text-center text-uppercase mb-5">Professional Timeline</h2>
-
-<div class="timeline">
-
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2022</h3>
-<strong>Telefónica Movistar</strong>
-<p>Billing and collections BI dashboards.</p>
-</div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2022</h3>
-<strong>Deloitte</strong>
-<p>Payment reconciliation automation and dashboards.</p>
-</div>
-</div>
-
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2023</h3>
-<strong>Nestlé</strong>
-<p>SSIS ETL pipelines for fiscal reporting.</p>
-</div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2024</h3>
-<strong>MVS Radio</strong>
-<p>HR analytics dashboards.</p>
-</div>
-</div>
-
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2025</h3>
-<strong>MVS Radio</strong>
-<p>Sales data model optimization.</p>
-</div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2026</h3>
-<strong>Grupo Salinas</strong>
-<p>Legal collections automation.</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="contact" class="section text-center contact-section">
-
-<h2 class="text-uppercase mb-4">Contact</h2>
-
-<p class="contact-message">
-Ready to turn data into strategic advantage? I'm excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
-</p>
-
-<div class="contact-info">
-
-<p><strong>Email:</strong> avila.pablo961@gmail.com</p>
-<p><strong>Phone:</strong> +52 55 3398 0702</p>
-
-</div>
-
-<a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">Email</a>
-<a class="btn btn-outline-dark" href="tel:+525533980702">Phone</a>
-<a class="btn btn-outline-dark" target="_blank" href="https://linkedin.com">LinkedIn</a>
-<a class="btn btn-outline-dark" target="_blank" href="https://github.com">GitHub</a>
-
-</section>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
