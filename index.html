@@ -13,10 +13,18 @@
 
 <style>
 
-body {font-family:'Lato',sans-serif;}
-h1,h2,h3,h4 {font-family:'Montserrat',sans-serif;font-weight:700;}
+body{
+font-family:'Lato',sans-serif;
+}
 
-.navbar {background:#1f2933;}
+h1,h2,h3,h4{
+font-family:'Montserrat',sans-serif;
+font-weight:700;
+}
+
+.navbar{
+background:#1f2933;
+}
 
 .masthead{
 background:#0d6efd;
@@ -99,21 +107,23 @@ color:#444;
 line-height:1.7;
 }
 
-/* CONTROL DE TAMAÑO DE IMAGENES */
+/* IMAGENES DEL PROYECTO */
 
-.carousel-item{
-text-align:center;
-}
-
-.carousel-item img{
-
-max-height:500px;
-width:auto;
-max-width:100%;
+.project-image{
+max-width:850px;
+max-height:420px;
+width:100%;
+object-fit:contain;
+display:block;
 margin:auto;
 border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
 
+/* SEPARACION ENTRE IMAGENES */
+
+.carousel-item{
+padding:25px 0;
 }
 
 </style>
@@ -150,9 +160,11 @@ box-shadow:0 10px 30px rgba(0,0,0,.15);
 <h2 class="text-center text-uppercase">Portfolio</h2>
 
 <p class="text-center mb-5">
-These are selected data engineering and analytics solutions I’ve delivered,
-designed to transform raw data into actionable insights, optimize reporting processes,
+
+These are selected data engineering and analytics solutions I’ve delivered, 
+designed to transform raw data into actionable insights, optimize reporting processes, 
 and enhance operational performance.
+
 </p>
 
 <div class="row g-4">
@@ -228,7 +240,9 @@ and enhance operational performance.
 <h2 class="text-uppercase mb-4">Contact</h2>
 
 <p class="contact-message">
+
 Ready to turn data into strategic advantage? I’m excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
+
 </p>
 
 <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
@@ -251,7 +265,7 @@ href="https://github.com/PABLO8520">
 
 </section>
 
-<!-- MODAL -->
+<!-- MODAL MOVISTAR -->
 
 <div class="modal fade" id="movistarModal">
 
@@ -274,21 +288,35 @@ href="https://github.com/PABLO8520">
 <div class="carousel-inner">
 
 <div class="carousel-item active">
-<img src="assets/img/portfolio/movistar_1.png">
+
+<img src="assets/img/portfolio/movistar_1.png" class="project-image">
+
 </div>
 
 <div class="carousel-item">
-<img src="assets/img/portfolio/movistar_2.png">
+
+<img src="assets/img/portfolio/movistar_2.png" class="project-image">
+
+</div>
+
+<div class="carousel-item">
+
+<img src="assets/img/portfolio/movistar_3.png" class="project-image">
+
 </div>
 
 </div>
 
 <button class="carousel-control-prev" type="button" data-bs-target="#movistarCarousel" data-bs-slide="prev">
+
 <span class="carousel-control-prev-icon"></span>
+
 </button>
 
 <button class="carousel-control-next" type="button" data-bs-target="#movistarCarousel" data-bs-slide="next">
+
 <span class="carousel-control-next-icon"></span>
+
 </button>
 
 </div>
