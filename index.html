@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <title>Pablo Díaz Avila | Data Engineer & Analytics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
 
 <style>
 
 body{
 font-family:'Lato',sans-serif;
-background:#f5f6fa;
+background:#f6f8fb;
+scroll-behavior:smooth;
 }
 
 h1,h2,h3,h4{
@@ -26,12 +29,6 @@ font-weight:700;
 .navbar{
 background:#1f2933;
 padding:18px 0;
-font-size:18px;
-}
-
-.navbar-brand{
-font-size:22px;
-font-weight:700;
 }
 
 .masthead{
@@ -64,138 +61,169 @@ background:white;
 padding:90px 0;
 }
 
-/* PORTFOLIO */
+/* PROJECT CARDS */
 
 .portfolio-card{
 background:white;
 border-radius:16px;
-padding:25px;
+padding:28px;
 box-shadow:0 15px 35px rgba(0,0,0,.12);
 cursor:pointer;
-transition:.3s;
-height:100%;
+transition:all .35s ease;
 border-top:5px solid #0d6efd;
 }
 
 .portfolio-card:hover{
-transform:translateY(-8px);
-box-shadow:0 25px 45px rgba(0,0,0,.18);
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:0 30px 55px rgba(0,0,0,.18);
+
 }
 
-/* IMAGES */
+/* PROJECT IMAGES */
 
 .project-image{
-max-width:500px;
+
+max-width:420px;
+
 width:100%;
+
 display:block;
-margin:35px auto;
+
+margin:30px auto;
+
 border-radius:10px;
+
 box-shadow:0 10px 20px rgba(0,0,0,.15);
+
 }
 
 /* TECH STACK */
 
 .tech-stack{
+
 text-align:center;
+
 }
 
 .tech-icon{
+
 font-size:40px;
+
 margin:15px;
+
 color:#0d6efd;
+
+transition:.3s;
+
 }
 
-/* METRICS */
+.tech-icon:hover{
 
-.metric-card{
+transform:scale(1.25);
+
+color:#0b5ed7;
+
+}
+
+/* DATA ARCHITECTURE */
+
+.arch-box{
+
 background:white;
+
 padding:25px;
+
 border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-text-align:center;
-}
 
-.metric-number{
-font-size:36px;
-font-weight:700;
-color:#0d6efd;
-}
-
-/* TIMELINE */
-
-.timeline-section{
-background:white;
-padding:100px 0;
-}
-
-.timeline{
-position:relative;
-max-width:1000px;
-margin:auto;
-}
-
-.timeline::after{
-content:'';
-position:absolute;
-width:4px;
-background:#0d6efd;
-top:0;
-bottom:0;
-left:50%;
-}
-
-.timeline-item{
-padding:20px 40px;
-position:relative;
-width:50%;
-}
-
-.timeline-item::after{
-content:'';
-position:absolute;
-width:18px;
-height:18px;
-right:-9px;
-background:white;
-border:4px solid #0d6efd;
-top:30px;
-border-radius:50%;
-}
-
-.left{left:0;}
-.right{left:50%;}
-.right::after{left:-9px;}
-
-.timeline-content{
-background:white;
-padding:20px;
-border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.arch-box:hover{
+
+transform:translateY(-6px);
+
 }
 
 /* CONTACT */
 
 .contact-section{
+
 background:#f8f9fa;
+
 }
 
 .contact-message{
+
 max-width:700px;
+
 margin:20px auto 40px;
+
 font-size:18px;
+
 color:#444;
+
 line-height:1.7;
+
+}
+
+/* SCROLL ANIMATION */
+
+.fade-in{
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:all .8s ease;
+
+}
+
+.fade-in.show{
+
+opacity:1;
+
+transform:translateY(0);
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
 <div class="container">
+
 <a class="navbar-brand" href="#">Pablo Díaz</a>
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#portfolio">Portfolio</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#timeline">Timeline</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+</ul>
+
 </div>
+
 </nav>
 
 
@@ -206,9 +234,13 @@ line-height:1.7;
 <h1 class="text-uppercase">Pablo Díaz Avila</h1>
 
 <div class="divider">
+
 <div class="divider-line"></div>
+
 <i class="fas fa-star"></i>
+
 <div class="divider-line"></div>
+
 </div>
 
 <p class="lead">Data Engineer · Analytics & BI</p>
@@ -216,122 +248,147 @@ line-height:1.7;
 </header>
 
 
-<!-- METRICS -->
-
-<section class="section container">
-
-<h2 class="text-center mb-5">Impact Metrics</h2>
-
-<div class="row g-4">
-
-<div class="col-md-3">
-<div class="metric-card">
-<div class="metric-number">90%</div>
-Automation Improvement
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="metric-card">
-<div class="metric-number">35%</div>
-Reporting Efficiency
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="metric-card">
-<div class="metric-number">5+</div>
-Enterprise Dashboards
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="metric-card">
-<div class="metric-number">Millions</div>
-Rows Processed
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TECH STACK -->
-
-<section class="section tech-stack">
+<section class="section tech-stack fade-in">
 
 <h2 class="text-center mb-5">Tech Stack</h2>
 
 <i class="fab fa-python tech-icon"></i>
+
 <i class="fas fa-database tech-icon"></i>
+
 <i class="fas fa-chart-bar tech-icon"></i>
-<i class="fab fa-microsoft tech-icon"></i>
+
+<i class="fab fa-aws tech-icon"></i>
+
+<i class="fas fa-bolt tech-icon"></i>
+
 <i class="fas fa-server tech-icon"></i>
 
-<p>Python · SQL · Power BI · Azure · SSIS · Excel</p>
+<i class="fab fa-microsoft tech-icon"></i>
+
+<p>
+
+Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · Excel
+
+</p>
 
 </section>
 
 
-<!-- PORTFOLIO -->
+<section class="section container fade-in">
 
-<section id="portfolio" class="section container">
+<h2 class="text-center mb-5">Data Engineering Architecture</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="arch-box">
+
+<h5>Data Sources</h5>
+
+<p>Oracle · SQL Server · APIs</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-3">
+
+<div class="arch-box">
+
+<h5>ETL / Processing</h5>
+
+<p>SSIS · Python · Spark</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-3">
+
+<div class="arch-box">
+
+<h5>Storage</h5>
+
+<p>Azure · AWS</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-3">
+
+<div class="arch-box">
+
+<h5>Analytics</h5>
+
+<p>Power BI · Excel</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="portfolio" class="section container fade-in">
 
 <h2 class="text-center text-uppercase">Portfolio</h2>
 
 <p class="text-center mb-5">
-These projects demonstrate how I design scalable data solutions transforming raw data into analytics platforms and operational insights.
+
+These projects demonstrate how I design scalable data solutions transforming raw data into analytics platforms and business intelligence systems.
+
 </p>
 
 <div class="row g-4">
 
 <div class="col-md-4">
+
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
+
 <h4>Telefónica Movistar</h4>
+
 <p>Revenue & Collections BI Dashboard</p>
+
 <strong>Power BI · DAX</strong>
+
 </div>
+
 </div>
 
 <div class="col-md-4">
+
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
+
 <h4>Deloitte</h4>
+
 <p>Payment Reconciliation Automation</p>
-<strong>Power BI · SQL</strong>
+
+<strong>SQL · Power BI</strong>
+
 </div>
+
 </div>
 
 <div class="col-md-4">
+
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
+
 <h4>Nestlé</h4>
-<p>ETL Data Pipeline</p>
+
+<p>Fiscal Reporting Data Pipeline</p>
+
 <strong>SSIS · SQL</strong>
-</div>
+
 </div>
 
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
-<h4>MVS Radio</h4>
-<p>HR Dashboard</p>
-<strong>Power BI</strong>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salesModal">
-<h4>MVS Radio</h4>
-<p>Sales Model</p>
-<strong>DAX</strong>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salinasModal">
-<h4>Grupo Salinas</h4>
-<p>Collections Automation</p>
-<strong>Power BI</strong>
-</div>
 </div>
 
 </div>
@@ -339,58 +396,78 @@ These projects demonstrate how I design scalable data solutions transforming raw
 </section>
 
 
-<!-- CONTACT -->
+<!-- TU TIMELINE QUEDA EXACTAMENTE IGUAL -->
 
-<section id="contact" class="section text-center contact-section">
+<section id="timeline" class="section">
+
+<h2 class="text-center text-uppercase mb-5">Professional Timeline</h2>
+
+<div class="timeline">
+
+<!-- deja aquí el timeline que ya tenías -->
+
+</div>
+
+</section>
+
+
+<section id="contact" class="section text-center contact-section fade-in">
 
 <h2 class="text-uppercase mb-4">Contact</h2>
 
 <p class="contact-message">
+
 Ready to turn data into strategic advantage?  
 I’m excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
+
 </p>
 
 <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
-<i class="fas fa-envelope"></i> Email
+
+Email
+
 </a>
 
 <a class="btn btn-outline-dark" href="tel:+525533980702">
-<i class="fas fa-phone"></i> Phone
+
+Phone
+
 </a>
 
 <a class="btn btn-outline-dark" href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
-<i class="fab fa-linkedin"></i> LinkedIn
+
+LinkedIn
+
 </a>
 
 <a class="btn btn-outline-dark" href="https://github.com/PABLO8520" target="_blank">
-<i class="fab fa-github"></i> GitHub
+
+GitHub
+
 </a>
 
 </section>
 
 
-<!-- MOVISTAR MODAL -->
+<script>
 
-<div class="modal fade" id="movistarModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
 
-<h3>Telefónica Movistar – Revenue Analytics</h3>
+document.querySelectorAll(".fade-in").forEach(el=>{
+observer.observe(el)
+})
 
-<p><strong>Business Problem:</strong> Lack of visibility in collections performance.</p>
-
-<p><strong>Impact:</strong> Enabled finance teams to track revenue recovery.</p>
-
-<img src="assets/img/projects/movistar_1.png" class="project-image">
-<img src="assets/img/projects/movistar_2.png" class="project-image">
-<img src="assets/img/projects/movistar_3.png" class="project-image">
-
-</div>
-</div>
-</div>
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
