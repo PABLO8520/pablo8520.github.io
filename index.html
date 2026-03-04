@@ -45,6 +45,22 @@ margin-bottom:25px;
 
 .section{
 padding:90px 0;
+.tech-stack{
+text-align:center;
+}
+
+.tech-icon{
+font-size:42px;
+margin:15px;
+color:#0d6efd;
+}
+
+.arch-box{
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+text-align:center;  
 }
 
 /* PROJECT CARDS */
@@ -126,15 +142,21 @@ box-shadow:0 10px 25px rgba(0,0,0,.12);
 
 .contact-section{
 background:#f8f9fa;
-text-align:center;
-padding:80px 20px;
 }
 
-.contact-icons i{
-font-size:28px;
-margin:15px;
-color:#0d6efd;
+.contact-message{
+max-width:700px;
+margin:20px auto 30px;
+font-size:18px;
+color:#444;
+line-height:1.7;
 }
+
+.contact-info{
+font-size:18px;
+margin-bottom:20px;
+}
+
 
 </style>
 
@@ -170,6 +192,65 @@ color:#0d6efd;
 <p class="lead">Data Engineer · Analytics & BI</p>
 </header>
 
+
+<section class="section tech-stack">
+
+<h2 class="text-center mb-5">Tech Stack</h2>
+
+<i class="fab fa-python tech-icon"></i>
+<i class="fas fa-database tech-icon"></i>
+<i class="fas fa-chart-bar tech-icon"></i>
+<i class="fab fa-aws tech-icon"></i>
+<i class="fas fa-bolt tech-icon"></i>
+<i class="fas fa-server tech-icon"></i>
+<i class="fab fa-microsoft tech-icon"></i>
+
+<p>
+Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · Excel
+</p>
+
+</section>
+
+
+<section class="section container">
+
+<h2 class="text-center mb-5">Data Engineering Architecture</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>Data Sources</h5>
+<p>Oracle · SQL Server · APIs</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>ETL</h5>
+<p>SSIS · Python · Spark</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>Storage</h5>
+<p>Azure · AWS</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>Analytics</h5>
+<p>Power BI · Excel</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
 <!-- PORTFOLIO -->
 
 <section id="portfolio" class="section container">
@@ -195,14 +276,21 @@ color:#0d6efd;
 <div class="col-md-4">
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
 <h4>Nestlé</h4>
-<p>Fiscal Reporting Data Pipeline</p>
+<p>Fiscal Reporting ETL</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleHRModal">
+<h4>Nestlé</h4>
+<p>HR Analytics Dashboard</p>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
 <h4>MVS Radio</h4>
-<p>Sales & Growth Analytics</p>
+<p>HR Analytics</p>
 </div>
 </div>
 
@@ -216,6 +304,7 @@ color:#0d6efd;
 </div>
 
 </section>
+
 
 <!-- MOVISTAR MODAL -->
 
@@ -309,31 +398,57 @@ color:#0d6efd;
 </div>
 
 <!-- TIMELINE -->
-
 <section id="timeline" class="section">
 
-<h2 class="text-center mb-5">Career Timeline</h2>
+<h2 class="text-center text-uppercase mb-5">Professional Timeline</h2>
 
 <div class="timeline">
 
 <div class="timeline-item left">
 <div class="timeline-content">
-<h4>Data Engineer – Deloitte</h4>
-<p>Data pipelines and reconciliation automation.</p>
+<h3>2022</h3>
+<strong>Telefónica Movistar</strong>
+<p>Billing and collections BI dashboards.</p>
 </div>
 </div>
 
 <div class="timeline-item right">
 <div class="timeline-content">
-<h4>BI Developer – Telefónica Movistar</h4>
-<p>Revenue analytics dashboards and financial monitoring.</p>
+<h3>2022</h3>
+<strong>Deloitte</strong>
+<p>Payment reconciliation automation and dashboards.</p>
 </div>
 </div>
 
 <div class="timeline-item left">
 <div class="timeline-content">
-<h4>Analytics Projects – Nestlé</h4>
-<p>Fiscal reporting and HR analytics dashboards.</p>
+<h3>2023</h3>
+<strong>Nestlé</strong>
+<p>SSIS ETL pipelines for fiscal reporting.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>2024</h3>
+<strong>MVS Radio</strong>
+<p>HR analytics dashboards.</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>2025</h3>
+<strong>MVS Radio</strong>
+<p>Sales data model optimization.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>2026</h3>
+<strong>Grupo Salinas</strong>
+<p>Legal collections automation.</p>
 </div>
 </div>
 
@@ -341,31 +456,30 @@ color:#0d6efd;
 
 </section>
 
-<!-- CONTACT -->
 
-<section id="contact" class="contact-section">
 
-<h2>Contact</h2>
+<section id="contact" class="section text-center contact-section">
 
-<p>Feel free to reach out for collaboration or opportunities.</p>
+<h2 class="text-uppercase mb-4">Contact</h2>
 
-<div class="contact-icons">
+<p class="contact-message">
+Ready to turn data into strategic advantage? I'm excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
+</p>
 
-<a href="mailto:avila.pablo961@gmail.com">
-<i class="fas fa-envelope"></i>
-</a>
+<div class="contact-info">
 
-<a href="https://github.com/tuusuario">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="https://linkedin.com/in/pablo-d-44967318a">
-<i class="fab fa-linkedin"></i>
-</a>
+<p><strong>Email:</strong> avila.pablo961@gmail.com</p>
+<p><strong>Phone:</strong> +52 55 3398 0702</p>
 
 </div>
 
+<a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">Email</a>
+<a class="btn btn-outline-dark" href="tel:+525533980702">Phone</a>
+<a class="btn btn-outline-dark" target="_blank" href="https://linkedin.com">LinkedIn</a>
+<a class="btn btn-outline-dark" target="_blank" href="https://github.com">GitHub</a>
+
 </section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
