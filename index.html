@@ -13,13 +13,26 @@
 
 <style>
 
-body{font-family:'Lato',sans-serif;background:#f5f6fa;}
+body{
+font-family:'Lato',sans-serif;
+background:#f5f6fa;
+}
 
-h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:700;}
+h1,h2,h3,h4{
+font-family:'Montserrat',sans-serif;
+font-weight:700;
+}
 
-.navbar{background:#1f2933;padding:18px 0;font-size:18px;}
+.navbar{
+background:#1f2933;
+padding:18px 0;
+font-size:18px;
+}
 
-.navbar-brand{font-size:22px;font-weight:700;}
+.navbar-brand{
+font-size:22px;
+font-weight:700;
+}
 
 .masthead{
 background:#0d6efd;
@@ -47,7 +60,11 @@ height:4px;
 background:white;
 }
 
-.section{padding:90px 0;}
+.section{
+padding:90px 0;
+}
+
+/* PORTFOLIO */
 
 .portfolio-card{
 background:white;
@@ -65,8 +82,10 @@ transform:translateY(-8px);
 box-shadow:0 25px 45px rgba(0,0,0,.18);
 }
 
+/* IMAGES */
+
 .project-image{
-max-width:520px;
+max-width:500px;
 width:100%;
 display:block;
 margin:35px auto;
@@ -74,11 +93,44 @@ border-radius:10px;
 box-shadow:0 10px 20px rgba(0,0,0,.15);
 }
 
-.timeline-section{background:white;padding:100px 0;}
+/* TECH STACK */
+
+.tech-stack{
+text-align:center;
+}
+
+.tech-icon{
+font-size:40px;
+margin:15px;
+color:#0d6efd;
+}
+
+/* METRICS */
+
+.metric-card{
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.metric-number{
+font-size:36px;
+font-weight:700;
+color:#0d6efd;
+}
+
+/* TIMELINE */
+
+.timeline-section{
+background:white;
+padding:100px 0;
+}
 
 .timeline{
 position:relative;
-max-width:1100px;
+max-width:1000px;
 margin:auto;
 }
 
@@ -90,7 +142,6 @@ background:#0d6efd;
 top:0;
 bottom:0;
 left:50%;
-margin-left:-2px;
 }
 
 .timeline-item{
@@ -119,10 +170,14 @@ border-radius:50%;
 background:white;
 padding:20px;
 border-radius:12px;
-box-shadow:0 15px 30px rgba(0,0,0,.12);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
-.contact-section{background:#f8f9fa;}
+/* CONTACT */
+
+.contact-section{
+background:#f8f9fa;
+}
 
 .contact-message{
 max-width:700px;
@@ -140,30 +195,9 @@ line-height:1.7;
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 <div class="container">
 <a class="navbar-brand" href="#">Pablo Díaz</a>
-
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div id="nav" class="collapse navbar-collapse">
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="#portfolio">Portfolio</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#timeline">Timeline</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
-
-</ul>
-</div>
 </div>
 </nav>
+
 
 <header class="masthead">
 
@@ -182,14 +216,72 @@ line-height:1.7;
 </header>
 
 
+<!-- METRICS -->
+
+<section class="section container">
+
+<h2 class="text-center mb-5">Impact Metrics</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="metric-card">
+<div class="metric-number">90%</div>
+Automation Improvement
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="metric-card">
+<div class="metric-number">35%</div>
+Reporting Efficiency
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="metric-card">
+<div class="metric-number">5+</div>
+Enterprise Dashboards
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="metric-card">
+<div class="metric-number">Millions</div>
+Rows Processed
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TECH STACK -->
+
+<section class="section tech-stack">
+
+<h2 class="text-center mb-5">Tech Stack</h2>
+
+<i class="fab fa-python tech-icon"></i>
+<i class="fas fa-database tech-icon"></i>
+<i class="fas fa-chart-bar tech-icon"></i>
+<i class="fab fa-microsoft tech-icon"></i>
+<i class="fas fa-server tech-icon"></i>
+
+<p>Python · SQL · Power BI · Azure · SSIS · Excel</p>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
 <section id="portfolio" class="section container">
 
 <h2 class="text-center text-uppercase">Portfolio</h2>
 
 <p class="text-center mb-5">
-
-These projects demonstrate how I design scalable data solutions — transforming raw data into analytics platforms, executive dashboards, and operational insights that drive measurable business impact.
-
+These projects demonstrate how I design scalable data solutions transforming raw data into analytics platforms and operational insights.
 </p>
 
 <div class="row g-4">
@@ -219,133 +311,79 @@ These projects demonstrate how I design scalable data solutions — transforming
 </div>
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsHRModal">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
 <h4>MVS Radio</h4>
-<p>HR Analytics Dashboard</p>
-<strong>Power BI · Azure</strong>
+<p>HR Dashboard</p>
+<strong>Power BI</strong>
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsSalesModal">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salesModal">
 <h4>MVS Radio</h4>
-<p>Sales Data Model</p>
-<strong>DAX · Excel</strong>
+<p>Sales Model</p>
+<strong>DAX</strong>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salinasModal">
 <h4>Grupo Salinas</h4>
-<p>Legal Collections Automation</p>
+<p>Collections Automation</p>
 <strong>Power BI</strong>
 </div>
 </div>
 
 </div>
+
 </section>
 
 
-<!-- MODALS -->
+<!-- CONTACT -->
 
-<!-- MOVISTAR -->
+<section id="contact" class="section text-center contact-section">
+
+<h2 class="text-uppercase mb-4">Contact</h2>
+
+<p class="contact-message">
+Ready to turn data into strategic advantage?  
+I’m excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
+</p>
+
+<a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
+<i class="fas fa-envelope"></i> Email
+</a>
+
+<a class="btn btn-outline-dark" href="tel:+525533980702">
+<i class="fas fa-phone"></i> Phone
+</a>
+
+<a class="btn btn-outline-dark" href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+
+<a class="btn btn-outline-dark" href="https://github.com/PABLO8520" target="_blank">
+<i class="fab fa-github"></i> GitHub
+</a>
+
+</section>
+
+
+<!-- MOVISTAR MODAL -->
+
 <div class="modal fade" id="movistarModal">
 <div class="modal-dialog modal-xl modal-dialog-centered">
 <div class="modal-content p-5">
 
 <h3>Telefónica Movistar – Revenue Analytics</h3>
 
-<p><strong>Business Problem:</strong> Lack of visibility on billing and collections performance.</p>
+<p><strong>Business Problem:</strong> Lack of visibility in collections performance.</p>
 
-<p><strong>Impact:</strong> Enabled finance teams to track recovery and revenue trends.</p>
+<p><strong>Impact:</strong> Enabled finance teams to track revenue recovery.</p>
 
 <img src="assets/img/projects/movistar_1.png" class="project-image">
 <img src="assets/img/projects/movistar_2.png" class="project-image">
 <img src="assets/img/projects/movistar_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-
-<!-- DELOITTE -->
-
-<div class="modal fade" id="deloitteModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Deloitte – Payment Reconciliation</h3>
-
-<p>Automated financial reconciliation dashboards.</p>
-
-<img src="assets/img/projects/deloitte_1.png" class="project-image">
-<img src="assets/img/projects/deloitte_2.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-
-<!-- NESTLE -->
-
-<div class="modal fade" id="nestleModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Nestlé – ETL Data Integration</h3>
-
-<p>Built ETL pipelines for financial reporting.</p>
-
-<img src="assets/img/projects/nestle_1.png" class="project-image">
-<img src="assets/img/projects/nestle_2.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-
-<!-- MVS HR -->
-
-<div class="modal fade" id="mvsHRModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>MVS Radio – HR Dashboard</h3>
-
-<img src="assets/img/projects/mvs_hr_1.png" class="project-image">
-<img src="assets/img/projects/mvs_hr_2.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-
-<!-- MVS SALES -->
-
-<div class="modal fade" id="mvsSalesModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>MVS Radio – Sales Model</h3>
-
-<img src="assets/img/projects/mvs_sales_1.png" class="project-image">
-<img src="assets/img/projects/mvs_sales_2.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-
-<!-- SALINAS -->
-
-<div class="modal fade" id="salinasModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Grupo Salinas – Collections Automation</h3>
-
-<img src="assets/img/projects/salinas_1.png" class="project-image">
-<img src="assets/img/projects/salinas_2.png" class="project-image">
 
 </div>
 </div>
