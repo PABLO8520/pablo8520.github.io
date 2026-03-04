@@ -46,6 +46,28 @@ margin-bottom:25px;
 padding:90px 0;
 }
 
+/* TECH STACK */
+
+.tech-stack{
+text-align:center;
+}
+
+.tech-icon{
+font-size:42px;
+margin:15px;
+color:#0d6efd;
+}
+
+/* ARCHITECTURE */
+
+.arch-box{
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+text-align:center;
+}
+
 /* PORTFOLIO */
 
 .portfolio-card{
@@ -66,7 +88,7 @@ box-shadow:0 30px 55px rgba(0,0,0,.18);
 /* PROJECT IMAGES */
 
 .project-image{
-max-width:500px;
+max-width:520px;
 width:100%;
 display:block;
 margin:25px auto;
@@ -129,7 +151,7 @@ background:#f8f9fa;
 
 .contact-message{
 max-width:700px;
-margin:20px auto 40px;
+margin:20px auto 30px;
 font-size:18px;
 color:#444;
 line-height:1.7;
@@ -146,8 +168,9 @@ margin-bottom:20px;
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<!-- NAVBAR -->
 
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 <div class="container">
 
 <a class="navbar-brand" href="#">Pablo Díaz</a>
@@ -169,8 +192,9 @@ margin-bottom:20px;
 </ul>
 
 </div>
-
 </nav>
+
+<!-- HERO -->
 
 <header class="masthead">
 
@@ -181,6 +205,68 @@ margin-bottom:20px;
 <p class="lead">Data Engineer · Analytics & BI</p>
 
 </header>
+
+<!-- TECH STACK -->
+
+<section class="section tech-stack">
+
+<h2 class="text-center mb-5">Tech Stack</h2>
+
+<i class="fab fa-python tech-icon"></i>
+<i class="fas fa-database tech-icon"></i>
+<i class="fas fa-chart-bar tech-icon"></i>
+<i class="fab fa-aws tech-icon"></i>
+<i class="fas fa-bolt tech-icon"></i>
+<i class="fas fa-server tech-icon"></i>
+<i class="fab fa-microsoft tech-icon"></i>
+
+<p>
+Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · Excel
+</p>
+
+</section>
+
+<!-- ARCHITECTURE -->
+
+<section class="section container">
+
+<h2 class="text-center mb-5">Data Engineering Architecture</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>Data Sources</h5>
+<p>Oracle · SQL Server · APIs</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>ETL</h5>
+<p>SSIS · Python · Spark</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>Storage</h5>
+<p>Azure · AWS</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="arch-box">
+<h5>Analytics</h5>
+<p>Power BI · Excel</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
 
 <section id="portfolio" class="section container">
 
@@ -302,7 +388,8 @@ margin-bottom:20px;
 
 <p class="contact-message">
 
-Ready to turn data into strategic advantage? I’m excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
+Ready to turn data into strategic advantage?  
+I’m excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
 
 </p>
 
@@ -320,117 +407,7 @@ Ready to turn data into strategic advantage? I’m excited to collaborate with f
 
 </section>
 
-<!-- MODALS -->
-
-<div class="modal fade" id="movistarModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Telefónica Movistar – Revenue Dashboard</h3>
-
-<p><strong>Business Problem</strong><br>
-Finance teams needed visibility over billing and collections performance.</p>
-
-<p><strong>Data Pipeline</strong><br>
-Oracle → SQL → Power BI</p>
-
-<p><strong>Architecture</strong><br>
-Operational DB → Data Model → BI Dashboard</p>
-
-<p><strong>Key Metrics</strong><br>
-Revenue, Collections, Aging Buckets</p>
-
-<p><strong>Business Impact</strong><br>
-Improved financial monitoring.</p>
-
-<img src="assets/img/projects/movistar_1.png" class="project-image">
-<img src="assets/img/projects/movistar_2.png" class="project-image">
-<img src="assets/img/projects/movistar_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="deloitteModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Deloitte – Payment Reconciliation</h3>
-
-<p><strong>Business Problem</strong> Manual reconciliation process.</p>
-
-<p><strong>Pipeline</strong> Files → .NET Loader → SQL → Power BI</p>
-
-<img src="assets/img/projects/deloitte_1.png" class="project-image">
-<img src="assets/img/projects/deloitte_2.png" class="project-image">
-<img src="assets/img/projects/deloitte_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="nestleModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Nestlé – Fiscal Reporting ETL</h3>
-
-<p>ETL pipelines built with SSIS delivering analytics datasets.</p>
-
-<img src="assets/img/projects/nestle_1.png" class="project-image">
-<img src="assets/img/projects/nestle_2.png" class="project-image">
-<img src="assets/img/projects/nestle_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="nestleHRModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Nestlé – HR Analytics</h3>
-
-<img src="assets/img/projects/nestle_hr_1.png" class="project-image">
-<img src="assets/img/projects/nestle_hr_2.png" class="project-image">
-<img src="assets/img/projects/nestle_hr_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="mvsModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>MVS Radio – HR Dashboard</h3>
-
-<img src="assets/img/projects/mvs_1.png" class="project-image">
-<img src="assets/img/projects/mvs_2.png" class="project-image">
-<img src="assets/img/projects/mvs_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="salinasModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h3>Grupo Salinas – Legal Collections</h3>
-
-<img src="assets/img/projects/salinas_1.png" class="project-image">
-<img src="assets/img/projects/salinas_2.png" class="project-image">
-<img src="assets/img/projects/salinas_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+<!-- IMPORTANTE PARA MODALS -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
