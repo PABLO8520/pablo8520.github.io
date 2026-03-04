@@ -13,145 +13,182 @@
 
 <style>
 
-body { font-family:'Lato',sans-serif; }
-h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:700; }
+body{font-family:'Lato',sans-serif;background:#f5f6fa;}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:700;}
 
-.navbar { background:#1f2933; }
+.navbar{background:#1f2933;}
 
-.masthead {
-  background:#0d6efd;
-  color:white;
-  padding:120px 20px;
-  text-align:center;
+.masthead{
+background:#0d6efd;
+color:white;
+padding:120px 20px;
+text-align:center;
 }
 
-.masthead-avatar {
-  width:180px;
-  border-radius:50%;
-  margin-bottom:25px;
+.masthead-avatar{
+width:180px;
+border-radius:50%;
+margin-bottom:25px;
 }
 
-.divider {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin:25px 0;
+.divider{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:25px 0;
 }
 
-.divider-line {
-  width:90px;
-  height:4px;
-  background:white;
+.divider-line{
+width:90px;
+height:4px;
+background:white;
 }
 
-.section {
-  padding:90px 0;
+.section{
+padding:90px 0;
 }
 
-.portfolio-card {
-  background:white;
-  border-radius:16px;
-  padding:25px;
-  box-shadow:0 15px 35px rgba(0,0,0,.12);
-  cursor:pointer;
-  transition:.3s;
-  height:100%;
+/* PORTFOLIO */
+
+.portfolio-card{
+background:white;
+border-radius:16px;
+padding:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+cursor:pointer;
+transition:.3s;
+height:100%;
+border-top:5px solid #0d6efd;
 }
 
-.portfolio-card:hover {
-  transform:translateY(-6px);
+.portfolio-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 45px rgba(0,0,0,.18);
 }
 
-.timeline-wrapper {
-  overflow-x:auto;
-  padding:30px 10px;
+/* TIMELINE */
+
+.timeline-section{
+background:#ffffff;
+padding:100px 0;
 }
 
-.timeline {
-  display:flex;
-  gap:30px;
-  min-width:1200px;
+.timeline{
+position:relative;
+max-width:1100px;
+margin:auto;
 }
 
-.timeline-year {
-  min-width:260px;
-  background:white;
-  border-radius:16px;
-  padding:25px;
-  box-shadow:0 15px 35px rgba(0,0,0,.12);
-  border-top:6px solid #0d6efd;
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#0d6efd;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-2px;
 }
 
-.timeline-year h3 {
-  color:#0d6efd;
-  margin-bottom:15px;
+.timeline-item{
+padding:20px 40px;
+position:relative;
+width:50%;
 }
 
-.timeline-item {
-  margin-bottom:15px;
+.timeline-item::after{
+content:'';
+position:absolute;
+width:18px;
+height:18px;
+right:-9px;
+background:white;
+border:4px solid #0d6efd;
+top:30px;
+border-radius:50%;
+z-index:1;
 }
 
-.contact-section {
-  background:#f8f9fa;
+.left{left:0;}
+.right{left:50%;}
+
+.right::after{left:-9px;}
+
+.timeline-content{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 15px 30px rgba(0,0,0,.12);
 }
 
-.contact-message {
-  max-width:700px;
-  margin:20px auto 40px;
-  font-size:18px;
-  color:#444;
-  line-height:1.7;
+.timeline-content h3{
+color:#0d6efd;
 }
 
-.contact a {
-  margin:8px;
+/* CONTACT */
+
+.contact-section{
+background:#f8f9fa;
 }
 
-/* NUEVO CONTROL DE IMAGENES */
+.contact-message{
+max-width:700px;
+margin:20px auto 40px;
+font-size:18px;
+color:#444;
+line-height:1.7;
+}
+
+/* PROJECT IMAGES */
 
 .project-image{
-
-max-width:850px;
-max-height:450px;
+max-width:900px;
+max-height:500px;
 width:100%;
 object-fit:contain;
 display:block;
 margin:25px auto;
 border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,.15);
-
 }
 
 </style>
 </head>
 
-<body id="page-top">
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#page-top">Pablo Díaz</a>
-  </div>
+<div class="container">
+<a class="navbar-brand" href="#">Pablo Díaz</a>
+</div>
 </nav>
 
 <header class="masthead">
-  <img src="assets/img/pablo.png" class="masthead-avatar">
-  <h1 class="text-uppercase">Pablo Díaz Avila</h1>
 
-  <div class="divider">
-    <div class="divider-line"></div>
-    <i class="fas fa-star"></i>
-    <div class="divider-line"></div>
-  </div>
+<img src="assets/img/pablo.png" class="masthead-avatar">
 
-  <p class="lead">Data Engineer · Analytics & BI</p>
+<h1 class="text-uppercase">Pablo Díaz Avila</h1>
+
+<div class="divider">
+<div class="divider-line"></div>
+<i class="fas fa-star"></i>
+<div class="divider-line"></div>
+</div>
+
+<p class="lead">Data Engineer · Analytics & BI</p>
+
 </header>
+
+<!-- PORTFOLIO -->
 
 <section id="portfolio" class="section container">
 
 <h2 class="text-center text-uppercase">Portfolio</h2>
 
 <p class="text-center mb-5">
-These are selected data engineering and analytics solutions I’ve delivered, designed to transform raw data into actionable insights and optimize business reporting processes.
+
+These projects demonstrate how I transform raw data into scalable analytics solutions, combining data engineering pipelines, business intelligence dashboards, and advanced data modeling to support strategic decision-making.
+
 </p>
 
 <div class="row g-4">
@@ -159,7 +196,7 @@ These are selected data engineering and analytics solutions I’ve delivered, de
 <div class="col-md-6">
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
 <h4>Telefónica Movistar</h4>
-<p>Billing, Collections & Accounts Receivable BI</p>
+<p>Revenue & Collections BI Dashboard</p>
 <strong>Power BI · DAX · Finance</strong>
 </div>
 </div>
@@ -167,7 +204,7 @@ These are selected data engineering and analytics solutions I’ve delivered, de
 <div class="col-md-6">
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
 <h4>Deloitte</h4>
-<p>Payment Reconciliation & BI Automation</p>
+<p>Payment Reconciliation Automation</p>
 <strong>Power BI · SQL · .NET</strong>
 </div>
 </div>
@@ -175,8 +212,8 @@ These are selected data engineering and analytics solutions I’ve delivered, de
 <div class="col-md-6">
 <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
 <h4>Nestlé</h4>
-<p>Data Integration & Analytics</p>
-<strong>SSIS · SQL Server · Power BI</strong>
+<p>ETL Data Integration</p>
+<strong>SSIS · SQL Server</strong>
 </div>
 </div>
 
@@ -208,90 +245,133 @@ These are selected data engineering and analytics solutions I’ve delivered, de
 
 </section>
 
+<!-- TIMELINE -->
+
+<section class="timeline-section">
+
+<h2 class="text-center text-uppercase mb-5">Professional Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>2022</h3>
+<p><strong>Telefónica Movistar</strong></p>
+<p>BI dashboards for Billing, Collections and Accounts Receivable.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>2022</h3>
+<p><strong>Deloitte</strong></p>
+<p>Payment reconciliation dashboards and BI automation.</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>2023</h3>
+<p><strong>Nestlé</strong></p>
+<p>ETL pipelines using SSIS delivering analytics-ready datasets.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>2024</h3>
+<p><strong>MVS Radio</strong></p>
+<p>HR analytics dashboard improving reporting efficiency.</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>2025</h3>
+<p><strong>MVS Radio</strong></p>
+<p>Sales and growth data model optimization.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>2026</h3>
+<p><strong>Grupo Salinas</strong></p>
+<p>Automation of Legal Collections reporting.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section text-center contact-section">
+
+<h2 class="text-uppercase mb-4">Contact</h2>
+
+<p class="contact-message">
+
+Ready to turn data into strategic advantage?  
+I’m excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
+
+</p>
+
+<a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">
+<i class="fas fa-envelope"></i> Email
+</a>
+
+<a class="btn btn-outline-dark" href="tel:+525533980702">
+<i class="fas fa-phone"></i> +52 55 3398 0702
+</a>
+
+<a class="btn btn-outline-dark" target="_blank"
+href="https://www.linkedin.com/in/pablo-d-44967318a/">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+
+<a class="btn btn-outline-dark" target="_blank"
+href="https://github.com/PABLO8520">
+<i class="fab fa-github"></i> GitHub
+</a>
+
+</section>
+
 <!-- MODAL MOVISTAR -->
 
 <div class="modal fade" id="movistarModal">
 <div class="modal-dialog modal-xl modal-dialog-centered">
 <div class="modal-content p-4">
 
-<h3>Telefónica Movistar – BI Dashboard</h3>
+<h3>Telefónica Movistar – Revenue Analytics</h3>
 
-<p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
+<h5>Business Problem</h5>
+<p>
+Finance teams lacked centralized analytics for monitoring billing performance and collections efficiency.
+</p>
+
+<h5>Data Pipeline</h5>
+<p>
+Billing data extracted from operational systems → transformed with Power Query → modeled using a star schema → visualized in Power BI dashboards.
+</p>
+
+<h5>Key Metrics</h5>
+<ul>
+<li>Collection Rate</li>
+<li>Aging Balance</li>
+<li>Revenue Performance</li>
+<li>Outstanding Receivables</li>
+</ul>
+
+<h5>Business Impact</h5>
+<p>
+Enabled executives to monitor revenue recovery trends and improved decision-making across finance operations.
+</p>
 
 <img src="assets/img/projects/movistar_1.png" class="project-image">
 <img src="assets/img/projects/movistar_2.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- MODAL DELOITTE -->
-
-<div class="modal fade" id="deloitteModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>Deloitte – BI Automation</h3>
-
-<p>Development of Payment Reconciliation dashboards for Johnson & Johnson.</p>
-<p>Creation of a .NET program for file loading automation.</p>
-<p>Modification of SQL stored procedures for BI report generation.</p>
-
-</div>
-</div>
-</div>
-
-<!-- MODAL NESTLE -->
-
-<div class="modal fade" id="nestleModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>Nestlé – Data Engineering & Analytics</h3>
-
-<p>Built ETL pipelines using SQL Server Integration Services (SSIS) and delivered Power BI analytics datasets.</p>
-
-</div>
-</div>
-</div>
-
-<!-- MODAL MVS HR -->
-
-<div class="modal fade" id="mvsHRModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>MVS Radio – HR Dashboard</h3>
-
-<p>Developed an HR dashboard for employee and training tracking.</p>
-
-</div>
-</div>
-</div>
-
-<!-- MODAL MVS SALES -->
-
-<div class="modal fade" id="mvsSalesModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>MVS Radio – Sales Data Model</h3>
-
-<p>Optimized a sales and growth data model using DAX and table relationships.</p>
-
-</div>
-</div>
-</div>
-
-<!-- MODAL GRUPO SALINAS -->
-
-<div class="modal fade" id="salinasModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>Grupo Salinas – Legal Collections Automation</h3>
-
-<p>Automated the Legal Collections report in Power BI reducing manual processing time by 90%.</p>
+<img src="assets/img/projects/movistar_3.png" class="project-image">
 
 </div>
 </div>
