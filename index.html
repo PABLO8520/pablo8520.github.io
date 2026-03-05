@@ -87,17 +87,17 @@ transform:translateY(-8px);
 box-shadow:0 30px 55px rgba(0,0,0,.18);
 }
 
-/* PROJECT IMAGES */
+/* IMAGES SMALLER */
 
 .project-image{
-width:720px;
+width:500px;
 max-width:100%;
-height:420px;
+height:280px;
 object-fit:cover;
 display:block;
-margin:25px auto;
+margin:20px auto;
 border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,.15);
+box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
 
 /* TIMELINE */
@@ -196,7 +196,6 @@ margin-bottom:20px;
 </div>
 </nav>
 
-
 <header class="masthead">
 
 <img src="assets/img/pablo.png" class="masthead-avatar">
@@ -206,7 +205,6 @@ margin-bottom:20px;
 <p class="lead">Data Engineer · Analytics & BI</p>
 
 </header>
-
 
 <section class="section tech-stack">
 
@@ -229,7 +227,6 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </p>
 
 </section>
-
 
 <section class="section container">
 
@@ -268,7 +265,6 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 
 </section>
-
 
 <section id="portfolio" class="section container">
 
@@ -322,7 +318,6 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 
 </section>
 
-
 <!-- MOVISTAR MODAL -->
 
 <div class="modal fade" id="movistarModal" tabindex="-1">
@@ -334,13 +329,13 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 <h2>Telefónica Movistar – Revenue Analytics</h2>
 
 <p><strong>Business Problem</strong></p>
-<p>Lack of centralized financial monitoring for billing and collections performance.</p>
+<p>Finance teams lacked visibility into billing performance and collections efficiency.</p>
 
 <p><strong>Data Pipeline</strong></p>
 <p>Oracle → SQL transformations → Power BI dataset.</p>
 
 <p><strong>Architecture</strong></p>
-<p>Operational systems feeding analytical dashboards.</p>
+<p>Operational systems → ETL → Power BI dashboards.</p>
 
 <p><strong>Key Metrics</strong></p>
 <ul>
@@ -350,7 +345,7 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </ul>
 
 <p><strong>Business Impact</strong></p>
-<p>Enabled finance teams to monitor revenue and collections performance.</p>
+<p>Enabled executives to monitor financial performance and collections efficiency.</p>
 
 <img src="assets/img/projects/movistar_1.png" class="project-image">
 <img src="assets/img/projects/movistar_2.png" class="project-image">
@@ -359,7 +354,6 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 </div>
 </div>
-
 
 <!-- DELOITTE MODAL -->
 
@@ -371,7 +365,24 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 
 <h2>Deloitte – Payment Reconciliation Automation</h2>
 
-<p>Automation of financial reconciliation processes using SQL Server, .NET and Power BI dashboards.</p>
+<p><strong>Business Problem</strong></p>
+<p>Manual reconciliation processes created delays and inconsistencies.</p>
+
+<p><strong>Data Pipeline</strong></p>
+<p>Payment files → .NET ingestion → SQL Server processing → Power BI dashboards.</p>
+
+<p><strong>Architecture</strong></p>
+<p>.NET ingestion layer feeding SQL Server stored procedures used by BI dashboards.</p>
+
+<p><strong>Key Metrics</strong></p>
+<ul>
+<li>Transaction reconciliation accuracy</li>
+<li>Payment variance</li>
+<li>Processing time</li>
+</ul>
+
+<p><strong>Business Impact</strong></p>
+<p>Reduced reconciliation time and improved financial reporting reliability.</p>
 
 <img src="assets/img/projects/deloitte_1.png" class="project-image">
 <img src="assets/img/projects/deloitte_2.png" class="project-image">
@@ -381,6 +392,42 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 </div>
 
+<!-- NESTLE MODAL -->
+
+<div class="modal fade" id="nestleModal" tabindex="-1">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+
+<h2>Nestlé – Fiscal Reporting ETL</h2>
+
+<p><strong>Business Problem</strong></p>
+<p>Regional reporting required manual consolidation from multiple systems.</p>
+
+<p><strong>Data Pipeline</strong></p>
+<p>Operational DBs → SSIS ETL → SQL Server warehouse → Power BI.</p>
+
+<p><strong>Architecture</strong></p>
+<p>Centralized fiscal data pipeline built with SSIS and SQL Server.</p>
+
+<p><strong>Key Metrics</strong></p>
+<ul>
+<li>Revenue reporting</li>
+<li>Inventory indicators</li>
+<li>Sales performance</li>
+</ul>
+
+<p><strong>Business Impact</strong></p>
+<p>Delivered automated fiscal reporting datasets used for executive dashboards.</p>
+
+<img src="assets/img/projects/nestle_1.png" class="project-image">
+<img src="assets/img/projects/nestle_2.png" class="project-image">
+<img src="assets/img/projects/nestle_3.png" class="project-image">
+
+</div>
+</div>
+</div>
 
 <!-- TIMELINE -->
 
@@ -442,7 +489,6 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 
 </section>
 
-
 <section id="contact" class="section text-center contact-section">
 
 <h2 class="text-uppercase mb-4">Contact</h2>
@@ -464,7 +510,6 @@ Ready to turn data into strategic advantage? I'm excited to collaborate with for
 <a class="btn btn-outline-dark" target="_blank" href="https://github.com/PABLO8520">GitHub</a>
 
 </section>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
