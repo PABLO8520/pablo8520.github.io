@@ -17,7 +17,6 @@
 body{
 font-family:'Lato',sans-serif;
 background:#f6f8fb;
-scroll-behavior:smooth;
 }
 
 h1,h2,h3,h4{
@@ -50,8 +49,6 @@ padding:90px 0;
 
 .tech-stack{
 text-align:center;
-max-width:900px;
-margin:auto;
 }
 
 .tech-icon{
@@ -87,15 +84,14 @@ transform:translateY(-8px);
 box-shadow:0 30px 55px rgba(0,0,0,.18);
 }
 
-/* IMAGES SMALLER */
+/* PROJECT IMAGES */
 
 .project-image{
-width:500px;
-max-width:100%;
-height:280px;
+width:420px;
+height:240px;
 object-fit:cover;
 display:block;
-margin:20px auto;
+margin:18px auto;
 border-radius:10px;
 box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
@@ -161,11 +157,6 @@ color:#444;
 line-height:1.7;
 }
 
-.contact-info{
-font-size:18px;
-margin-bottom:20px;
-}
-
 </style>
 
 </head>
@@ -178,23 +169,14 @@ margin-bottom:20px;
 <a class="navbar-brand" href="#">Pablo Díaz</a>
 
 <ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="#portfolio">Portfolio</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#timeline">Timeline</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
-
+<li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+<li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 </ul>
 
 </div>
 </nav>
+
 
 <header class="masthead">
 
@@ -206,11 +188,10 @@ margin-bottom:20px;
 
 </header>
 
+
 <section class="section tech-stack">
 
-<h2 class="mb-4">Tech Stack</h2>
-
-<div>
+<h2 class="text-center mb-4">Tech Stack</h2>
 
 <i class="fab fa-python tech-icon"></i>
 <i class="fas fa-database tech-icon"></i>
@@ -220,13 +201,12 @@ margin-bottom:20px;
 <i class="fas fa-server tech-icon"></i>
 <i class="fab fa-microsoft tech-icon"></i>
 
-</div>
-
 <p>
 Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · Excel
 </p>
 
 </section>
+
 
 <section class="section container">
 
@@ -265,6 +245,7 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 
 </section>
+
 
 <section id="portfolio" class="section container">
 
@@ -318,34 +299,33 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 
 </section>
 
+
 <!-- MOVISTAR MODAL -->
 
-<div class="modal fade" id="movistarModal" tabindex="-1">
+<div class="modal fade" id="movistarModal">
 <div class="modal-dialog modal-xl modal-dialog-centered">
 <div class="modal-content p-5">
 
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
 <h2>Telefónica Movistar – Revenue Analytics</h2>
 
-<p><strong>Business Problem</strong></p>
-<p>Finance teams lacked visibility into billing performance and collections efficiency.</p>
+<p><b>Business Problem</b></p>
+<p>Finance teams lacked centralized visibility into billing and collections performance.</p>
 
-<p><strong>Data Pipeline</strong></p>
-<p>Oracle → SQL transformations → Power BI dataset.</p>
+<p><b>Data Pipeline</b></p>
+<p>Oracle → SQL → Power BI.</p>
 
-<p><strong>Architecture</strong></p>
-<p>Operational systems → ETL → Power BI dashboards.</p>
+<p><b>Architecture</b></p>
+<p>Operational systems feeding analytical dashboards.</p>
 
-<p><strong>Key Metrics</strong></p>
+<p><b>Key Metrics</b></p>
 <ul>
-<li>Revenue performance</li>
-<li>Collections rate</li>
-<li>Accounts receivable aging</li>
+<li>Revenue</li>
+<li>Collections</li>
+<li>Aging buckets</li>
 </ul>
 
-<p><strong>Business Impact</strong></p>
-<p>Enabled executives to monitor financial performance and collections efficiency.</p>
+<p><b>Business Impact</b></p>
+<p>Enabled financial monitoring and operational insights.</p>
 
 <img src="assets/img/projects/movistar_1.png" class="project-image">
 <img src="assets/img/projects/movistar_2.png" class="project-image">
@@ -355,81 +335,6 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 </div>
 
-<!-- DELOITTE MODAL -->
-
-<div class="modal fade" id="deloitteModal" tabindex="-1">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
-<h2>Deloitte – Payment Reconciliation Automation</h2>
-
-<p><strong>Business Problem</strong></p>
-<p>Manual reconciliation processes created delays and inconsistencies.</p>
-
-<p><strong>Data Pipeline</strong></p>
-<p>Payment files → .NET ingestion → SQL Server processing → Power BI dashboards.</p>
-
-<p><strong>Architecture</strong></p>
-<p>.NET ingestion layer feeding SQL Server stored procedures used by BI dashboards.</p>
-
-<p><strong>Key Metrics</strong></p>
-<ul>
-<li>Transaction reconciliation accuracy</li>
-<li>Payment variance</li>
-<li>Processing time</li>
-</ul>
-
-<p><strong>Business Impact</strong></p>
-<p>Reduced reconciliation time and improved financial reporting reliability.</p>
-
-<img src="assets/img/projects/deloitte_1.png" class="project-image">
-<img src="assets/img/projects/deloitte_2.png" class="project-image">
-<img src="assets/img/projects/deloitte_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- NESTLE MODAL -->
-
-<div class="modal fade" id="nestleModal" tabindex="-1">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
-<h2>Nestlé – Fiscal Reporting ETL</h2>
-
-<p><strong>Business Problem</strong></p>
-<p>Regional reporting required manual consolidation from multiple systems.</p>
-
-<p><strong>Data Pipeline</strong></p>
-<p>Operational DBs → SSIS ETL → SQL Server warehouse → Power BI.</p>
-
-<p><strong>Architecture</strong></p>
-<p>Centralized fiscal data pipeline built with SSIS and SQL Server.</p>
-
-<p><strong>Key Metrics</strong></p>
-<ul>
-<li>Revenue reporting</li>
-<li>Inventory indicators</li>
-<li>Sales performance</li>
-</ul>
-
-<p><strong>Business Impact</strong></p>
-<p>Delivered automated fiscal reporting datasets used for executive dashboards.</p>
-
-<img src="assets/img/projects/nestle_1.png" class="project-image">
-<img src="assets/img/projects/nestle_2.png" class="project-image">
-<img src="assets/img/projects/nestle_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- TIMELINE -->
 
 <section id="timeline" class="section">
 
@@ -473,7 +378,7 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 <div class="timeline-content">
 <h3>2025</h3>
 <strong>MVS Radio</strong>
-<p>Sales model optimization.</p>
+<p>Sales data model optimization.</p>
 </div>
 </div>
 
@@ -489,6 +394,7 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 
 </section>
 
+
 <section id="contact" class="section text-center contact-section">
 
 <h2 class="text-uppercase mb-4">Contact</h2>
@@ -497,12 +403,8 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 Ready to turn data into strategic advantage? I'm excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
 </p>
 
-<div class="contact-info">
-
 <p><strong>Email:</strong> avila.pablo961@gmail.com</p>
 <p><strong>Phone:</strong> +52 55 3398 0702</p>
-
-</div>
 
 <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">Email</a>
 <a class="btn btn-outline-dark" href="tel:+525533980702">Phone</a>
@@ -510,6 +412,7 @@ Ready to turn data into strategic advantage? I'm excited to collaborate with for
 <a class="btn btn-outline-dark" target="_blank" href="https://github.com/PABLO8520">GitHub</a>
 
 </section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
