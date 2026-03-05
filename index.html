@@ -45,8 +45,6 @@ margin-bottom:25px;
 padding:90px 0;
 }
 
-/* TECH STACK */
-
 .tech-stack{
 text-align:center;
 }
@@ -57,8 +55,6 @@ margin:15px;
 color:#0d6efd;
 }
 
-/* ARCHITECTURE */
-
 .arch-box{
 background:white;
 padding:25px;
@@ -66,8 +62,6 @@ border-radius:14px;
 box-shadow:0 10px 25px rgba(0,0,0,.12);
 text-align:center;
 }
-
-/* PORTFOLIO */
 
 .portfolio-card{
 background:white;
@@ -84,19 +78,15 @@ transform:translateY(-8px);
 box-shadow:0 30px 55px rgba(0,0,0,.18);
 }
 
-/* PROJECT IMAGES */
-
 .project-image{
-width:420px;
-height:240px;
+width:450px;
+height:260px;
 object-fit:cover;
 display:block;
-margin:18px auto;
+margin:20px auto;
 border-radius:10px;
 box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
-
-/* TIMELINE */
 
 .timeline{
 position:relative;
@@ -143,8 +133,6 @@ border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
-/* CONTACT */
-
 .contact-section{
 background:#f8f9fa;
 }
@@ -165,7 +153,6 @@ line-height:1.7;
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 <div class="container">
-
 <a class="navbar-brand" href="#">Pablo Díaz</a>
 
 <ul class="navbar-nav ms-auto">
@@ -179,19 +166,15 @@ line-height:1.7;
 
 
 <header class="masthead">
-
 <img src="assets/img/pablo.png" class="masthead-avatar">
-
 <h1 class="text-uppercase">Pablo Díaz Avila</h1>
-
 <p class="lead">Data Engineer · Analytics & BI</p>
-
 </header>
 
 
 <section class="section tech-stack">
 
-<h2 class="text-center mb-4">Tech Stack</h2>
+<h2 class="mb-4">Tech Stack</h2>
 
 <i class="fab fa-python tech-icon"></i>
 <i class="fas fa-database tech-icon"></i>
@@ -204,45 +187,6 @@ line-height:1.7;
 <p>
 Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · Excel
 </p>
-
-</section>
-
-
-<section class="section container">
-
-<h2 class="text-center mb-5">Data Engineering Architecture</h2>
-
-<div class="row g-4">
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>Data Sources</h5>
-<p>Oracle · SQL Server · APIs</p>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>ETL</h5>
-<p>SSIS · Python · Spark</p>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>Storage</h5>
-<p>Azure · AWS</p>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>Analytics</h5>
-<p>Power BI · Excel</p>
-</div>
-</div>
-
-</div>
 
 </section>
 
@@ -300,7 +244,7 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </section>
 
 
-<!-- MOVISTAR MODAL -->
+<!-- MOVISTAR -->
 
 <div class="modal fade" id="movistarModal">
 <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -312,10 +256,10 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 <p>Finance teams lacked centralized visibility into billing and collections performance.</p>
 
 <p><b>Data Pipeline</b></p>
-<p>Oracle → SQL → Power BI.</p>
+<p>Oracle → SQL transformations → Power BI.</p>
 
 <p><b>Architecture</b></p>
-<p>Operational systems feeding analytical dashboards.</p>
+<p>Operational systems feeding financial dashboards.</p>
 
 <p><b>Key Metrics</b></p>
 <ul>
@@ -325,7 +269,7 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </ul>
 
 <p><b>Business Impact</b></p>
-<p>Enabled financial monitoring and operational insights.</p>
+<p>Enabled real-time monitoring of financial performance.</p>
 
 <img src="assets/img/projects/movistar_1.png" class="project-image">
 <img src="assets/img/projects/movistar_2.png" class="project-image">
@@ -336,82 +280,184 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 
 
-<section id="timeline" class="section">
+<!-- DELOITTE -->
 
-<h2 class="text-center text-uppercase mb-5">Professional Timeline</h2>
+<div class="modal fade" id="deloitteModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
 
-<div class="timeline">
+<h2>Deloitte – Payment Reconciliation Automation</h2>
 
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2022</h3>
-<strong>Telefónica Movistar</strong>
-<p>Billing and collections BI dashboards.</p>
+<p><b>Business Problem</b></p>
+<p>Manual reconciliation created operational delays.</p>
+
+<p><b>Data Pipeline</b></p>
+<p>Payment files → .NET ingestion → SQL Server → BI dashboards.</p>
+
+<p><b>Architecture</b></p>
+<p>Automation layer with SQL and Power BI.</p>
+
+<p><b>Key Metrics</b></p>
+<ul>
+<li>Transaction matching</li>
+<li>Variance detection</li>
+<li>Processing time</li>
+</ul>
+
+<p><b>Business Impact</b></p>
+<p>Improved financial reporting accuracy.</p>
+
+<img src="assets/img/projects/deloitte_1.png" class="project-image">
+<img src="assets/img/projects/deloitte_2.png" class="project-image">
+<img src="assets/img/projects/deloitte_3.png" class="project-image">
+
+</div>
 </div>
 </div>
 
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2022</h3>
-<strong>Deloitte</strong>
-<p>Payment reconciliation automation.</p>
+
+<!-- NESTLE -->
+
+<div class="modal fade" id="nestleModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<h2>Nestlé – Fiscal Reporting ETL</h2>
+
+<p><b>Business Problem</b></p>
+<p>Regional reporting required manual consolidation.</p>
+
+<p><b>Data Pipeline</b></p>
+<p>Databases → SSIS → SQL Server → Power BI.</p>
+
+<p><b>Architecture</b></p>
+<p>Centralized fiscal reporting pipeline.</p>
+
+<p><b>Key Metrics</b></p>
+<ul>
+<li>Revenue</li>
+<li>Inventory</li>
+<li>Sales</li>
+</ul>
+
+<p><b>Business Impact</b></p>
+<p>Automated financial reporting.</p>
+
+<img src="assets/img/projects/nestle_1.png" class="project-image">
+<img src="assets/img/projects/nestle_2.png" class="project-image">
+<img src="assets/img/projects/nestle_3.png" class="project-image">
+
+</div>
 </div>
 </div>
 
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2023</h3>
-<strong>Nestlé</strong>
-<p>SSIS ETL pipelines.</p>
+
+<!-- NESTLE HR -->
+
+<div class="modal fade" id="nestleHRModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<h2>Nestlé – HR Analytics</h2>
+
+<p><b>Business Problem</b></p>
+<p>Lack of centralized HR analytics visibility.</p>
+
+<p><b>Data Pipeline</b></p>
+<p>HR systems → SQL → Power BI dashboards.</p>
+
+<p><b>Architecture</b></p>
+<p>Central HR dataset.</p>
+
+<p><b>Key Metrics</b></p>
+<ul>
+<li>Employee distribution</li>
+<li>Workforce indicators</li>
+<li>HR KPIs</li>
+</ul>
+
+<p><b>Business Impact</b></p>
+<p>Improved workforce analytics visibility.</p>
+
+<img src="assets/img/projects/nestle_hr1.png" class="project-image">
+<img src="assets/img/projects/nestle_hr2.png" class="project-image">
+<img src="assets/img/projects/nestle_hr3.png" class="project-image">
+
 </div>
 </div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2024</h3>
-<strong>MVS Radio</strong>
-<p>HR analytics dashboards.</p>
-</div>
 </div>
 
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2025</h3>
-<strong>MVS Radio</strong>
-<p>Sales data model optimization.</p>
+
+<!-- MVS -->
+
+<div class="modal fade" id="mvsModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<h2>MVS Radio – HR Analytics Platform</h2>
+
+<p><b>Business Problem</b></p>
+<p>Manual HR reporting processes.</p>
+
+<p><b>Data Pipeline</b></p>
+<p>HR systems → Azure dataset → Power BI.</p>
+
+<p><b>Architecture</b></p>
+<p>Centralized HR reporting system.</p>
+
+<p><b>Key Metrics</b></p>
+<ul>
+<li>Training</li>
+<li>Participation</li>
+<li>HR performance</li>
+</ul>
+
+<p><b>Business Impact</b></p>
+<p>Reduced reporting time.</p>
+
+<img src="assets/img/projects/mvs_1.png" class="project-image">
+<img src="assets/img/projects/mvs_2.png" class="project-image">
+<img src="assets/img/projects/mvs_3.png" class="project-image">
+
 </div>
 </div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2026</h3>
-<strong>Grupo Salinas</strong>
-<p>Legal collections automation.</p>
-</div>
 </div>
 
+
+<!-- SALINAS -->
+
+<div class="modal fade" id="salinasModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<h2>Grupo Salinas – Legal Collections Automation</h2>
+
+<p><b>Business Problem</b></p>
+<p>Legal collections reporting was manual.</p>
+
+<p><b>Data Pipeline</b></p>
+<p>Oracle → SQL → Power BI.</p>
+
+<p><b>Architecture</b></p>
+<p>Automated reporting system.</p>
+
+<p><b>Key Metrics</b></p>
+<ul>
+<li>Recovery rate</li>
+<li>Legal cases</li>
+<li>Collection trends</li>
+</ul>
+
+<p><b>Business Impact</b></p>
+<p>Reduced reporting time by 90%.</p>
+
+<img src="assets/img/projects/salinas_1.png" class="project-image">
+<img src="assets/img/projects/salinas_2.png" class="project-image">
+<img src="assets/img/projects/salinas_3.png" class="project-image">
+
 </div>
-
-</section>
-
-
-<section id="contact" class="section text-center contact-section">
-
-<h2 class="text-uppercase mb-4">Contact</h2>
-
-<p class="contact-message">
-Ready to turn data into strategic advantage? I'm excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
-</p>
-
-<p><strong>Email:</strong> avila.pablo961@gmail.com</p>
-<p><strong>Phone:</strong> +52 55 3398 0702</p>
-
-<a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">Email</a>
-<a class="btn btn-outline-dark" href="tel:+525533980702">Phone</a>
-<a class="btn btn-outline-dark" target="_blank" href="https://www.linkedin.com/in/pablo-d-44967318a/">LinkedIn</a>
-<a class="btn btn-outline-dark" target="_blank" href="https://github.com/PABLO8520">GitHub</a>
-
-</section>
+</div>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
