@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -88,12 +87,12 @@ transform:translateY(-8px);
 box-shadow:0 30px 55px rgba(0,0,0,.18);
 }
 
-/* PROJECT IMAGES */
+/* IMAGES */
 
 .project-image{
-width:500px;
+width:420px;
 max-width:100%;
-height:280px;
+height:240px;
 object-fit:cover;
 display:block;
 margin:20px auto;
@@ -162,16 +161,13 @@ color:#444;
 line-height:1.7;
 }
 
-.contact-info{
-font-size:18px;
-margin-bottom:20px;
-}
-
 </style>
 
 </head>
 
 <body>
+
+<!-- NAVBAR -->
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 <div class="container">
@@ -197,15 +193,18 @@ margin-bottom:20px;
 </div>
 </nav>
 
+<!-- HEADER -->
+
 <header class="masthead">
 
 <img src="assets/img/pablo.png" class="masthead-avatar">
 
 <h1 class="text-uppercase">Pablo Díaz Avila</h1>
-
 <p class="lead">Data Engineer · Analytics & BI</p>
 
 </header>
+
+<!-- TECH STACK -->
 
 <section class="section tech-stack">
 
@@ -228,6 +227,8 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </p>
 
 </section>
+
+<!-- ARCHITECTURE -->
 
 <section class="section container">
 
@@ -267,6 +268,8 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 
 </section>
 
+<!-- PORTFOLIO -->
+
 <section id="portfolio" class="section container">
 
 <h2 class="text-center text-uppercase mb-5">Portfolio</h2>
@@ -294,9 +297,96 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 </div>
 </div>
 
+<div class="col-md-4">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleHRModal">
+<h4>Nestlé</h4>
+<p>HR Analytics Dashboard</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
+<h4>MVS Radio</h4>
+<p>HR Analytics Platform</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salinasModal">
+<h4>Grupo Salinas</h4>
+<p>Legal Collections Automation</p>
+</div>
+</div>
+
 </div>
 
 </section>
+
+<!-- MODALS -->
+
+<!-- MOVISTAR -->
+
+<div class="modal fade" id="movistarModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+
+<h2>Telefónica Movistar – Revenue Analytics</h2>
+
+<p><strong>Business Problem</strong></p>
+<p>Finance teams lacked visibility into billing performance.</p>
+
+<p><strong>Data Pipeline</strong></p>
+<p>Oracle → SQL → Power BI.</p>
+
+<img src="assets/img/projects/movistar_1.png" class="project-image">
+<img src="assets/img/projects/movistar_2.png" class="project-image">
+<img src="assets/img/projects/movistar_3.png" class="project-image">
+
+</div>
+</div>
+</div>
+
+<!-- DELOITTE -->
+
+<div class="modal fade" id="deloitteModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+
+<h2>Deloitte – Payment Reconciliation Automation</h2>
+
+<p>Payment files → SQL Server → BI dashboards.</p>
+
+<img src="assets/img/projects/deloitte_1.png" class="project-image">
+<img src="assets/img/projects/deloitte_2.png" class="project-image">
+<img src="assets/img/projects/deloitte_3.png" class="project-image">
+
+</div>
+</div>
+</div>
+
+<!-- NESTLE -->
+
+<div class="modal fade" id="nestleModal">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content p-5">
+
+<button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+
+<h2>Nestlé – Fiscal Reporting ETL</h2>
+
+<img src="assets/img/projects/nestle_1.png" class="project-image">
+<img src="assets/img/projects/nestle_2.png" class="project-image">
+<img src="assets/img/projects/nestle_3.png" class="project-image">
+
+</div>
+</div>
+</div>
+
+<!-- TIMELINE -->
 
 <section id="timeline" class="section">
 
@@ -308,15 +398,31 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 <div class="timeline-content">
 <h3>2022</h3>
 <strong>Telefónica Movistar</strong>
-<p>Billing and collections BI dashboards.</p>
+<p>Billing dashboards.</p>
 </div>
 </div>
 
 <div class="timeline-item right">
 <div class="timeline-content">
 <h3>2023</h3>
+<strong>Deloitte</strong>
+<p>Reconciliation automation.</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>2024</h3>
 <strong>Nestlé</strong>
-<p>SSIS ETL pipelines.</p>
+<p>SSIS pipelines.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>2025</h3>
+<strong>MVS Radio</strong>
+<p>HR analytics dashboards.</p>
 </div>
 </div>
 
@@ -324,25 +430,21 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact" class="section text-center contact-section">
 
 <h2 class="text-uppercase mb-4">Contact</h2>
 
 <p class="contact-message">
-Ready to turn data into strategic advantage? I'm excited to collaborate with forward-thinking organizations seeking measurable, data-driven results.
+Ready to turn data into strategic advantage? Let's work together.
 </p>
-
-<div class="contact-info">
 
 <p><strong>Email:</strong> avila.pablo961@gmail.com</p>
 <p><strong>Phone:</strong> +52 55 3398 0702</p>
 
-</div>
-
 <a class="btn btn-outline-dark" href="mailto:avila.pablo961@gmail.com">Email</a>
 <a class="btn btn-outline-dark" href="tel:+525533980702">Phone</a>
-<a class="btn btn-outline-dark" target="_blank" href="https://www.linkedin.com/in/pablo-d-44967318a/">LinkedIn</a>
-<a class="btn btn-outline-dark" target="_blank" href="https://github.com/PABLO8520">GitHub</a>
 
 </section>
 
