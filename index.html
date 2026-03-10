@@ -4,13 +4,15 @@
 
 <meta charset="UTF-8">
 <title>Pablo Díaz Avila | Data Engineer & Analytics</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Pablo Díaz Avila - Data Engineer specialized in Python, SQL, Power BI and data pipelines. Portfolio of analytics and BI projects.">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
 
 <style>
@@ -31,14 +33,14 @@ background:#1f2933;
 }
 
 .masthead{
-background:#0d6efd;
+background:linear-gradient(135deg,#0d6efd,#0040a8);
 color:white;
-padding:120px 20px;
+padding:130px 20px;
 text-align:center;
 }
 
 .masthead-avatar{
-width:180px;
+width:170px;
 border-radius:50%;
 margin-bottom:25px;
 }
@@ -46,6 +48,202 @@ margin-bottom:25px;
 .section{
 padding:90px 0;
 }
+
+.tech-stack{
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.tech-icon{
+font-size:40px;
+margin:15px;
+color:#0d6efd;
+}
+
+.arch-box{
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+text-align:center;
+}
+
+.pipeline-box{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+text-align:center;
+}
+
+.portfolio-card{
+background:white;
+border-radius:16px;
+padding:28px;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+cursor:pointer;
+transition:.35s;
+border-top:5px solid #0d6efd;
+}
+
+.portfolio-card:hover{
+transform:translateY(-8px);
+box-shadow:0 30px 55px rgba(0,0,0,.18);
+}
+
+.project-image{
+width:380px;
+max-width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+margin:18px auto;
+border-radius:10px;
+box-shadow:0 8px 18px rgba(0,0,0,.15);
+}
+
+.timeline{
+position:relative;
+max-width:1100px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#0d6efd;
+top:0;
+bottom:0;
+left:50%;
+}
+
+.timeline-item{
+padding:20px 40px;
+position:relative;
+width:50%;
+}
+
+.timeline-item::after{
+content:'';
+position:absolute;
+width:18px;
+height:18px;
+right:-9px;
+background:white;
+border:4px solid #0d6efd;
+top:30px;
+border-radius:50%;
+}
+
+.left{left:0;}
+.right{left:50%;}
+.right::after{left:-9px;}
+
+.timeline-content{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.contact-section{
+background:#f8f9fa;
+}
+
+.contact-message{
+max-width:700px;
+margin:20px auto 30px;
+font-size:18px;
+color:#444;
+line-height:1.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+
+<a class="navbar-brand" href="#">Pablo Díaz</a>
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#portfolio">Portfolio</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#timeline">Timeline</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</div>
+</nav>
+
+<!-- HEADER -->
+
+<header class="masthead">
+
+<img src="assets/img/pablo.png" class="masthead-avatar">
+
+<h1 class="text-uppercase">Pablo Díaz Avila</h1>
+
+<p class="lead">
+Data Engineer specialized in building automated data pipelines and scalable analytics solutions using Python, SQL and Power BI.
+</p>
+
+<a class="btn btn-light btn-lg mt-3 me-3"
+href="assets/assets/cv/DiazAvilaPablo_CV.pdf"
+download>
+
+Download CV
+
+</a>
+
+<a class="btn btn-outline-light btn-lg mt-3"
+href="https://www.linkedin.com/in/pablo-d-44967318a/"
+target="_blank">
+
+LinkedIn
+
+</a>
+
+</header>
+
+<!-- ABOUT -->
+
+<section id="about" class="section container text-center">
+
+<h2 class="mb-4">About Me</h2>
+
+<p style="max-width:750px;margin:auto;font-size:18px;line-height:1.8">
+
+I am a data professional specialized in designing analytics solutions, ETL pipelines and business intelligence platforms that transform raw data into actionable insights.
+
+My experience spans financial analytics, reporting automation and dashboard development across companies such as Telefónica Movistar, Deloitte, Nestlé and MVS Radio.
+
+I focus on building scalable data architectures that improve operational performance and enable data-driven decision making.
+
+</p>
+
+</section>
+
 
 /* TECH STACK */
 
