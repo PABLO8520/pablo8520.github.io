@@ -4,7 +4,10 @@
 
 <meta charset="UTF-8">
 <title>Pablo Díaz Avila | Data Engineer & Analytics</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Pablo Díaz Avila - Data Engineer specialized in Python, SQL, Power BI and cloud data pipelines. Portfolio of analytics and BI projects.">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -30,14 +33,14 @@ background:#1f2933;
 }
 
 .masthead{
-background:#0d6efd;
+background: linear-gradient(135deg,#0d6efd,#0040a8);
 color:white;
-padding:120px 20px;
+padding:130px 20px;
 text-align:center;
 }
 
 .masthead-avatar{
-width:180px;
+width:170px;
 border-radius:50%;
 margin-bottom:25px;
 }
@@ -58,6 +61,16 @@ margin:auto;
 font-size:40px;
 margin:15px;
 color:#0d6efd;
+}
+
+/* PIPELINE */
+
+.pipeline-box{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+text-align:center;
 }
 
 /* ARCHITECTURE */
@@ -90,12 +103,12 @@ box-shadow:0 30px 55px rgba(0,0,0,.18);
 /* IMAGES */
 
 .project-image{
-width:420px;
+width:380px;
 max-width:100%;
-height:240px;
+height:220px;
 object-fit:cover;
 display:block;
-margin:20px auto;
+margin:18px auto;
 border-radius:10px;
 box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
@@ -177,6 +190,10 @@ line-height:1.7;
 <ul class="navbar-nav ms-auto">
 
 <li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
+
+<li class="nav-item">
 <a class="nav-link" href="#portfolio">Portfolio</a>
 </li>
 
@@ -200,9 +217,34 @@ line-height:1.7;
 <img src="assets/img/pablo.png" class="masthead-avatar">
 
 <h1 class="text-uppercase">Pablo Díaz Avila</h1>
-<p class="lead">Data Engineer · Analytics & BI</p>
+
+<p class="lead">
+Data Engineer specialized in building automated data pipelines and scalable analytics solutions using Python, SQL and Power BI.
+</p>
+
+<a class="btn btn-light btn-lg mt-3" href="assets/Pablo_Diaz_CV.pdf" target="_blank">
+Download Resume
+</a>
 
 </header>
+
+<!-- ABOUT -->
+
+<section id="about" class="section container text-center">
+
+<h2 class="mb-4">About Me</h2>
+
+<p style="max-width:750px;margin:auto;font-size:18px;line-height:1.8">
+
+I am a data professional specialized in designing analytics solutions, ETL pipelines and business intelligence platforms that transform raw data into actionable insights.
+
+My experience spans financial analytics, reporting automation and dashboard development across companies such as Telefónica Movistar, Deloitte, Nestlé and MVS Radio.
+
+I focus on building scalable data architectures that improve operational performance and enable data-driven decision making.
+
+</p>
+
+</section>
 
 <!-- TECH STACK -->
 
@@ -216,15 +258,42 @@ line-height:1.7;
 <i class="fas fa-database tech-icon"></i>
 <i class="fas fa-chart-bar tech-icon"></i>
 <i class="fab fa-aws tech-icon"></i>
-<i class="fas fa-bolt tech-icon"></i>
-<i class="fas fa-server tech-icon"></i>
 <i class="fab fa-microsoft tech-icon"></i>
+<i class="fas fa-server tech-icon"></i>
 
 </div>
 
 <p>
-Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · Excel
+
+Python · SQL · Power BI · Azure · AWS · Spark · SSIS · Power Automate · Excel
+
 </p>
+
+</section>
+
+<!-- DATA PIPELINE -->
+
+<section class="section container text-center">
+
+<h2 class="mb-5">Featured Data Pipeline</h2>
+
+<div class="pipeline-box">
+
+<h4>Automated Financial Analytics Pipeline</h4>
+
+<p>
+
+API / SQL Sources → Python ETL → Azure Storage → SQL Warehouse → Power BI Dashboards
+
+</p>
+
+<p>
+
+Designed automated pipelines integrating multiple data sources, transforming and modeling financial datasets to enable real-time monitoring of revenue, collections and operational KPIs.
+
+</p>
+
+</div>
 
 </section>
 
@@ -246,7 +315,7 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 <div class="col-md-3">
 <div class="arch-box">
 <h5>ETL</h5>
-<p>SSIS · Python · Spark</p>
+<p>Python · Spark · SSIS</p>
 </div>
 </div>
 
@@ -273,187 +342,60 @@ Python · SQL · Power BI · Azure · AWS · Spark · Power Automate · SSIS · 
 <section id="portfolio" class="section container">
 
 <h2 class="text-center text-uppercase mb-5">Portfolio</h2>
-<p class="text-center mb-5">
-This portfolio showcases a selection of data and analytics solutions I have developed across academic and enterprise contexts. These projects demonstrate my ability to design data pipelines, automate reporting processes, and build scalable analytics frameworks that transform raw data into meaningful business insights. Each initiative reflects a focus on improving operational performance, enabling data-driven decision making, and delivering high-impact analytical solutions aligned with organizational strategy.
-</p>
 
 <div class="row g-4">
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
+<div class="portfolio-card">
 <h4>Telefónica Movistar</h4>
-<p>Revenue & Collections BI Dashboard</p>
-<strong> Power BI · DAX · Finance · Data Modeling </strong>
+<p>Revenue & Collections Dashboard</p>
+<strong>Power BI · DAX · Data Modeling</strong>
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
+<div class="portfolio-card">
 <h4>Deloitte</h4>
 <p>Payment Reconciliation Automation</p>
 <strong>Power BI · SQL · .NET</strong>
-
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
+<div class="portfolio-card">
 <h4>Nestlé</h4>
 <p>Fiscal Reporting ETL</p>
-<strong>Data Modeling· SISS ·Power BI ·Power BI Report Builder ·Legal</strong>
+<strong>SSIS · Power BI · Data Modeling</strong>
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleHRModal">
+<div class="portfolio-card">
 <h4>Nestlé</h4>
 <p>HR Analytics Dashboard</p>
-<strong>Power BI ·Data Cleaning ·Human Resources ·Azure </strong>
+<strong>Power BI · Azure · Data Cleaning</strong>
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
+<div class="portfolio-card">
 <h4>MVS Radio</h4>
-<p> Performance dashboard for MVS Education </p>
-<strong>Power Query · Power Pivot · DAX · Excel advanced </strong>
+<p>Performance Analytics Dashboard</p>
+<strong>Power Query · Power Pivot · Excel</strong>
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salinasModal">
+<div class="portfolio-card">
 <h4>Grupo Salinas</h4>
-<p>Legal Collections Automation</p>
-<strong>Power BI · Data Cleaning · KPIS · Visualization </strong>
+<p>Legal Collections Analytics</p>
+<strong>Power BI · KPI Analysis</strong>
 </div>
 </div>
 
 </div>
 
 </section>
-
-<!-- MODALS -->
-
-<!-- MOVISTAR -->
-<div class="modal fade" id="movistarModal">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h3>Telefónica Movistar – BI Dashboard</h3>
-      <p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-      <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-      <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-      <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-
-
-<img src="assets/img/projects/movistar_1.png" class="project-image">
-<img src="assets/img/projects/movistar_2.png" class="project-image">
-<img src="assets/img/projects/movistar_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- DELOITTE -->
-
-<div class="modal fade" id="deloitteModal">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content p-4">
-      <h3>Deloitte – BI & Automation</h3>
-      <p><strong>Purpose:</strong> Automate reconciliation and reporting processes.</p>
-      <p><strong>KPIs:</strong> Variance detection, reconciliation accuracy.</p>
-      <p><strong>Tech:</strong> Power BI, SQL Server, .NET.</p>
-      <p><strong>Impact:</strong> Reduced manual effort and improved reporting reliability.</p>
- 
-<img src="assets/img/projects/deloitte_1.png" class="project-image">
-<img src="assets/img/projects/deloitte_2.png" class="project-image">
-<img src="assets/img/projects/deloitte_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- NESTLE -->
-
-<div class="modal fade" id="nestleModal"> 
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-
-<h2>Nestlé – Fiscal Reporting ETL</h2>
-      <p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-      <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-      <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-      <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-<img src="assets/img/projects/nestle_1.png" class="project-image">
-<img src="assets/img/projects/nestle_2.png" class="project-image">
-<img src="assets/img/projects/nestle_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- NESTLE -->
-
-<div class="modal fade" id="nestleHRModal">   
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-
-
-<h2>HR Analytics Dashboard</h2>
-      <p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-      <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-      <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-      <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-<img src="assets/img/projects/nestle_4.png" class="project-image">
-<img src="assets/img/projects/nestle_5.png" class="project-image">
-<img src="assets/img/projects/nestle_6.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-  <!-- MVS -->
-
-<div class="modal fade" id="mvsModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-
-
-<h2>HR Analytics Dashboard</h2>
-      <p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-      <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-      <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-      <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-<img src="assets/img/projects/mvs_1.png" class="project-image">
-<img src="assets/img/projects/mvs_2.png" class="project-image">
-<img src="assets/img/projects/mvs_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-  <!-- SALINAS -->
-
-<div class="modal fade" id="salinasModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-
-
-<h2>Legal Collections Automation</h2>
-      <p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-      <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-      <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-      <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-<img src="assets/img/projects/salinas_1.png" class="project-image">
-<img src="assets/img/projects/salinas_2.png" class="project-image">
-<img src="assets/img/projects/salinas_3.png" class="project-image">
-
-</div>
-</div>
-</div>
 
 <!-- TIMELINE -->
 
@@ -467,7 +409,7 @@ This portfolio showcases a selection of data and analytics solutions I have deve
 <div class="timeline-content">
 <h3>2022</h3>
 <strong>Telefónica Movistar</strong>
-<p>Billing dashboards.</p>
+<p>Designed financial dashboards monitoring billing and AR performance.</p>
 </div>
 </div>
 
@@ -475,7 +417,7 @@ This portfolio showcases a selection of data and analytics solutions I have deve
 <div class="timeline-content">
 <h3>2023</h3>
 <strong>Deloitte</strong>
-<p>Reconciliation automation.</p>
+<p>Developed automated reconciliation and reporting solutions.</p>
 </div>
 </div>
 
@@ -483,7 +425,7 @@ This portfolio showcases a selection of data and analytics solutions I have deve
 <div class="timeline-content">
 <h3>2024</h3>
 <strong>Nestlé</strong>
-<p>SSIS pipelines.</p>
+<p>Built ETL pipelines and fiscal reporting data models.</p>
 </div>
 </div>
 
@@ -491,7 +433,7 @@ This portfolio showcases a selection of data and analytics solutions I have deve
 <div class="timeline-content">
 <h3>2025</h3>
 <strong>MVS Radio</strong>
-<p>HR analytics dashboards.</p>
+<p>Delivered analytics dashboards supporting operational performance tracking.</p>
 </div>
 </div>
 
@@ -508,20 +450,8 @@ This portfolio showcases a selection of data and analytics solutions I have deve
 <h2 class="text-uppercase mb-3">Contact</h2>
 
 <p class="contact-message">
-Ready to turn data into strategic advantage? Let's work together.
+Interested in working together or discussing data projects? Let's connect.
 </p>
-
-<div class="divider-custom mb-5">
-
-<div class="divider-custom-line"></div>
-
-<div class="divider-custom-icon">
-<i class="fas fa-star"></i>
-</div>
-
-<div class="divider-custom-line"></div>
-
-</div>
 
 <div class="d-flex justify-content-center flex-wrap gap-4">
 
@@ -537,7 +467,7 @@ Email
 href="tel:+525533980702">
 
 <i class="fas fa-phone me-2"></i>
-+52 55 3398 0702
+Phone
 
 </a>
 
@@ -563,15 +493,13 @@ GitHub
 
 </section>
 
-<!-- FOOTER -->
-
-<footer class="text-center py-4 footer-section">
+<footer class="text-center py-4">
 
 © Pablo Díaz Avila | Data Engineer & Analytics
 
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
