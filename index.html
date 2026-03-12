@@ -57,7 +57,7 @@ body::before {
 .avatar-wrap { position: relative; display: inline-block; margin-bottom: 28px; }
 .avatar-ring { position: absolute; inset: -6px; border-radius: 50%; background: conic-gradient(from 0deg, var(--blue), var(--cyan), var(--blue)); animation: spin 6s linear infinite; z-index: 0; }
 @keyframes spin { to { transform: rotate(360deg); } }
-.masthead-avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: 4px solid var(--navy); }
+.masthead-avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: 4px solid var(--navy); display: block; }
 
 .open-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(6,182,212,0.12); border: 1px solid rgba(6,182,212,0.3); color: var(--cyan); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
 .open-badge .dot { width: 7px; height: 7px; background: var(--cyan); border-radius: 50%; animation: pulse 1.5s infinite; }
@@ -81,7 +81,6 @@ body::before {
 /* ── ABOUT ── */
 .about-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 40px; }
 .about-card p { font-size: 1.1rem; line-height: 1.8; color: var(--muted); }
-.about-card p strong { color: var(--text); }
 
 /* ── ACADEMIC ── */
 .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px,1fr)); gap: 24px; }
@@ -96,6 +95,7 @@ body::before {
 .edu-school { font-size:0.85rem; color:var(--blue-light); font-weight:600; margin-bottom:12px; }
 .edu-card p { font-size:0.9rem; color:var(--muted); line-height:1.65; margin-bottom:14px; }
 .edu-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.tag { background:rgba(37,99,235,0.1); border:1px solid rgba(37,99,235,0.2); color:var(--blue-light); font-size:0.72rem; font-weight:600; padding:3px 10px; border-radius:100px; display:inline-block; }
 
 /* ── TECH STACK ── */
 .tech-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:14px; }
@@ -118,7 +118,7 @@ body::before {
 .portfolio-card:hover::before { transform:scaleX(1); }
 .card-company { font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--blue-light); margin-bottom:6px; }
 .portfolio-card h4 { font-size:1.1rem; color:#fff; margin-bottom:10px; }
-.portfolio-card p { font-size:0.9rem; color:var(--muted); margin-bottom:14px; line-height:1.5; }
+.portfolio-card p { font-size:0.9rem; color:var(--muted); margin-bottom:10px; line-height:1.5; }
 .portfolio-card strong { font-size:0.82rem; color:var(--muted); }
 .card-arrow { position:absolute; top:22px; right:22px; color:var(--muted); font-size:0.9rem; transition:all .25s; }
 .portfolio-card:hover .card-arrow { color:var(--blue-light); transform:translate(3px,-3px); }
@@ -150,20 +150,29 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
 /* ── MODALS ── */
 .modal-content { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); color:var(--text); padding:0; }
 .modal-header-custom { padding:28px 32px 20px; border-bottom:1px solid var(--card-border); position:relative; }
-.modal-company { font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--blue-light); margin-bottom:6px; }
+.modal-company-label { font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--blue-light); margin-bottom:6px; }
 .modal-header-custom h3 { font-size:1.4rem; color:#fff; }
 .modal-body-custom { padding:28px 32px; }
 .modal-body-custom p { color:var(--muted); font-size:0.95rem; line-height:1.7; margin-bottom:12px; }
 .modal-body-custom strong { color:var(--text); }
-.modal-body-custom ul { padding-left:18px; margin-bottom:12px; }
-.modal-body-custom li { color:var(--muted); font-size:0.92rem; line-height:1.7; margin-bottom:4px; }
 .modal-body-custom h2 { font-size:1.4rem; color:#fff; margin-bottom:16px; }
-.project-image { width:100%; max-height:280px; object-fit:cover; border-radius:10px; margin-bottom:12px; border:1px solid var(--card-border); display:block; }
+.modal-body-custom ul { padding-left:20px; margin-bottom:14px; }
+.modal-body-custom li { color:var(--muted); font-size:0.92rem; line-height:1.7; margin-bottom:4px; }
+
+/* ── PROJECT IMAGES — original style ── */
+.project-image {
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.4);
+  border: 1px solid var(--card-border);
+}
+
 .btn-close-custom { position:absolute; top:18px; right:22px; background:rgba(255,255,255,0.08); border:none; color:var(--muted); width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem; transition:all .2s; z-index:10; }
 .btn-close-custom:hover { background:rgba(255,255,255,0.15); color:#fff; }
-
-/* ── TAG ── */
-.tag { background:rgba(37,99,235,0.1); border:1px solid rgba(37,99,235,0.2); color:var(--blue-light); font-size:0.72rem; font-weight:600; padding:3px 10px; border-radius:100px; display:inline-block; margin:2px; }
 
 /* ── FADE ── */
 .fade-up { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
@@ -182,6 +191,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
   .edu-card { flex-direction:column; gap:16px; }
   .edu-grid { grid-template-columns:1fr; }
   .modal-header-custom, .modal-body-custom { padding-left:20px; padding-right:20px; }
+  .project-image { width:100%; }
 }
 </style>
 </head>
@@ -207,22 +217,19 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
   </div>
 </nav>
 
-<!-- HERO / MASTHEAD -->
+<!-- HERO -->
 <header class="masthead">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div style="position:relative;z-index:2;">
-
     <div class="open-badge"><span class="dot"></span>Open to Work · CDMX / Remote</div>
-
     <div class="avatar-wrap">
       <div class="avatar-ring"></div>
-      <img src="assets/img/pablo.png" class="masthead-avatar" alt="Pablo Díaz Avila" onerror="this.outerHTML='<div style=\'width:160px;height:160px;border-radius:50%;background:var(--card-bg);display:flex;align-items:center;justify-content:center;font-size:56px;color:var(--blue-light);position:relative;z-index:1;border:4px solid var(--navy);\'><i class=\'fas fa-user\'></i></div>'">
+      <img src="assets/img/pablo.png" class="masthead-avatar" alt="Pablo Díaz Avila"
+           onerror="this.outerHTML='<div style=\'width:160px;height:160px;border-radius:50%;background:#141c2e;display:flex;align-items:center;justify-content:center;font-size:56px;color:#3b82f6;position:relative;z-index:1;border:4px solid #0a0f1e;\'><i class=\'fas fa-user\'></i></div>'">
     </div>
-
     <h1>Pablo <span>Díaz</span> Avila</h1>
     <p class="lead">Data Engineer · Analytics &amp; BI</p>
-
     <div class="hero-btns">
       <a class="btn-primary-custom" href="assets/assets/cv/DiazAvilaPablo_CV.pdf" download="DiazAvilaPablo_CV.pdf">
         <i class="fas fa-download"></i> Download CV
@@ -234,7 +241,6 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
         <i class="fab fa-github"></i> GitHub
       </a>
     </div>
-
   </div>
 </header>
 
@@ -533,7 +539,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Telefónica Movistar</div>
+        <div class="modal-company-label">Telefónica Movistar</div>
         <h3>Telefónica Movistar – BI Dashboard</h3>
       </div>
       <div class="modal-body-custom">
@@ -541,9 +547,9 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
         <p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
         <p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
         <p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-        <img src="assets/img/projects/movistar_1.png" class="project-image">
-        <img src="assets/img/projects/movistar_2.png" class="project-image">
-        <img src="assets/img/projects/movistar_3.png" class="project-image">
+        <img src="assets/img/projects/movistar_1.png" class="project-image" onerror="this.style.display='none'">
+        <img src="assets/img/projects/movistar_2.png" class="project-image" onerror="this.style.display='none'">
+        <img src="assets/img/projects/movistar_3.png" class="project-image" onerror="this.style.display='none'">
       </div>
     </div>
   </div>
@@ -555,7 +561,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Deloitte</div>
+        <div class="modal-company-label">Deloitte</div>
         <h3>Deloitte – Financial Reconciliation Analytics</h3>
       </div>
       <div class="modal-body-custom">
@@ -577,7 +583,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Deloitte</div>
+        <div class="modal-company-label">Deloitte</div>
         <h3>.NET Financial File Loader</h3>
       </div>
       <div class="modal-body-custom">
@@ -597,7 +603,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Nestlé</div>
+        <div class="modal-company-label">Nestlé</div>
         <h3>Nestlé – Fiscal Reporting ETL</h3>
       </div>
       <div class="modal-body-custom">
@@ -613,13 +619,13 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
   </div>
 </div>
 
-<!-- ALICE PROJECT -->
+<!-- ALICE -->
 <div class="modal fade" id="nestleAliceModal" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Nestlé</div>
+        <div class="modal-company-label">Nestlé</div>
         <h3>Alice Project - Logistics Data Migration</h3>
       </div>
       <div class="modal-body-custom">
@@ -643,7 +649,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Nestlé / Nongam</div>
+        <div class="modal-company-label">Nestlé / Nongam</div>
         <h3>Nongam – Sudamérica</h3>
       </div>
       <div class="modal-body-custom">
@@ -670,7 +676,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">MVS Radio</div>
+        <div class="modal-company-label">MVS Radio</div>
         <h3>HR Analytics Dashboard</h3>
       </div>
       <div class="modal-body-custom">
@@ -692,7 +698,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Grupo Salinas</div>
+        <div class="modal-company-label">Grupo Salinas</div>
         <h3>Legal Collections Automation</h3>
       </div>
       <div class="modal-body-custom">
@@ -714,7 +720,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     <div class="modal-content">
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
-        <div class="modal-company">Personal Project</div>
+        <div class="modal-company-label">Personal Project</div>
         <h3>Football Data Analytics</h3>
       </div>
       <div class="modal-body-custom">
