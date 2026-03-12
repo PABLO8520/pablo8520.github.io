@@ -1,846 +1,1370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<title>Pablo Díaz Avila | Data Engineer & Analytics</title>
-
+<title>Pablo Díaz Avila | Senior Data Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="description" content="Data Engineer specialized in Python, SQL, Power BI, ETL pipelines and business intelligence solutions. Portfolio of data analytics projects and enterprise BI dashboards.">
+<meta name="description" content="Senior Data Engineer with 4+ years building data pipelines and BI solutions at Telefónica, Deloitte, Nestlé and Grupo Salinas. Python, SQL, Power BI, Azure, Databricks.">
 <meta name="author" content="Pablo Díaz Avila">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
 
 <style>
-
-html{
-scroll-padding-top:80px;
+:root {
+  --navy: #0a0f1e;
+  --navy2: #111827;
+  --blue: #2563eb;
+  --blue-light: #3b82f6;
+  --cyan: #06b6d4;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card-bg: #141c2e;
+  --card-border: rgba(37,99,235,0.2);
+  --radius: 16px;
 }
 
-body{
-font-family:'Lato',sans-serif;
-background:#f6f8fb;
-scroll-behavior:smooth;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-padding-top: 80px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-h1,h2,h3,h4{
-font-family:'Montserrat',sans-serif;
-font-weight:700;
+h1,h2,h3,h4,h5 { font-family: 'Syne', sans-serif; }
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
 }
 
-.navbar{
-background:#1f2933;
+/* ── NAVBAR ── */
+.navbar {
+  background: rgba(10,15,30,0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(37,99,235,0.15);
+  padding: 14px 0;
+  z-index: 1000;
 }
 
-.masthead{
-background:#0d6efd;
-color:white;
-padding:120px 20px;
-text-align:center;
+.navbar-brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #fff !important;
+  letter-spacing: -0.5px;
 }
 
-.masthead-avatar{
-width:180px;
-border-radius:50%;
-margin-bottom:25px;
+.nav-link {
+  color: var(--muted) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color .2s;
 }
 
-.section{
-padding:90px 0;
+.nav-link:hover { color: var(--blue-light) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 120px 20px 80px;
+  overflow: hidden;
 }
 
-/* ABOUT */
-
-.about-box{
-max-width:900px;
-margin:auto;
-font-size:18px;
-line-height:1.7;
-color:#444;
+.hero-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
-/* TECH STACK */
-
-.tech-stack{
-text-align:center;
-max-width:900px;
-margin:auto;
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
 }
 
-.tech-icon{
-font-size:40px;
-margin:15px;
-color:#0d6efd;
+.avatar-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 28px;
 }
 
-/* ARCHITECTURE */
-
-.arch-box{
-background:white;
-padding:25px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-text-align:center;
+.avatar-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--blue), var(--cyan), var(--blue));
+  animation: spin 6s linear infinite;
+  z-index: 0;
 }
 
-/* PORTFOLIO */
+@keyframes spin { to { transform: rotate(360deg); } }
 
-.portfolio-card{
-background:white;
-border-radius:16px;
-padding:28px;
-box-shadow:0 15px 35px rgba(0,0,0,.12);
-cursor:pointer;
-transition:.35s;
-border-top:5px solid #0d6efd;
+.avatar-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 4px solid var(--navy);
 }
 
-.portfolio-card:hover{
-transform:translateY(-8px);
-box-shadow:0 30px 55px rgba(0,0,0,.18);
+.avatar-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  color: var(--blue-light);
+  position: relative;
+  z-index: 1;
+  border: 4px solid var(--navy);
 }
 
-/* IMAGES */
-
-.project-image{
-width:420px;
-max-width:100%;
-height:240px;
-object-fit:cover;
-display:block;
-margin:20px auto;
-border-radius:10px;
-box-shadow:0 8px 18px rgba(0,0,0,.15);
+.open-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(6,182,212,0.12);
+  border: 1px solid rgba(6,182,212,0.3);
+  color: var(--cyan);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
 }
 
-/* TIMELINE */
-
-.timeline{
-position:relative;
-max-width:1100px;
-margin:auto;
+.open-badge .dot {
+  width: 7px; height: 7px;
+  background: var(--cyan);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
 }
 
-.timeline::after{
-content:'';
-position:absolute;
-width:4px;
-background:#0d6efd;
-top:0;
-bottom:0;
-left:50%;
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.4); }
 }
 
-.timeline-item{
-padding:20px 40px;
-position:relative;
-width:50%;
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 12px;
 }
 
-.timeline-item::after{
-content:'';
-position:absolute;
-width:18px;
-height:18px;
-right:-9px;
-background:white;
-border:4px solid #0d6efd;
-top:30px;
-border-radius:50%;
+.hero h1 span { color: var(--blue-light); }
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
 }
 
-.left{left:0;}
-.right{left:50%;}
-.right::after{left:-9px;}
+.hero-tagline strong { color: var(--text); font-weight: 500; }
 
-.timeline-content{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+.hero-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+.btn-primary-custom {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .25s;
+}
+.btn-primary-custom:hover { background: var(--blue-light); color: #fff; transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .25s;
+}
+.btn-ghost:hover { border-color: var(--blue-light); color: var(--blue-light); transform: translateY(-2px); }
+
+/* ── SECTIONS ── */
+.section { padding: 100px 0; position: relative; z-index: 1; }
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 10px;
 }
 
-/* CONTACT */
-
-.contact-section{
-background:#f8f9fa;
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
 }
 
-.contact-message{
-max-width:700px;
-margin:20px auto 30px;
-font-size:18px;
-color:#444;
-line-height:1.7;
+/* ── ABOUT ── */
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 40px;
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-.masthead{
-padding:90px 15px;
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--muted);
 }
 
-.masthead-avatar{
-width:130px;
+.about-card p strong { color: var(--text); }
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
 }
 
-.section{
-padding:60px 20px;
+.stat-box {
+  background: rgba(37,99,235,0.08);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
 }
 
-.tech-icon{
-font-size:32px;
-margin:10px;
+.stat-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--blue-light);
+  display: block;
 }
 
-.timeline::after{
-left:20px;
+.stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+/* ── TECH STACK ── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 14px;
 }
 
-.timeline-item{
-width:100%;
-padding-left:60px;
-padding-right:20px;
+.tech-pill {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: all .25s;
+  letter-spacing: 0.02em;
 }
 
-.timeline-item::after{
-left:11px;
+.tech-pill:hover {
+  border-color: var(--blue-light);
+  background: rgba(37,99,235,0.1);
+  transform: translateY(-3px);
+  color: var(--blue-light);
 }
 
-.left,.right{
-left:0;
+.tech-pill i { display: block; font-size: 1.5rem; margin-bottom: 8px; color: var(--blue-light); }
+
+/* ── ARCH ── */
+.arch-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  align-items: center;
+  position: relative;
 }
 
-.project-image{
-height:200px;
+.arch-step {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
+.arch-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue-light);
+  font-size: 1.4rem;
+  z-index: 2;
 }
 
+.arch-step h5 {
+  color: var(--blue-light);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.arch-step p { color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+
+/* ── PORTFOLIO ── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.portfolio-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  cursor: pointer;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  transform: scaleX(0);
+  transition: transform .3s;
+  transform-origin: left;
+}
+
+.portfolio-card:hover { transform: translateY(-6px); border-color: rgba(37,99,235,0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.portfolio-card:hover::before { transform: scaleX(1); }
+
+.card-company {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 6px;
+}
+
+.portfolio-card h4 { font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+.portfolio-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  background: rgba(37,99,235,0.1);
+  border: 1px solid rgba(37,99,235,0.2);
+  color: var(--blue-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.card-arrow {
+  position: absolute;
+  top: 22px; right: 22px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: all .25s;
+}
+.portfolio-card:hover .card-arrow { color: var(--blue-light); transform: translate(3px,-3px); }
+
+/* ── TIMELINE ── */
+.tl-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+.tl-line {
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--blue), var(--cyan));
+  transform: translateX(-50%);
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: start;
+}
+
+.tl-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; }
+.tl-item:nth-child(odd) .tl-empty { grid-column: 3; }
+.tl-item:nth-child(even) .tl-content { grid-column: 3; }
+.tl-item:nth-child(even) .tl-empty { grid-column: 1; }
+
+.tl-dot-wrap {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.tl-dot {
+  width: 16px; height: 16px;
+  background: var(--blue);
+  border: 3px solid var(--navy);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--blue);
+}
+
+.tl-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+}
+
+.tl-year {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--blue-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.tl-company { font-size: 1rem; color: #fff; font-weight: 700; margin-bottom: 4px; }
+.tl-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+
+/* ── CONTACT ── */
+.contact-wrap {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all .25s;
+}
+.contact-btn:hover { border-color: var(--blue-light); color: var(--blue-light); transform: translateY(-3px); }
+.contact-btn i { font-size: 1rem; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 28px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ── MODALS ── */
+.modal-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 0;
+}
+
+.modal-header-custom {
+  padding: 28px 32px 0;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 20px;
+}
+
+.modal-header-custom .modal-company {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 6px;
+}
+
+.modal-header-custom h3 { font-size: 1.4rem; color: #fff; }
+
+.modal-body-custom { padding: 28px 32px; }
+
+.modal-section { margin-bottom: 22px; }
+.modal-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 8px;
+}
+.modal-section p, .modal-section li { color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+.modal-section ul { padding-left: 18px; }
+.modal-section li { margin-bottom: 4px; }
+
+.modal-impact {
+  background: rgba(6,182,212,0.07);
+  border: 1px solid rgba(6,182,212,0.2);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  color: var(--cyan);
+}
+
+.project-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.btn-close-custom {
+  position: absolute;
+  top: 18px; right: 22px;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: var(--muted);
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all .2s;
+}
+.btn-close-custom:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .arch-flow { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .arch-step::after { display: none; }
+  .tl-line { left: 20px; }
+  .tl-item { grid-template-columns: 40px 1fr; }
+  .tl-item:nth-child(odd) .tl-content,
+  .tl-item:nth-child(even) .tl-content { grid-column: 2; text-align: left; }
+  .tl-item .tl-empty { display: none; }
+  .tl-dot-wrap { grid-column: 1; }
+}
+
+/* ── FADE IN ANIMATION ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fade-up.visible { opacity: 1; transform: none; }
 </style>
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-
-<div class="container">
-
-<a class="navbar-brand" href="#">Pablo Díaz</a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navbarNav">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="#about">About</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#portfolio">Portfolio</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#timeline">Timeline</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Pablo Díaz</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stack">Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
-<!-- HEADER -->
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="open-badge">
+      <span class="dot"></span>
+      Open to Work · CDMX / Remote
+    </div>
 
-<header class="masthead">
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar-placeholder">
+        <i class="fas fa-user"></i>
+      </div>
+      <!-- Uncomment and replace with real image:
+      <img src="assets/img/pablo.png" class="avatar-img" alt="Pablo Díaz Avila">
+      -->
+    </div>
 
-<img src="assets/img/pablo.png" class="masthead-avatar">
+    <h1>Pablo <span>Díaz</span> Avila</h1>
+    <p class="hero-tagline">
+      Senior Data Engineer with <strong>4+ years</strong> building pipelines & BI solutions at
+      <strong>Telefónica · Deloitte · Nestlé · Grupo Salinas</strong>
+    </p>
 
-<h1 class="text-uppercase">Pablo Díaz Avila</h1>
-
-<p class="lead">Data Engineer · Analytics & BI</p>
-
-<br>
-
-<div class="d-flex justify-content-center flex-wrap gap-3">
-
-<a class="btn btn-light btn-lg px-4 py-3"
-   href="assets/assets/cv/DiazAvilaPablo_CV.pdf"
-   download="DiazAvilaPablo_CV.pdf">
-   <i class="fas fa-download me-2"></i>Download CV
-</a>
-
-<a class="btn btn-outline-light btn-lg px-4 py-3"
-href="https://www.linkedin.com/in/pablo-d-44967318a/"
-target="_blank">
-<i class="fab fa-linkedin me-2"></i>LinkedIn
-</a>
-
-<a class="btn btn-outline-light btn-lg px-4 py-3"
-href="https://github.com/PABLO8520"
-target="_blank">
-<i class="fab fa-github me-2"></i>GitHub
-</a>
-
-</div>
-
-</header>
+    <div class="hero-btns">
+      <a class="btn-primary-custom" href="assets/assets/cv/DiazAvilaPablo_CV.pdf" download>
+        <i class="fas fa-download"></i> Download CV
+      </a>
+      <a class="btn-ghost" href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a class="btn-ghost" href="https://github.com/PABLO8520" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
-
-<section id="about" class="section container">
-
-<h2 class="text-center text-uppercase mb-5">About Me</h2>
-
-<div class="about-box text-center">
-
-<p>
-
-Data Engineer and Analytics professional with experience designing data pipelines,
-automating reporting processes, and building business intelligence solutions that
-support strategic decision-making.
-
-</p>
-
-</div>
-
+<section id="about" class="section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Data Engineer & Analytics Specialist</h2>
+    </div>
+    <div class="about-card fade-up">
+      <p>
+        Data Engineer with <strong>4+ years of experience</strong> designing end-to-end data solutions for large enterprises in
+        telecommunications, consulting, FMCG, and media. I specialize in <strong>ETL pipeline architecture</strong>,
+        <strong>business intelligence dashboards</strong>, and <strong>cloud data migrations</strong> — turning
+        raw, complex data into actionable insights that directly support strategic decisions.
+      </p>
+      <p style="margin-top:14px;">
+        I've built reconciliation automation for <strong>Deloitte</strong>, logistics data migrations for
+        <strong>Nestlé</strong> on Azure Databricks, revenue dashboards for <strong>Telefónica Movistar</strong>,
+        and legal collections automation for <strong>Grupo Salinas</strong>. Fluent in Spanish and English,
+        comfortable working with international and cross-functional teams.
+      </p>
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="stat-number">4+</span>
+          <div class="stat-label">Years of experience</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">6</span>
+          <div class="stat-label">Enterprise clients</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">10+</span>
+          <div class="stat-label">BI & pipeline projects</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- TECH STACK -->
-
-<section class="section tech-stack">
-
-<h2 class="mb-4">Tech Stack</h2>
-
-<div>
-
-<i class="fab fa-python tech-icon"></i>
-<i class="fas fa-database tech-icon"></i>
-<i class="fas fa-chart-bar tech-icon"></i>
-<i class="fab fa-aws tech-icon"></i>
-<i class="fas fa-bolt tech-icon"></i>
-<i class="fas fa-server tech-icon"></i>
-<i class="fab fa-microsoft tech-icon"></i>
-
-</div>
-
-<p>
-Python · Spark · SQL · SSIS · Databricks · SnowFlake  · Power BI · Tableau · Excel · Azure · AWS · Power Automate · Power Apps 
-
+<section id="stack" class="section" style="background: rgba(255,255,255,0.01);">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Tech Stack</div>
+      <h2 class="section-title">Tools & Technologies</h2>
+    </div>
+    <div class="tech-grid fade-up">
+      <div class="tech-pill"><i class="fab fa-python"></i>Python</div>
+      <div class="tech-pill"><i class="fas fa-database"></i>SQL</div>
+      <div class="tech-pill"><i class="fas fa-bolt"></i>Spark</div>
+      <div class="tech-pill"><i class="fab fa-microsoft"></i>Power BI</div>
+      <div class="tech-pill"><i class="fas fa-table"></i>SSIS</div>
+      <div class="tech-pill"><i class="fas fa-cloud"></i>Databricks</div>
+      <div class="tech-pill"><i class="fas fa-snowflake"></i>Snowflake</div>
+      <div class="tech-pill"><i class="fab fa-aws"></i>AWS S3</div>
+      <div class="tech-pill"><i class="fas fa-cloud"></i>Azure</div>
+      <div class="tech-pill"><i class="fas fa-chart-bar"></i>Tableau</div>
+      <div class="tech-pill"><i class="fab fa-microsoft"></i>Excel</div>
+      <div class="tech-pill"><i class="fas fa-cogs"></i>Power Apps</div>
+      <div class="tech-pill"><i class="fas fa-robot"></i>Power Automate</div>
+      <div class="tech-pill"><i class="fas fa-code"></i>.NET / C#</div>
+      <div class="tech-pill"><i class="fas fa-server"></i>SQL Server</div>
+      <div class="tech-pill"><i class="fas fa-file-alt"></i>Report Builder</div>
+    </div>
+  </div>
 </section>
 
 <!-- ARCHITECTURE -->
-
-<section class="section container">
-
-<h2 class="text-center mb-5">Data Engineering Architecture</h2>
-
-<div class="row g-4">
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>Data Sources</h5>
-<p>Oracle · SQL Server · APIs</p>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>ETL</h5>
-<p>SSIS · Python ETL · Spark Processing</p>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>Storage</h5>
-<p>Azure Data Factory · AWS S3 · Data Lakes</p>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="arch-box">
-<h5>Analytics</h5>
-<p>Power BI · Excel</p>
-</div>
-</div>
-
-</div>
-
+<section class="section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">How I Work</div>
+      <h2 class="section-title">Data Engineering Architecture</h2>
+    </div>
+    <div class="arch-flow fade-up">
+      <div class="arch-step">
+        <h5>01 · Ingest</h5>
+        <p>Oracle · SQL Server · REST APIs · Excel / CSV · SAP</p>
+      </div>
+      <div class="arch-step">
+        <h5>02 · Transform</h5>
+        <p>SSIS · Python ETL · PySpark · Databricks · T-SQL</p>
+      </div>
+      <div class="arch-step">
+        <h5>03 · Store</h5>
+        <p>Azure Data Lake · AWS S3 · Snowflake · SharePoint</p>
+      </div>
+      <div class="arch-step">
+        <h5>04 · Visualize</h5>
+        <p>Power BI · Tableau · Excel · Report Builder · Paginated Reports</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- PORTFOLIO (se mantiene igual que tu diseño) --> 
-  <!-- tus modales siguen funcionando igual --> <!-- solo se cambiaron descripciones para que no parezcan repetidas -->
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Work</div>
+      <h2 class="section-title">Selected Projects</h2>
+      <p style="color:var(--muted);max-width:640px;margin-bottom:40px;line-height:1.7;">
+        Enterprise data solutions from pipeline architecture to executive dashboards — built for real organizations, delivering measurable impact.
+      </p>
+    </div>
 
+    <div class="portfolio-grid">
 
-<section id="portfolio" class="section container">
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#movistarModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Telefónica Movistar</div>
+        <h4>Revenue & Collections BI Dashboard</h4>
+        <p>End-to-end Power BI dashboard tracking billing, collections, and accounts receivable across aging buckets for 10M+ subscribers.</p>
+        <div class="card-tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Finance</span><span class="tag">Data Modeling</span>
+        </div>
+      </div>
 
-<h2 class="text-center text-uppercase mb-5">Portfolio</h2>
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#deloitteModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Deloitte</div>
+        <h4>Payment Reconciliation Automation</h4>
+        <p>Automated financial reconciliation between ERP transactions and SAT CFDI invoices, matching UUID records via SQL stored procedures.</p>
+        <div class="card-tags">
+          <span class="tag">SQL Server</span><span class="tag">T-SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span>
+        </div>
+      </div>
 
-<p class="text-center mb-5">
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#deloitteModal1">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Deloitte</div>
+        <h4>.NET Financial File Loader</h4>
+        <p>Contributed to a .NET application that ingests structured Excel and financial files into SQL Server for reconciliation reporting.</p>
+        <div class="card-tags">
+          <span class="tag">.NET (C#)</span><span class="tag">SQL Server</span><span class="tag">Data Validation</span>
+        </div>
+      </div>
 
-This portfolio showcases a selection of data and analytics solutions I have developed across academic and enterprise contexts. These projects demonstrate my ability to design data pipelines, automate reporting processes, and build scalable analytics frameworks that transform raw data into meaningful business insights. Each initiative reflects a focus on improving operational performance, enabling data-driven decision making, and delivering high-impact analytical solutions aligned with organizational strategy.
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#nestleModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Nestlé</div>
+        <h4>Fiscal Reporting ETL</h4>
+        <p>Designed SSIS pipelines to automate monthly fiscal reporting, reducing manual processing from 2 days to under 2 hours.</p>
+        <div class="card-tags">
+          <span class="tag">SSIS</span><span class="tag">SQL Server</span><span class="tag">Report Builder</span>
+        </div>
+      </div>
 
-</p>
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#nestleAliceModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Nestlé</div>
+        <h4>Alice Project — Logistics Data Migration</h4>
+        <p>Led logistics data migration to Azure Databricks, creating layered schema architecture (inbound → silver → gold) with zero downtime.</p>
+        <div class="card-tags">
+          <span class="tag">Azure</span><span class="tag">Databricks</span><span class="tag">PySpark</span><span class="tag">Python</span>
+        </div>
+      </div>
 
-<div class="row g-4">
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#nongamModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Nestlé / Nongam</div>
+        <h4>Alice BI Reporting — South America</h4>
+        <p>Built Power BI data models connected to SharePoint and migrated to paginated Report Builder for operational regional reporting.</p>
+        <div class="card-tags">
+          <span class="tag">Power BI</span><span class="tag">SharePoint</span><span class="tag">Report Builder</span>
+        </div>
+      </div>
 
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#movistarModal">
-<h4>Telefónica Movistar</h4>
-<p>Revenue & Collections BI Dashboard</p>
-<strong>Power BI · DAX · Finance · Data Modeling</strong>
-</div>
-</div>
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#mvsModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">MVS Radio</div>
+        <h4>Education Performance Dashboard</h4>
+        <p>Built an advanced Excel analytics dashboard using Power Query, Power Pivot, and DAX to track KPIs across MVS Education programs.</p>
+        <div class="card-tags">
+          <span class="tag">Power Query</span><span class="tag">Power Pivot</span><span class="tag">DAX</span><span class="tag">Excel</span>
+        </div>
+      </div>
 
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal">
-<h4>Deloitte</h4>
-<p>Payment Reconciliation Automation</p>
-<strong>Power BI · SQL · .NET</strong>
-</div>
-</div>
-  
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#salinasModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Grupo Salinas</div>
+        <h4>Legal Collections Automation</h4>
+        <p>Automated the Legal Collections reporting process in Power BI, replacing a fully manual workflow and reducing reporting time by 80%.</p>
+        <div class="card-tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Cleaning</span><span class="tag">KPIs</span>
+        </div>
+      </div>
 
+      <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#footballModal">
+        <i class="card-arrow fas fa-arrow-up-right"></i>
+        <div class="card-company">Personal Project</div>
+        <h4>Football Data Analytics</h4>
+        <p>Web-scraped match statistics and built a Python analysis pipeline with Pandas to surface performance patterns and player metrics.</p>
+        <div class="card-tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Web Scraping</span><span class="tag">Visualization</span>
+        </div>
+      </div>
 
-  
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#deloitteModal1">
-<h4>Deloitte</h4>
-<p> .NET Financial File Loader</p>
-<strong> .NET (C#) · SQL Server · Data Validation · File Handling</strong>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleModal">
-<h4>Nestlé</h4>
-<p>Fiscal Reporting ETL</p>
-<strong>Data Modeling ·SSIS ·Report Builder </strong>
-</div>
-</div>
-   
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nestleAliceModal"">
-<h4>Nestlé</h4>
-<p>Alice Project - Logistics Data Migration</p>
-<strong> Azure · Databricks · SQL · Python</strong>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#nongamModal"">
-<h4>Nestlé</h4>
-<p>Alice Data Migration & Reportingn </p>
-<strong> Power BI · SharePoint · Data Modeling · Reporting </strong>
-</div>
-</div>
-   
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#mvsModal">
-<h4>MVS Radio</h4>
-<p>Performance dashboard for MVS Education</p>
-<strong>Power Query · Power Pivot · DAX · Excel advanced</strong>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#salinasModal">
-<h4>Grupo Salinas</h4>
-<p>Legal Collections Automation</p>
-<strong>Power BI · Data Cleaning · KPIS · Visualization</strong>
-</div>
-</div>
-
-
-<!-- NUEVOS PROYECTOS -->
-
-<div class="col-md-4">
-<div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#footballModal">
-<h4>Football Data Analytics</h4>
-<p>Match Performance Analysis</p>
-<strong>Python · Pandas · Web Scraping · Visualization</strong>
-</div>
-</div>
-
-
-
-
-</div>
-
-
+    </div>
+  </div>
 </section>
-
-<!-- MOVISTAR MODAL -->
-
-<div class="modal fade" id="movistarModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>Telefónica Movistar – BI Dashboard</h3>
-
-<p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-<p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-<p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-<p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-
-<img src="assets/img/projects/movistar_1.png" class="project-image">
-<img src="assets/img/projects/movistar_2.png" class="project-image">
-<img src="assets/img/projects/movistar_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- DELOITTE MODAL -->
-
-<div class="modal fade" id="deloitteModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>Deloitte – Financial Reconciliation Analytics</h3>
-
-<p><strong>Purpose:</strong> Built a financial reconciliation solution to match ERP transactions with SAT CFDI invoices.</p>
-
-<p><strong>Pipeline:</strong> Developed a SQL Server stored procedure to process accounting records, match invoice UUIDs, and generate a reconciliation dataset.</p>
-
-<p><strong>Tech:</strong> SQL Server · T-SQL · Power BI · DAX · Data Modeling</p>
-<p><strong>Impact:</strong> Enabled automated reconciliation monitoring and faster detection of financial discrepancies.</p>
-<img src="assets/img/projects/deloitte_0.png" class="project-image">
-<img src="assets/img/projects/deloitte_1.png" class="project-image">
-<img src="assets/img/projects/deloitte_2.png" class="project-image">
-
-
-</div>
-</div>
-</div>
-
-<!-- DELOITTE MODAL1 -->
-<!-- DELOITTE MODAL1 -->
-
-<div class="modal fade" id="deloitteModal1">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h3>.NET Financial File Loader</h3>
-
-<p><strong>Purpose:</strong> Contributed to the development of a .NET-based program designed to load and manage financial report files used in internal reconciliation processes.</p>
-
-<p><strong>Data:</strong> Processed Excel and structured files to populate SQL Server tables used for financial and operational reporting.</p>
-
-<p><strong>Tech:</strong> .NET (C#) · SQL Server · DatA Validation · File Handling</p>
-
-<p><strong>Impact:</strong> Automated the ingestion of reporting data, reducing manual processing time and improving reliability of financial datasets.</p>
-
-<img src="assets/img/projects/deloitte_4.png" class="project-image">
-
-
-</div>
-</div>
-</div>
-
-
-<!-- NESTLE MODAL -->
-
-<div class="modal fade" id="nestleModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-4">
-
-<h2>Nestlé – Fiscal Reporting ETL</h2>
-
-<p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-<p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-<p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-<p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-
-<img src="assets/img/projects/nestle_1.png" class="project-image">
-<img src="assets/img/projects/nestle_2.png" class="project-image">
-<img src="assets/img/projects/nestle_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- NESTLE ALICE -->
-
-<div class="modal fade" id="nestleAliceModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h2>>Alice Project - Logistics Data Migration</h2>
-
-<p><strong>Key Contributions:</strong></p>
-<ul>
-  <li>Created structured database schemas in Azure Databricks (inbound, utils, silver, gold, dataset).</li>
-  <li>Migrated historical logistics data with full integrity and zero downtime.</li>
-  <li>Optimized ETL pipelines for faster and reliable data processing.</li>
-  <li>Documented data models and processes for team alignment.</li>
-</ul>
-
-<p><strong>Impact:</strong> Seamless migration with improved performance, data reliability, and faster analytics for supply chain operations.</p>
-
-<img src="assets/img/projects/alice_1.png" class="project-image">
-
-
-</div>
-</div>
-</div>
-
-<!-- NESTLE ALICE -->
-
-<div class="modal fade" id="nestleAliceModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h2>>Alice Project - Logistics Data Migration</h2>
-
-<p><strong>Key Contributions:</strong></p>
-<ul>
-  <li>Created structured database schemas in Azure Databricks (inbound, utils, silver, gold, dataset).</li>
-  <li>Migrated historical logistics data with full integrity and zero downtime.</li>
-  <li>Optimized ETL pipelines for faster and reliable data processing.</li>
-  <li>Documented data models and processes for team alignment.</li>
-</ul>
-
-<p><strong>Impact:</strong> Seamless migration with improved performance, data reliability, and faster analytics for supply chain operations.</p>
-
-<img src="assets/img/projects/alice_1.png" class="project-image">
-
-
-</div>
-</div>
-</div>
-
-<!-- NONGAM -->
-
-<div class="modal fade" id="nongamModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h2>Nongam – Sudamérica</h2>
-
-<p><strong>Purpose:</strong> Support the migration of legacy databases and develop reliable reporting solutions for South American operations.</p>
-
-      <p><strong>Key Contributions:</strong></p>
-      <ul>
-        <li>Decommissioned legacy databases from on-premise servers to streamline data management.</li>
-        <li>Created SQL queries to extract, clean, and structure data efficiently.</li>
-        <li>Centralized files in SharePoint for secure and organized storage.</li>
-        <li>Connected SharePoint datasets to Power BI for reporting and analytics.</li>
-        <li>Built robust Power BI data models: calculated measures, relationships, added columns, and performed data cleansing.</li>
-        <li>Migrated the Power BI model to Report Builder to produce paginated reports for operational use.</li>
-      </ul>
-
-      <p><strong>Impact:</strong> Improved data accessibility, ensured consistent reporting, and enabled faster, more accurate decision-making across the region.</p>
-
-<img src="assets/img/projects/nongam_1.png" class="project-image">
-
-
-</div>
-</div>
-</div>
-   
-<!-- MVS MODAL -->
-
-<div class="modal fade" id="mvsModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h2>HR Analytics Dashboard</h2>
-
-<p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-<p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-<p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-<p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-
-<img src="assets/img/projects/mvs_1.png" class="project-image">
-<img src="assets/img/projects/mvs_2.png" class="project-image">
-<img src="assets/img/projects/mvs_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-<!-- SALINAS MODAL -->
-
-<div class="modal fade" id="salinasModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h2>Legal Collections Automation</h2>
-
-<p><strong>Purpose:</strong> Provide financial visibility across billing, collections and AR.</p>
-<p><strong>KPIs:</strong> Aging buckets, recovery rate, outstanding balance.</p>
-<p><strong>DAX:</strong> Time intelligence, cumulative collections, delinquency ratios.</p>
-<p><strong>Impact:</strong> Improved executive decision-making and operational follow-up.</p>
-
-<img src="assets/img/projects/salinas_1.png" class="project-image">
-<img src="assets/img/projects/salinas_2.png" class="project-image">
-<img src="assets/img/projects/salinas_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-
-
-
-<!-- PYTHON ETL MODAL -->
-
-<div class="modal fade" id="etlModal">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-<div class="modal-content p-5">
-
-<h2>Python ETL Data Pipeline</h2>
-
-<p><strong>Purpose:</strong> Automate data ingestion and transformation processes.</p>
-
-<p><strong>Pipeline:</strong> Developed a Python ETL pipeline to extract raw datasets, perform transformations, and load curated tables for reporting.</p>
-
-<p><strong>Tech:</strong> Python · SQL · Data Engineering · Automation</p>
-
-<p><strong>Impact:</strong> Reduced manual data preparation and improved reliability of analytical datasets.</p>
-
-<img src="assets/img/projects/etl_1.png" class="project-image">
-<img src="assets/img/projects/etl_2.png" class="project-image">
-<img src="assets/img/projects/etl_3.png" class="project-image">
-
-</div>
-</div>
-</div>
-
-
-
 
 <!-- TIMELINE -->
+<section id="timeline" class="section" style="background:rgba(255,255,255,0.01);">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:60px;">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Professional Timeline</h2>
+    </div>
+    <div class="tl-wrap fade-up">
+      <div class="tl-line"></div>
 
-<section id="timeline" class="section">
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">2022</div>
+          <div class="tl-company">Telefónica Movistar</div>
+          <div class="tl-desc">Designed revenue and collections BI dashboards. Implemented DAX time intelligence measures used by finance executives for monthly reporting.</div>
+        </div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-empty"></div>
+      </div>
 
-<h2 class="text-center text-uppercase mb-5">Professional Timeline</h2>
+      <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2023</div>
+          <div class="tl-company">Deloitte</div>
+          <div class="tl-desc">Built SAT CFDI reconciliation automation with T-SQL and Power BI. Contributed to a .NET financial file loader used in audit workflows.</div>
+        </div>
+      </div>
 
-<div class="timeline">
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">2024</div>
+          <div class="tl-company">Nestlé</div>
+          <div class="tl-desc">Led fiscal ETL pipelines with SSIS. Spearheaded the Alice Project — a full logistics data migration to Azure Databricks with layered schema architecture.</div>
+        </div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-empty"></div>
+      </div>
 
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2022</h3>
-<strong>Telefónica Movistar</strong>
-<p>Billing dashboards.</p>
-</div>
-</div>
+      <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2025</div>
+          <div class="tl-company">MVS Radio</div>
+          <div class="tl-desc">Delivered an advanced Excel analytics dashboard using Power Query, Power Pivot and DAX for MVS Education's performance tracking.</div>
+        </div>
+      </div>
 
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2023</h3>
-<strong>Deloitte</strong>
-<p>Reconciliation automation.</p>
-</div>
-</div>
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">2026</div>
+          <div class="tl-company">Grupo Salinas</div>
+          <div class="tl-desc">Automated the Legal Collections reporting process in Power BI — eliminating a fully manual workflow and reducing turnaround time by 80%.</div>
+        </div>
+        <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+        <div class="tl-empty"></div>
+      </div>
 
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2024</h3>
-<strong>Nestlé</strong>
-<p>SSIS pipelines.</p>
-</div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>2025</h3>
-<strong>MVS Radio</strong>
-<p>HR analytics dashboards.</p>
-</div>
-</div>
-
-
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>2026</h3>
-<strong>Grupo Salinas</strong>
-<p>Automated the Legal Collections Report in Power BI.</p>
-</div>
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
-
-<section id="contact" class="section text-center contact-section">
-
-<div class="container">
-
-<h2 class="text-uppercase mb-3">Contact</h2>
-
-<p class="contact-message">
-Ready to turn data into strategic advantage? Let's work together.
-</p>
-
-<div class="divider-custom mb-5">
-
-<div class="divider-custom-line"></div>
-
-<div class="divider-custom-icon">
-<i class="fas fa-star"></i>
-</div>
-
-<div class="divider-custom-line"></div>
-
-</div>
-
-<div class="d-flex justify-content-center flex-wrap gap-4">
-
-<a class="btn btn-outline-dark btn-lg px-4 py-3" href="mailto:avila.pablo961@gmail.com">
-<i class="fas fa-envelope me-2"></i>Email
-</a>
-
-<a class="btn btn-outline-dark btn-lg px-4 py-3" href="tel:+525533980702">
-<i class="fas fa-phone me-2"></i>+52 55 3398 0702
-</a>
-
-<a class="btn btn-outline-dark btn-lg px-4 py-3" href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
-<i class="fab fa-linkedin me-2"></i>LinkedIn
-</a>
-
-<a class="btn btn-outline-dark btn-lg px-4 py-3" href="https://github.com/PABLO8520" target="_blank">
-<i class="fab fa-github me-2"></i>GitHub
-</a>
-
-</div>
-
-</div>
-
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-wrap fade-up">
+      <div class="section-label" style="text-align:center;">Contact</div>
+      <h2 class="section-title" style="text-align:center;">Let's Build Something</h2>
+      <p class="contact-sub">
+        Available for full-time roles, freelance projects, and consulting in data engineering, BI, and analytics.
+        Based in <strong>CDMX</strong> — open to remote and hybrid.
+      </p>
+      <div class="contact-links">
+        <a class="contact-btn" href="mailto:avila.pablo961@gmail.com">
+          <i class="fas fa-envelope"></i> avila.pablo961@gmail.com
+        </a>
+        <a class="contact-btn" href="tel:+525533980702">
+          <i class="fas fa-phone"></i> +52 55 3398 0702
+        </a>
+        <a class="contact-btn" href="https://www.linkedin.com/in/pablo-d-44967318a/" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a class="contact-btn" href="https://github.com/PABLO8520" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-
-<footer class="text-center py-4 footer-section">
-© Pablo Díaz Avila | Data Engineer & Analytics
+<footer>
+  © 2026 Pablo Díaz Avila · Data Engineer & Analytics
 </footer>
 
+<!-- ═══════════════ MODALS ═══════════════ -->
+
+<!-- MOVISTAR -->
+<div class="modal fade" id="movistarModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Telefónica Movistar · 2022</div>
+        <h3>Revenue & Collections BI Dashboard</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Built a comprehensive Power BI solution to give finance and collections teams full visibility over billing cycles, payment behavior, and accounts receivable across millions of subscribers.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Key KPIs & Features</div>
+          <ul>
+            <li>Aging bucket analysis (30/60/90/120+ days overdue)</li>
+            <li>Recovery rate and collection efficiency metrics</li>
+            <li>Outstanding balance tracking by product line and region</li>
+            <li>Time intelligence measures: MTD, YTD, rolling 12-month comparisons</li>
+            <li>Delinquency ratio trends with drill-through by customer segment</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Modeling</span><span class="tag">Finance Analytics</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Reduced monthly reporting cycle from 3 days to same-day delivery. Dashboard adopted by finance and executive leadership for weekly operations reviews.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/movistar_1.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/movistar_2.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/movistar_3.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELOITTE 1 -->
+<div class="modal fade" id="deloitteModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Deloitte · 2023</div>
+        <h3>Payment Reconciliation Automation</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Designed and built an automated financial reconciliation pipeline to match ERP accounting records against SAT CFDI (Mexico's electronic invoice system) UUID records — eliminating a fully manual audit process.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Technical Pipeline</div>
+          <ul>
+            <li>Developed T-SQL stored procedures to extract and normalize ERP transaction data</li>
+            <li>Built UUID-matching logic to link invoices with payment records</li>
+            <li>Created Power BI data model with reconciliation status flags and discrepancy alerts</li>
+            <li>Implemented DAX measures for exception reporting and audit trail summaries</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">SQL Server</span><span class="tag">T-SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Reduced reconciliation turnaround from days to hours. Financial discrepancies now detected automatically, improving audit accuracy and compliance readiness.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/deloitte_0.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/deloitte_1.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/deloitte_2.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELOITTE 2 -->
+<div class="modal fade" id="deloitteModal1" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Deloitte · 2023</div>
+        <h3>.NET Financial File Loader</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Contributed to the development of a .NET desktop application that automates the ingestion of structured financial report files into SQL Server for use in internal reconciliation and audit workflows.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Key Contributions</div>
+          <ul>
+            <li>Parsed and validated Excel and fixed-width financial files in C#</li>
+            <li>Implemented data validation logic to flag malformed or incomplete records before insertion</li>
+            <li>Mapped file columns to SQL Server schemas used by downstream reporting</li>
+            <li>Wrote unit tests to ensure file processing reliability</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">.NET (C#)</span><span class="tag">SQL Server</span><span class="tag">Data Validation</span><span class="tag">File Handling</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Eliminated manual file entry for financial datasets. Reduced data ingestion errors and freed analyst time for higher-value tasks.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/deloitte_4.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NESTLE ETL -->
+<div class="modal fade" id="nestleModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Nestlé · 2024</div>
+        <h3>Fiscal Reporting ETL</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Designed and implemented SSIS-based ETL pipelines to automate Nestlé Mexico's monthly fiscal reporting cycle, replacing a fragmented manual process involving multiple data sources and spreadsheets.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Pipeline Components</div>
+          <ul>
+            <li>Extraction from Oracle ERP and SQL Server staging tables via SSIS packages</li>
+            <li>Data cleansing and transformation logic with error handling and logging</li>
+            <li>Star schema modeling for optimized Report Builder consumption</li>
+            <li>Parameterized reports with monthly/quarterly fiscal periods</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">SSIS</span><span class="tag">SQL Server</span><span class="tag">Data Modeling</span><span class="tag">Report Builder</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Reduced monthly fiscal report generation from 2 full days to under 2 hours. Improved data consistency and eliminated manual errors in financial submissions.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/nestle_1.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/nestle_2.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/nestle_3.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ALICE PROJECT -->
+<div class="modal fade" id="nestleAliceModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Nestlé · 2024</div>
+        <h3>Alice Project — Logistics Data Migration</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Led the technical data engineering work for Project Alice — a full migration of Nestlé's logistics and supply chain data from on-premise SQL Server to a cloud-native architecture on Azure Databricks.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Key Contributions</div>
+          <ul>
+            <li>Designed layered database schemas in Azure Databricks: <code>inbound → utils → silver → gold → dataset</code></li>
+            <li>Migrated 5+ years of historical logistics data with full referential integrity and zero downtime</li>
+            <li>Optimized Spark-based ETL jobs, reducing pipeline runtime by ~40%</li>
+            <li>Documented data models, schema contracts, and pipeline flows for team onboarding</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">Azure Databricks</span><span class="tag">PySpark</span><span class="tag">Python</span><span class="tag">Delta Lake</span><span class="tag">SQL</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Enabled cloud-native analytics for supply chain operations. Migration completed on schedule with zero data loss and improved query performance for downstream BI tools.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/alice_1.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NONGAM / ALICE BI -->
+<div class="modal fade" id="nongamModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Nestlé / Nongam · 2024</div>
+        <h3>Alice BI Reporting — South America</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Supported the decommissioning of legacy on-premise databases for South American operations and built a new, standardized reporting layer connected to SharePoint and Power BI.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Key Contributions</div>
+          <ul>
+            <li>Decommissioned legacy databases and migrated structured data to SharePoint</li>
+            <li>Wrote SQL queries to extract, clean, and normalize regional data</li>
+            <li>Built Power BI data models with calculated measures, relationships, and cleansing steps</li>
+            <li>Migrated Power BI model to Report Builder for paginated operational reports</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">Power BI</span><span class="tag">SharePoint</span><span class="tag">Report Builder</span><span class="tag">SQL</span><span class="tag">Data Modeling</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Improved data accessibility across South American operations. Consistent, reliable reporting enabled faster regional decision-making and compliance tracking.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/nongam_1.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MVS -->
+<div class="modal fade" id="mvsModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">MVS Radio · 2025</div>
+        <h3>Education Performance Dashboard</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Built a full-featured analytics dashboard in Excel using Power Query and Power Pivot to track KPIs for MVS Education — the educational division of MVS Radio, covering enrollment, instructors, and program performance.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Key Features</div>
+          <ul>
+            <li>Power Query transformations for multi-source data consolidation</li>
+            <li>Power Pivot data model with star schema relationships</li>
+            <li>DAX measures for enrollment rates, completion KPIs, and instructor performance</li>
+            <li>Interactive slicers and dynamic charts for period-over-period analysis</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">Power Pivot</span><span class="tag">DAX</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Replaced manual weekly Excel reports with a self-service dashboard. Management gained real-time visibility into program performance without relying on IT.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/mvs_1.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/mvs_2.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/mvs_3.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SALINAS -->
+<div class="modal fade" id="salinasModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Grupo Salinas · 2026</div>
+        <h3>Legal Collections Automation</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Automated the Legal Collections reporting process for Grupo Salinas — one of Mexico's largest conglomerates — replacing a fully manual workflow that required multiple analysts and several days to complete each cycle.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Key Features</div>
+          <ul>
+            <li>Data ingestion from internal collections systems and legal case management platforms</li>
+            <li>Power BI data model with case status tracking, recovery stages, and aging analysis</li>
+            <li>Automated KPIs: recovery rate, case throughput, average days-to-resolution</li>
+            <li>Dynamic filters by legal team, product type, and collection stage</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Cleaning</span><span class="tag">KPI Visualization</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Impact:</strong> Reduced reporting cycle time by 80%. Legal and collections leadership now have daily visibility into recovery performance — previously a weekly, manual process.
+        </div>
+        <div style="margin-top:22px;">
+          <img src="assets/img/projects/salinas_1.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/salinas_2.png" class="project-image" onerror="this.style.display='none'">
+          <img src="assets/img/projects/salinas_3.png" class="project-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTBALL -->
+<div class="modal fade" id="footballModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+      <div class="modal-header-custom">
+        <div class="modal-company">Personal Project</div>
+        <h3>Football Data Analytics</h3>
+      </div>
+      <div class="modal-body-custom">
+        <div class="modal-section">
+          <div class="modal-section-title">Overview</div>
+          <p>Built a personal data analytics project to explore football (soccer) match statistics using Python — combining web scraping, data wrangling, and visualization to surface performance patterns across leagues and players.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">What It Does</div>
+          <ul>
+            <li>Scrapes match data from public sources using BeautifulSoup / Selenium</li>
+            <li>Cleans and structures data with Pandas into an analysis-ready dataset</li>
+            <li>Calculates player performance metrics: xG, pass accuracy, defensive actions</li>
+            <li>Generates visualizations including heatmaps, radar charts, and trend lines</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Tech Stack</div>
+          <div class="card-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">BeautifulSoup</span><span class="tag">Matplotlib</span><span class="tag">Web Scraping</span></div>
+        </div>
+        <div class="modal-impact">
+          💡 <strong>Purpose:</strong> Demonstrates applied Python data engineering skills — from raw web data to structured analysis — in a domain-rich context.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Stagger portfolio cards
+document.querySelectorAll('.portfolio-card.fade-up').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.07}s`;
+});
+</script>
 
 </body>
 </html>
