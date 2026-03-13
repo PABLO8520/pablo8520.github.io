@@ -230,10 +230,10 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     </div>
     <div class="about-card fade-up">
       <p>
-        Data Engineer and Analytics professional with <strong style="color:var(--text);">4+ years of hands-on experience</strong>
-        across 6 enterprise clients in telecom, consulting, FMCG, media and financial services.
-        I specialize in designing end-to-end data pipelines, automating reporting processes, and building
-        business intelligence solutions that turn raw operational data into clear strategic decisions.
+        Data Engineer and Analytics professional with <strong style="color:var(--text);">3+ years of hands-on experience</strong>
+        across  enterprise clients in telecom, consulting, FMCG, media and financial services.
+        Industrial Engineer (IPN–UPIICSA) with a Computer Science specialization — my engineering background shaped the way I work with data,
+        approaching every project with a process and business mindset.
       </p>
       <p>
         My work spans the full data stack — from ingesting and transforming data with
@@ -244,18 +244,13 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
         and have been building enterprise-grade data solutions ever since.
       </p>
       <p>
-        Currently based in CDMX and open to remote or hybrid opportunities where data engineering
+        Currently based in CDMX and open to remote, hybrid or relocation opportunities where data engineering
         and analytics create real business impact.
       </p>
       <div class="about-stats">
         <div class="stat-item">
-          <div class="stat-value">4+</div>
+          <div class="stat-value">3+</div>
           <div class="stat-label">Years of Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">6</div>
-          <div class="stat-label">Enterprise Clients</div>
-        </div>
         <div class="stat-item">
           <div class="stat-value">10+</div>
           <div class="stat-label">Projects Delivered</div>
@@ -291,8 +286,8 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
         <div class="edu-body">
           <div class="edu-badge">2024 · Diploma</div>
           <h4>Data Science</h4>
-          <div class="edu-school">Coderhouse</div>
-          <p>Intensive diploma covering the full data science workflow: statistical analysis, machine learning, Python for data, and visualization techniques. Deepened the analytical foundations built through 4+ years of hands-on enterprise data engineering experience.</p>
+          <div class="edu-school">DEVF</div>
+          <p>Intensive diploma covering the full data science workflow: statistical analysis, machine learning, Python for data, and visualization techniques. Deepened the analytical foundations built through 3+ years of hands-on enterprise data engineering experience.</p>
           <div class="edu-tags">
             <span class="tag">Python</span><span class="tag">Machine Learning</span>
             <span class="tag">Statistics</span><span class="tag">Data Visualization</span>
@@ -324,6 +319,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
       <div class="tech-pill"><i class="fab fa-aws"></i>AWS</div>
       <div class="tech-pill"><i class="fas fa-robot"></i>Power Automate</div>
       <div class="tech-pill"><i class="fas fa-cogs"></i>Power Apps</div>
+      <div class="tech-pill"><i class="fab fa-git-alt"></i>Git</div>
     </div>
   </div>
 </section>
@@ -384,9 +380,9 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
       <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#nestleModal">
         <i class="card-arrow fas fa-arrow-up-right"></i>
         <div class="card-company">Nestlé</div>
-        <h4>Fiscal Reporting ETL Pipeline</h4>
-        <p>End-to-end SSIS pipeline for fiscal period reporting with paginated outputs delivered via Report Builder.</p>
-        <strong>SSIS · SQL Server · Report Builder · T-SQL</strong>
+        <h4>Sales & Stock Evolution Dashboard</h4>
+        <p>Automated self-service Power BI dashboard with Power Automate delivery to Supply Chain and Sales teams for on-demand analysis.</p>
+        <strong>Power BI · Power Automate · DAX · Power Query</strong>
       </div>
 
       <div class="portfolio-card fade-up" data-bs-toggle="modal" data-bs-target="#nestleAliceModal">
@@ -623,21 +619,28 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
       <button class="btn-close-custom" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       <div class="modal-header-custom">
         <div class="modal-company-label">Nestlé</div>
-        <h3>Fiscal Reporting ETL Pipeline</h3>
+        <h3>Sales & Stock Evolution Dashboard — Automated Delivery</h3>
       </div>
       <div class="modal-body-custom">
-        <p><strong>Purpose:</strong> Designed and implemented an SSIS-based ETL pipeline to automate fiscal period reporting, replacing manual data exports with a reliable, scheduled data flow.</p>
+        <p><strong>Purpose:</strong> Built a self-service Power BI dashboard for Supply Chain and Sales teams, automating report distribution via Power Automate and eliminating manual data requests between areas.</p>
+
         <div class="modal-section-title">Tech Stack</div>
-        <p>SSIS · SQL Server · Report Builder · T-SQL · Data Modeling</p>
-        <div class="modal-section-title">Pipeline Design</div>
+        <p>Power BI · DAX · Power Query · Power Automate · SharePoint · Excel</p>
+
+        <div class="modal-section-title">Key Features</div>
         <ul>
-          <li>Extracted fiscal data from SQL Server source systems using optimized T-SQL queries</li>
-          <li>Transformed and validated records through SSIS data flow components</li>
-          <li>Loaded structured output into reporting-ready tables</li>
-          <li>Generated paginated fiscal reports using Report Builder for finance team delivery</li>
+          <li>Dynamic slicers by Category, Product Code, Description and Origin across hundreds of SKUs</li>
+          <li>Sales metrics: COF, Venta, Rolling and % Avance vs target per product</li>
+          <li>Stock breakdown: Liberated, Blocked, In-Transit and GATP Available</li>
+          <li>Coverage analysis in days to anticipate supply gaps per SKU</li>
+          <li>One-click Export to Excel and CSV for downstream team consumption</li>
         </ul>
+
+        <div class="modal-section-title">Power Automate Flow</div>
+        <p>Scheduled flow that automatically distributed the report to Supply Chain and Sales stakeholders — zero manual intervention, every team received their data on time.</p>
+
         <div class="modal-section-title">Impact</div>
-        <p>Eliminated manual report generation for fiscal periods, improving data accuracy and freeing up finance team capacity for higher-value analysis.</p>
+        <p>Both teams gained full autonomy over their analysis, reducing reporting turnaround from hours to zero and freeing up analytics capacity for higher-value work.</p>
         <img src="assets/img/projects/nestle_1.png" class="project-image" onerror="this.style.display='none'">
         <img src="assets/img/projects/nestle_2.png" class="project-image" onerror="this.style.display='none'">
         <img src="assets/img/projects/nestle_3.png" class="project-image" onerror="this.style.display='none'">
