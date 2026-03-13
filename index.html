@@ -64,10 +64,10 @@ body::before { content:''; position:fixed; inset:0; background-image:url("data:i
 .about-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:40px; }
 .about-card p { font-size:1.05rem; line-height:1.85; color:var(--muted); margin-bottom:16px; }
 .about-card p:last-of-type { margin-bottom:0; }
-.about-stats { display:flex; gap:40px; margin-top:32px; padding-top:28px; border-top:1px solid var(--card-border); }
-.stat-item { text-align:center; }
-.stat-value { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:var(--blue-light); line-height:1; }
-.stat-label { font-size:0.8rem; color:var(--muted); margin-top:4px; }
+.about-stats { display:flex; gap:48px; margin-top:32px; padding-top:28px; border-top:1px solid var(--card-border); justify-content:center; }
+.stat-item { text-align:center; min-width:120px; }
+.stat-value { font-family:'Syne',sans-serif; font-size:2.4rem; font-weight:800; color:var(--blue-light); line-height:1; }
+.stat-label { font-size:0.82rem; color:var(--muted); margin-top:6px; letter-spacing:0.04em; }
 
 /* ACADEMIC */
 .edu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:24px; }
@@ -230,7 +230,7 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
     </div>
     <div class="about-card fade-up">
       <p>
-        Data Engineer and Analytics professional with <strong style="color:var(--text);">4+ years of hands-on experience</strong>
+        Data Engineer and Analytics professional with <strong style="color:var(--text);">3+ years of hands-on experience</strong>
         across enterprise clients in telecom, consulting, FMCG, media and financial services.
         Industrial Engineer (IPN–UPIICSA) with a Computer Science specialization — my engineering background shaped the way I work with data,
         approaching every project with a process and business mindset.
@@ -876,4 +876,11 @@ footer { border-top:1px solid rgba(255,255,255,0.06); padding:28px; text-align:c
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-  });
+  });}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.portfolio-card.fade-up').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.07}s`;
+});
+</script>
+</body>
+</html>
